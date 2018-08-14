@@ -1,28 +1,129 @@
-.App {
+body,
+h1,
+h2,
+h3,
+button,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.contents {
+  margin-left: 0;
+  transition: margin-left 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.contents.is-active {
+  margin-left: 300px;
+}
+
+.header {
+  background: #6b5344;
+  height: 60px;
+  line-height: 60px;
   text-align: center;
+  position: relative;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.header__title {
+  color: #fff;
+  font-size: 30px;
+  font-family: "Sofia", cursive;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.header__btn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.header__btn span {
+  font-size: 0;
 }
 
-.App-intro {
-  font-size: large;
+.header__btn span,
+.header__btn::before,
+.header__btn::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-top: 4px solid #fff;
+  border-radius: 2px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.header__btn::before {
+  position: absolute;
+  top: 0;
+}
+
+.header__btn::after {
+  position: absolute;
+  bottom: 0;
+}
+
+.contents {
+  position: relative;
+}
+
+.map {
+  height: calc(100vh - 60px);
+}
+
+.sidebar {
+  background: #a79c8e;
+  box-sizing: border-box;
+  color: #fff;
+  padding: 0 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+}
+
+.sidebar__title {
+  letter-spacing: 1px;
+  line-height: 70px;
+}
+
+.filter-locations {
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  width: 100%;
+  height: 42px;
+}
+
+.locations-list {
+  list-style-type: none;
+}
+
+.locations-list__item {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #6b5344;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.locations-list__item:hover {
+  background: #f5efde;
+  color: #6b5344;
 }
