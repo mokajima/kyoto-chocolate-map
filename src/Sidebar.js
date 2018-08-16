@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import Location from './Location'
 import LocationsList from './LocationsList'
 
@@ -17,7 +18,7 @@ class Sidebar extends Component {
           value={this.props.query}
           onChange={(event) => this.props.updateQuery(event.target.value)}
         />
-        {currentLocation && (
+        {currentLocation.id && (
           <Location location={currentLocation} />
         )}
         <LocationsList
@@ -28,6 +29,14 @@ class Sidebar extends Component {
       </div>
     )
   }
+}
+
+Sidebar.propTypes = {
+  currentLocation: PropTypes.object.isRequired,
+  locations: PropTypes.array.isRequired,
+  query: PropTypes.string.isRequired,
+  updateCurrentLocation: PropTypes.func.isRequired,
+  updateQuery: PropTypes.func.isRequired
 }
 
 export default Sidebar;

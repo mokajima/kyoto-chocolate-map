@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
 class Location extends Component {
   render() {
@@ -32,6 +33,10 @@ class Location extends Component {
       </div>
     )
   }
+}
+
+Location.propTypes = {
+  location: PropTypes.object.isRequired
 }
 
 export default Location;

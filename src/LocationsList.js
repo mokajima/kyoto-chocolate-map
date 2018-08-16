@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
 class LocationsList extends Component {
   render() {
@@ -22,6 +23,12 @@ class LocationsList extends Component {
       </ul>
     )
   }
+}
+
+LocationsList.propTypes = {
+  currentLocation: PropTypes.object.isRequired,
+  locations: PropTypes.array.isRequired,
+  updateCurrentLocation: PropTypes.func.isRequired
 }
 
 export default LocationsList;

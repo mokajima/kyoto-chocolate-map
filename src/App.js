@@ -7,7 +7,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    currentLocation: '',
+    currentLocation: {},
     locations: [],
     query: ''
   }
@@ -71,7 +71,7 @@ class App extends Component {
           </header>
           <Map
             currentLocation={this.state.currentLocation}
-            showingLocations={showingLocations}
+            locations={locations}
             updateCurrentLocation={this.updateCurrentLocation}
             googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQjsHZq9VBKSPlfbOeTBoknSDxgqZI_z8&v=3.exp"
             loadingElement={<div style={{height: `100%`}} />}
