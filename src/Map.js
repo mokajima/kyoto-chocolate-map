@@ -23,7 +23,7 @@ const Map = withScriptjs(withGoogleMap((props) => {
   )
 
   return (
-    <GoogleMap defaultZoom={14} defaultCenter={{lat: 35.01152, lng: 135.767766}}>
+    <GoogleMap defaultZoom={13} defaultCenter={{lat: 35.01152, lng: 135.767766}}>
       {props.locations.map((location) => {
         const icon = currentLocation && currentLocation.id === location.venueId ? highlightedIcon : defaultIcon
 
