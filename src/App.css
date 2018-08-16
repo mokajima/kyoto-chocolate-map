@@ -86,12 +86,13 @@ body {
   background: #a79c8e;
   box-sizing: border-box;
   color: #fff;
-  padding: 0 10px;
+  padding: 0 10px 5px;
   position: fixed;
   top: 0;
   left: 0;
   width: 300px;
   height: 100%;
+  overflow-y: scroll;
 }
 
 .sidebar__title {
@@ -110,8 +111,68 @@ body {
   height: 42px;
 }
 
+.location {
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.location__img img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.location__content {
+  color: #000;
+  padding: 6px 10px 4px;
+}
+
+.location__content p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.location__name {
+  color: #6b5344;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
+
+.location__meta {
+  margin-bottom: 1em;
+}
+
+.location__meta p {
+  margin: 0 0 0.5em;
+}
+
+.location__btn {
+  text-align: center;
+}
+
+.location__btn a {
+  background: #a79c8e;
+  color: #fff;
+  display: inline-block;
+  line-height: 45px;
+  text-decoration: none;
+  width: 180px;
+  height: 45px;
+}
+
+.location__btn a:hover {
+  background: #f5efde;
+  color: #6b5344;
+  text-decoration: underline;
+}
+
 .locations-list {
   list-style-type: none;
+  margin-bottom: 15px;
 }
 
 .locations-list__item {
@@ -119,11 +180,12 @@ body {
   border-radius: 4px;
   box-sizing: border-box;
   color: #6b5344;
+  cursor: pointer;
   margin-bottom: 5px;
   padding: 10px;
 }
 
-.locations-list__item:hover {
+.locations-list__item:hover,
+.locations-list__item.is-active {
   background: #f5efde;
-  color: #6b5344;
 }

@@ -1,0 +1,59 @@
+{
+  "shops": [
+    {
+      "name": "ASSEMBLAGES KAKIMOTO",
+      "position": {"lat": 35.0161443, "lng": 135.7645379},
+      "venueId": "571b2376498ee5843d97343a"
+    },
+    {
+      "name": "CACAO MARKET by MarieBelle",
+      "position": {"lat": 35.0051302, "lng": 135.7702987},
+      "venueId": "52225c840493f70f68fc7192"
+    },
+    {
+      "name": "Chocolat BEL AMER",
+      "position": {"lat": 35.0083209, "lng": 135.7616981},
+      "venueId": "55f7d3d1498e10faf80cc1b6"
+    },
+    {
+      "name": "DANDELION CHOCOLATE",
+      "position": {"lat": 34.7437788, "lng": 135.8252173},
+      "venueId": "5af1663c95d986003963c235"
+    },
+    {
+      "name": "JEAN-PAUL HÉVIN JAPON - Kyoto",
+      "position": {"lat": 35.0085587, "lng": 135.7629634},
+      "venueId": "5811ad8338fafc8715ce5530"
+    },
+    {
+      "name": "Kyoto Nama Chocolat Organic Tea House",
+      "position": {"lat": 35.016009, "lng": 135.784109},
+      "venueId": "4d60c012b19fa143dde9f9c8"
+    },
+    {
+      "name": "Lindt Chocolat Cafe Kyoto Shijodori",
+      "position": {"lat": 35.016009, "lng": 135.784109},
+      "venueId": "58baa7c215fb437fcfa2e60b"
+    },
+    {
+      "name": "Malebranche Cacao 365 Gion store",
+      "position": {"lat": 35.002791, "lng": 135.7734874},
+      "venueId": "53803239498e54d58e7d320b"
+    },
+    {
+      "name": "MARIEBELLE Kyoto",
+      "position": {"lat": 35.0083122, "lng": 135.7616981},
+      "venueId": "4f924337e4b0e2dc95c27126"
+    },
+    {
+      "name": "Raw Cafe by cacao∞magic",
+      "position": {"lat": 35.0267204, "lng": 135.7923553},
+      "venueId": "51185c46e4b06e75e9c7b381"
+    },
+    {
+      "name": "Salon de Royal Kyoto",
+      "position": {"lat": 35.0114269, "lng": 135.7686516},
+      "venueId": "510e8251e4b0470c6449b82c"
+    }
+  ]
+}
