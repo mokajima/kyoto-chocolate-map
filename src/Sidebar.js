@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Location from './Location'
+import LocationsList from './LocationsList'
 
 class Sidebar extends Component {
   render() {
@@ -19,21 +20,11 @@ class Sidebar extends Component {
         {currentLocation && (
           <Location location={currentLocation} />
         )}
-        <ul className="locations-list">
-          {this.props.locations.map((location) => {
-
-            let className = 'locations-list__item'
-            className += currentLocation && currentLocation.id === location.venueId ? ' is-active' : ''
-
-            return (
-              <li
-                className={className}
-                key={location.venueId}
-                onClick={() => this.props.updateCurrentLocation(location.venueId)}
-              >{location.name}</li>
-            )
-          })}
-        </ul>
+        <LocationsList
+          currentLocation={currentLocation}
+          locations={this.props.locations}
+          updateCurrentLocation={this.props.updateCurrentLocation}
+        />
       </div>
     )
   }
