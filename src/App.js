@@ -22,6 +22,13 @@ class App extends Component {
       })
   }
 
+  displaySidebar = () => {
+    const contents = document.getElementById('contents')
+    if (!contents.classList.contains('is-active')) {
+      contents.classList.add('is-active')
+    }
+  }
+
   toggleSidebar = () => {
     document.getElementById('contents').classList.toggle('is-active')
   }
@@ -41,6 +48,8 @@ class App extends Component {
           currentLocation: data.response.venue
         })
       })
+
+    this.displaySidebar()
   }
 
   updateQuery = (query) => {
