@@ -23,6 +23,10 @@ body {
   margin-left: 300px;
 }
 
+.contents.is-active .header__title {
+  display: none;
+}
+
 .header {
   background: #6b5344;
   height: 60px;
@@ -33,8 +37,8 @@ body {
 
 .header__title {
   color: #fff;
-  font-size: 30px;
   font-family: "Sofia", cursive;
+  font-size: 20px;
 }
 
 .header__btn {
@@ -188,4 +192,14 @@ body {
 .locations-list__item:hover,
 .locations-list__item.is-active {
   background: #f5efde;
+}
+
+@media screen and (min-width: 768px) {
+  .contents.is-active .header__title {
+    display: block;
+  }
+
+  .header__title {
+    font-size: 30px;
+  }
 }
