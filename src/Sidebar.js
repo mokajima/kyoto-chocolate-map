@@ -26,6 +26,9 @@ class Sidebar extends Component {
           locations={this.props.locations}
           updateCurrentLocation={this.props.updateCurrentLocation}
         />
+        <div className="attribution">
+          <img src="powered-by-foursquare-white.svg" alt="POWERED BY FOURSQUARE" />
+        </div>
       </div>
     )
   }
