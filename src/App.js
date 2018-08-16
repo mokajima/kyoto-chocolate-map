@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Sidebar from './Sidebar'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
+import Map from './Map'
+import Sidebar from './Sidebar'
 import './App.css';
 
 class App extends Component {
@@ -68,7 +69,15 @@ class App extends Component {
               <span>Hide Navigation</span>
             </button>
           </header>
-          <div id="map" className="map"></div>
+          <Map
+            currentLocation={this.state.currentLocation}
+            showingLocations={showingLocations}
+            updateCurrentLocation={this.updateCurrentLocation}
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQjsHZq9VBKSPlfbOeTBoknSDxgqZI_z8&v=3.exp"
+            loadingElement={<div style={{height: `100%`}} />}
+            containerElement={<div className="map" />}
+            mapElement={<div style={{height: `100%`}} />}
+          />
         </div>
         <Sidebar
           currentLocation={this.state.currentLocation}
