@@ -20,6 +20,9 @@ class App extends Component {
           locations: data.shops
         })
       })
+      .catch(() => {
+        alert('We couldn\'t get location data. Please try reloading the page.')
+      })
   }
 
   displaySidebar = () => {
@@ -47,6 +50,9 @@ class App extends Component {
         this.setState({
           currentLocation: data.response.venue
         })
+      })
+      .catch(() => {
+        alert('We couldn\'t get data from Foursquare.')
       })
 
     this.displaySidebar()
