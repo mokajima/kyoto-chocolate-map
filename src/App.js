@@ -45,15 +45,12 @@ class App extends Component {
     fetch(`https://api.foursquare.com/v2/venues/${venueId}?client_id=${clientId}&client_secret=${clientSecret}&v=${v}&lang=en`)
       .then((res) => res.json())
       .then((data) => {
-        this.setState({
-          currentLocation: data.response.venue
-        })
+        this.setState({currentLocation: data.response.venue})
+        this.displaySidebar()
       })
       .catch(() => {
         alert('We couldn\'t get data from Foursquare.')
       })
-
-    this.displaySidebar()
   }
 
   updateQuery = (query) => {
