@@ -77,10 +77,6 @@ body {
   bottom: 0;
 }
 
-.contents {
-  position: relative;
-}
-
 .map {
   height: calc(100vh - 60px);
 }
