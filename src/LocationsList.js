@@ -9,15 +9,24 @@ class LocationsList extends Component {
       <ul className="locations-list" role="listbox">
         {this.props.locations.map((location) => {
 
-          let className = 'locations-list__item'
-          className += currentLocation && currentLocation.id === location.venueId ? ' is-active' : ''
+          let className, ariaSelected
+
+          if (currentLocation && currentLocation.id === location.venueId) {
+            className = 'locations-list__item is-active'
+            ariaSelected = true
+          } else {
+            className = 'locations-list__item'
+            ariaSelected = false
+          }
 
           return (
             <li
               className={className}
               key={location.venueId}
               onClick={() => this.props.updateCurrentLocation(location.venueId)}
+              aria-selected={ariaSelected}
               role="option"
+              tabIndex="0"
             >{location.name}</li>
           )
         })}
