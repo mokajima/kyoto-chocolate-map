@@ -8,6 +8,7 @@ import './App.css';
 class App extends Component {
   state = {
     currentLocation: {},
+    isActive: true,
     locations: [],
     query: ''
   }
@@ -26,14 +27,11 @@ class App extends Component {
   }
 
   displaySidebar = () => {
-    const contents = document.getElementById('contents')
-    if (!contents.classList.contains('is-active')) {
-      contents.classList.add('is-active')
-    }
+    this.setState({isActive: true})
   }
 
   toggleSidebar = () => {
-    document.getElementById('contents').classList.toggle('is-active')
+    this.setState((prevState) => ({isActive: !prevState.isActive}))
   }
 
   updateCurrentLocation = (venueId) => {
@@ -64,7 +62,9 @@ class App extends Component {
 
   render() {
     const {locations, query} = this.state
-    let showingLocations
+    let className, showingLocations
+
+    className = this.state.isActive ? 'contents is-active' : 'contents'
 
     if (query) {
       const match = new RegExp(escapeRegExp(query), 'i')
@@ -77,7 +77,7 @@ class App extends Component {
 
     return (
       <main>
-        <div id="contents" className="contents is-active">
+        <div id="contents" className={className}>
           <header className="header">
             <h1 className="header__title">Kyoto Chocolate Map</h1>
             <button className="header__btn" onClick={this.toggleSidebar}>
