@@ -26,14 +26,24 @@ class App extends Component {
       })
   }
 
+  /**
+   * @description Display the sidebar
+   */
   displaySidebar = () => {
     this.setState({isActive: true})
   }
 
+  /**
+   * @description Toggle the sidebar
+   */
   toggleSidebar = () => {
     this.setState((prevState) => ({isActive: !prevState.isActive}))
   }
 
+  /**
+   * @description Update this.state.currentLocation
+   * @param {string} venueId - The ID of the venue to retrieve
+   */
   updateCurrentLocation = (venueId) => {
 
     if (this.state.currentLocation && this.state.currentLocation.id === venueId) return
@@ -53,6 +63,10 @@ class App extends Component {
       })
   }
 
+  /**
+   * @description Update this.state.query
+   * @param {string} query
+   */
   updateQuery = (query) => {
     this.setState({query})
   }
