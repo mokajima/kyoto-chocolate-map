@@ -6,6 +6,7 @@ import LocationsList from './LocationsList'
 class Sidebar extends Component {
   render() {
     const {currentLocation} = this.props
+    const tabIndex = this.props.isActive ? 0 : -1
 
     return (
       <section className="sidebar">
@@ -16,6 +17,7 @@ class Sidebar extends Component {
           name="query"
           placeholder="Filter locations"
           value={this.props.query}
+          tabIndex={tabIndex}
           onChange={(event) => this.props.updateQuery(event.target.value)}
         />
         {currentLocation.id && (
@@ -23,6 +25,7 @@ class Sidebar extends Component {
         )}
         <LocationsList
           currentLocation={currentLocation}
+          isActive={this.props.isActive}
           locations={this.props.locations}
           updateCurrentLocation={this.props.updateCurrentLocation}
         />

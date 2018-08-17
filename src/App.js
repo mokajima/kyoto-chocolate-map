@@ -96,6 +96,7 @@ class App extends Component {
         </div>
         <Sidebar
           currentLocation={this.state.currentLocation}
+          isActive={this.state.isActive}
           locations={showingLocations}
           query={query}
           updateCurrentLocation={this.updateCurrentLocation}
