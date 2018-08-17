@@ -12,6 +12,7 @@ body {
   font-family: "Open Sans", Helvetica, sans-serif;
 }
 
+/* Contents */
 .contents {
   margin-left: 0;
   transition: margin-left 0.5s ease;
@@ -27,6 +28,7 @@ body {
   display: none;
 }
 
+/* Header */
 .header {
   background: #6b5344;
   height: 60px;
@@ -81,6 +83,7 @@ body {
   height: calc(100vh - 60px);
 }
 
+/* Sidebar */
 .sidebar {
   background: #a79c8e;
   box-sizing: border-box;
@@ -110,6 +113,7 @@ body {
   height: 42px;
 }
 
+/* Location */
 .location {
   background: #fff;
   border-radius: 4px;
@@ -169,6 +173,7 @@ body {
   text-decoration: underline;
 }
 
+/* Locations list */
 .locations-list {
   list-style-type: none;
   margin-bottom: 30px;
