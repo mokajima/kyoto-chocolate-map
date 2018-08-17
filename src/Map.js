@@ -30,9 +30,10 @@ const Map = withScriptjs(withGoogleMap((props) => {
         return (
           <Marker
             key={location.venueId}
-            title={location.name}
-            position={location.position}
+            clickable={true}
             icon={icon}
+            position={location.position}
+            title={location.name}
             onClick={() => props.updateCurrentLocation(location.venueId)}
           />
         )
