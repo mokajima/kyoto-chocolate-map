@@ -90,7 +90,7 @@ class App extends Component {
             updateCurrentLocation={this.updateCurrentLocation}
             googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQjsHZq9VBKSPlfbOeTBoknSDxgqZI_z8&v=3.exp"
             loadingElement={<div style={{height: `100%`}} />}
-            containerElement={<div className="map" />}
+            containerElement={<div className="map" role="application" />}
             mapElement={<div style={{height: `100%`}} />}
           />
         </div>
