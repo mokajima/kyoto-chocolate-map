@@ -8,7 +8,7 @@ class Sidebar extends Component {
     const {currentLocation} = this.props
 
     return (
-      <div className="sidebar">
+      <section className="sidebar">
         <h2 className="sidebar__title">Locations</h2>
         <input
           className="filter-locations"
@@ -29,7 +29,7 @@ class Sidebar extends Component {
         <div className="attribution">
           <img src="powered-by-foursquare-white.svg" alt="POWERED BY FOURSQUARE" />
         </div>
-      </div>
+      </section>
     )
   }
 }
