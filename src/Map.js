@@ -22,6 +22,13 @@ const Map = withScriptjs(withGoogleMap((props) => {
     new window.google.maps.Size(21,34)
   )
 
+  /**
+   * @description Listen for authentication errors
+   */
+  window.gm_authFailure = () => {
+    alert('We couldn\'t get data from Google Maps')
+  }
+
   return (
     <GoogleMap defaultZoom={13} defaultCenter={{lat: 35.01152, lng: 135.767766}}>
       {props.locations.map((location) => {
