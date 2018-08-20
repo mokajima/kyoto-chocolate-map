@@ -48,8 +48,8 @@ class App extends Component {
 
     if (this.state.currentLocation && this.state.currentLocation.id === venueId) return
 
-    const clientId = 'AOGK0IYX14B50BVIDNSYC2WKGESQD3BUG2JU1DGMFEWP5030'
-    const clientSecret = 'I2R5NC0OWSTFPKNHDJE4G32VJPLVI5TTPONNOD1VYLT0CYEZ'
+    const clientId = 'YOUR_CLIENT_ID'
+    const clientSecret = 'YOUR_CLIENT_SECRET'
     const v = '20180813'
 
     fetch(`https://api.foursquare.com/v2/venues/${venueId}?client_id=${clientId}&client_secret=${clientSecret}&v=${v}&lang=en`)
@@ -99,7 +99,7 @@ class App extends Component {
             currentLocation={this.state.currentLocation}
             locations={locations}
             updateCurrentLocation={this.updateCurrentLocation}
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQjsHZq9VBKSPlfbOeTBoknSDxgqZI_z8&v=3.exp"
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&v=3.exp"
             loadingElement={<div style={{height: `100%`}} />}
             containerElement={<div className="map" aria-label="Map" role="application" />}
             mapElement={<div style={{height: `100%`}} />}
