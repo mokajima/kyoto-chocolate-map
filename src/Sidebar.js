@@ -4,38 +4,36 @@ import Location from './Location'
 import LocationsList from './LocationsList'
 import Logo from './powered-by-foursquare-white.svg';
 
-class Sidebar extends Component {
-  render() {
-    const {currentLocation} = this.props
-    const tabIndex = this.props.isActive ? 0 : -1
+const Sidebar = (props) => {
+  const {currentLocation} = props
+  const tabIndex = props.isActive ? 0 : -1
 
-    return (
-      <section className="sidebar">
-        <h2 className="sidebar__title">Locations</h2>
-        <input
-          className="filter-locations"
-          type="text"
-          name="query"
-          placeholder="Filter locations"
-          value={this.props.query}
-          tabIndex={tabIndex}
-          onChange={(event) => this.props.updateQuery(event.target.value)}
-        />
-        {currentLocation.id && (
-          <Location location={currentLocation} />
-        )}
-        <LocationsList
-          currentLocation={currentLocation}
-          isActive={this.props.isActive}
-          locations={this.props.locations}
-          updateCurrentLocation={this.props.updateCurrentLocation}
-        />
-        <div className="attribution">
-          <img src={Logo} alt="POWERED BY FOURSQUARE" />
-        </div>
-      </section>
-    )
-  }
+  return (
+    <section className="sidebar">
+      <h2 className="sidebar__title">Locations</h2>
+      <input
+        className="filter-locations"
+        type="text"
+        name="query"
+        placeholder="Filter locations"
+        value={props.query}
+        tabIndex={tabIndex}
+        onChange={(event) => props.updateQuery(event.target.value)}
+      />
+      {currentLocation.id && (
+        <Location location={currentLocation} />
+      )}
+      <LocationsList
+        currentLocation={currentLocation}
+        isActive={props.isActive}
+        locations={props.locations}
+        updateCurrentLocation={props.updateCurrentLocation}
+      />
+      <div className="attribution">
+        <img src={Logo} alt="POWERED BY FOURSQUARE" />
+      </div>
+    </section>
+  )
 }
 
 Sidebar.propTypes = {
