@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import Location from './Location'
 import LocationsList from './LocationsList'
+import Logo from './powered-by-foursquare-white.svg';
 
 class Sidebar extends Component {
   render() {
@@ -30,7 +31,7 @@ class Sidebar extends Component {
           updateCurrentLocation={this.props.updateCurrentLocation}
         />
         <div className="attribution">
-          <img src="powered-by-foursquare-white.svg" alt="POWERED BY FOURSQUARE" />
+          <img src={Logo} alt="POWERED BY FOURSQUARE" />
         </div>
       </section>
     )
