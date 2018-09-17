@@ -21,6 +21,8 @@ You can filter locations with a text field in the sidebar. Clicking a location o
 1. Download a zip file or clone via GitHub
 2. Install all project dependencies with `npm install`
 3. Start the development server with `npm start`
-4. Replace YOUR_CLIENT_ID in `src/App.js` with your Client ID of your Foursquare App
-5. Replace YOUR_CLIENT_SECRET in `src/App.js` with your Client Secret of your Foursquare App
-6. Replace YOUR_API_KEY in `src/App.js` with your Google API key
+4. Replace `YOUR_CLIENT_ID` in `src/App.js` with your Client ID of your Foursquare App
+5. Replace `YOUR_CLIENT_SECRET` in `src/App.js` with your Client Secret of your Foursquare App
+6. Replace `YOUR_API_KEY` in `src/App.js` with your Google API key
+
+The service worker is only enabled in the production environment, e.g. the output of `npm run build`.
