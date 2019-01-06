@@ -2,6 +2,9 @@ node_modules
 yarn.lock
 .DS_Store
 
+# Production
+build
+
 # Vim
 [._]*.s[a-v][a-z]
 [._]*.sw[a-p]
