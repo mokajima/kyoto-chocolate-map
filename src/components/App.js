@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
+import { getLocations } from '../utils/api'
 import Map from './Map'
 import Sidebar from './Sidebar'
 import './App.css';
@@ -14,11 +15,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('locations.json')
-      .then((res) => res.json())
-      .then((data) => {
+    getLocations()
+      .then(shops => {
         this.setState({
-          locations: data.shops
+          locations: shops
         })
       })
       .catch(() => {
