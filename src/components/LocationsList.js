@@ -38,7 +38,8 @@ const LocationsList = (props) => {
 LocationsList.propTypes = {
   currentLocation: PropTypes.object.isRequired,
   locations: PropTypes.array.isRequired,
-  updateCurrentLocation: PropTypes.func.isRequired
+  updateCurrentLocation: PropTypes.func.isRequired,
+  isActive: PropTypes.bool.isRequired
 }
 
 export default LocationsList

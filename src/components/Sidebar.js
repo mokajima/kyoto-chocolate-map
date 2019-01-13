@@ -41,7 +41,8 @@ Sidebar.propTypes = {
   locations: PropTypes.array.isRequired,
   query: PropTypes.string.isRequired,
   updateCurrentLocation: PropTypes.func.isRequired,
-  updateQuery: PropTypes.func.isRequired
+  updateQuery: PropTypes.func.isRequired,
+  isActive: PropTypes.bool.isRequired
 }
 
 export default Sidebar
