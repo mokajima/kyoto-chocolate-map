@@ -22,11 +22,11 @@ const Location = (props) => {
         )}
         {location.url && (
           <p className="location__url">
-            <a href={location.url}>{location.url}</a>
+            <a href={location.url} target="_blank" rel="noopener noreferrer">{location.url}</a>
           </p>
         )}
         <p className="location__btn">
-          <a href={location.canonicalUrl} target="_blank">View in Foursquare</a>
+          <a href={location.canonicalUrl} target="_blank" rel="noopener noreferrer">View in Foursquare</a>
         </p>
       </div>
     </div>
