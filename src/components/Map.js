@@ -11,7 +11,7 @@ const Map = withScriptjs(withGoogleMap((props) => {
     new window.google.maps.Size(21, 34),
     new window.google.maps.Point(0, 0),
     new window.google.maps.Point(10, 34),
-    new window.google.maps.Size(21,34)
+    new window.google.maps.Size(21, 34)
   )
 
   const highlightedIcon = new window.google.maps.MarkerImage(
@@ -19,7 +19,7 @@ const Map = withScriptjs(withGoogleMap((props) => {
     new window.google.maps.Size(21, 34),
     new window.google.maps.Point(0, 0),
     new window.google.maps.Point(10, 34),
-    new window.google.maps.Size(21,34)
+    new window.google.maps.Size(21, 34)
   )
 
   /**
