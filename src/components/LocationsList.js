@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
 
 const LocationsList = (props) => {
@@ -41,4 +41,4 @@ LocationsList.propTypes = {
   updateCurrentLocation: PropTypes.func.isRequired
 }
 
-export default LocationsList;
+export default LocationsList

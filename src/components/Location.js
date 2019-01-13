@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
 
 const Location = (props) => {
@@ -37,4 +37,4 @@ Location.propTypes = {
   location: PropTypes.object.isRequired
 }
 
-export default Location;
+export default Location

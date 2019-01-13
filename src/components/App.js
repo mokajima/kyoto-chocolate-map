@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 import { getLocations } from '../utils/api'
 import Map from './Map'
 import Sidebar from './Sidebar'
-import './App.css';
+import './App.css'
 
 class App extends Component {
   state = {
@@ -114,8 +114,8 @@ class App extends Component {
           updateQuery={this.updateQuery}
         />
       </main>
-    );
+    )
   }
 }
 
-export default App;
+export default App

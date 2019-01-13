@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
 import Location from './Location'
 import LocationsList from './LocationsList'
-import Logo from '../powered-by-foursquare-white.svg';
+import Logo from '../powered-by-foursquare-white.svg'
 
 const Sidebar = (props) => {
   const {currentLocation} = props
@@ -44,4 +44,4 @@ Sidebar.propTypes = {
   updateQuery: PropTypes.func.isRequired
 }
 
-export default Sidebar;
+export default Sidebar

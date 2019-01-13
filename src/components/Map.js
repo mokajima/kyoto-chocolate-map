@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
 import PropTypes from 'prop-types'
 
@@ -59,4 +59,4 @@ Map.propTypes = {
   mapElement: PropTypes.element.isRequired
 }
 
-export default Map;
+export default Map
