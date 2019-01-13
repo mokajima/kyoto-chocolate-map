@@ -99,10 +99,10 @@ class App extends Component {
             currentLocation={this.state.currentLocation}
             locations={locations}
             updateCurrentLocation={this.updateCurrentLocation}
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&v=3.exp"
-            loadingElement={<div style={{height: `100%`}} />}
+            googleMapURL='https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&v=3.exp'
+            loadingElement={<div style={{height: '100%'}} />}
             containerElement={<div className="map" aria-label="Map" role="application" />}
-            mapElement={<div style={{height: `100%`}} />}
+            mapElement={<div style={{height: '100%'}} />}
           />
         </div>
         <Sidebar
