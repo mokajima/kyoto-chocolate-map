@@ -8,7 +8,7 @@ const LocationsList = (props) => {
     <ul className="locations-list" role="listbox">
       {props.locations.map((location) => {
 
-        let ariaSelected, className, tabIndex
+        let ariaSelected, className
 
         if (currentLocation && currentLocation.id === location.venueId) {
           ariaSelected = true
@@ -18,7 +18,7 @@ const LocationsList = (props) => {
           className = 'locations-list__item'
         }
 
-        tabIndex = props.isActive ? 0 : -1
+        const tabIndex = props.isActive ? 0 : -1
 
         return (
           <li

@@ -73,9 +73,9 @@ class App extends Component {
 
   render() {
     const {locations, query} = this.state
-    let className, showingLocations
+    let showingLocations
 
-    className = this.state.isActive ? 'contents is-active' : 'contents'
+    const className = this.state.isActive ? 'contents is-active' : 'contents'
 
     if (query) {
       const match = new RegExp(escapeRegExp(query), 'i')
