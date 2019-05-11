@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
-import { getLocations } from '../utils/api'
-import Map from './Map'
-import Sidebar from './Sidebar'
+import { getLocations } from './utils/api'
+import Map from './components/Map'
+import Sidebar from './components/Sidebar'
 import './App.css'
 
 class App extends Component {
