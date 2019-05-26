@@ -6,20 +6,10 @@ import Logo from '../powered-by-foursquare-white.svg'
 
 const Sidebar = props => {
   const {currentLocation} = props
-  const tabIndex = props.isActive ? 0 : -1
 
   return (
     <section className="sidebar">
       <h2 className="sidebar__title">Locations</h2>
-      <input
-        className="filter-locations"
-        type="text"
-        name="query"
-        placeholder="Filter locations"
-        value={props.query}
-        tabIndex={tabIndex}
-        onChange={event => props.updateQuery(event.target.value)}
-      />
       {currentLocation.id && (
         <Location location={currentLocation} />
       )}
@@ -39,9 +29,7 @@ const Sidebar = props => {
 Sidebar.propTypes = {
   currentLocation: PropTypes.object.isRequired,
   locations: PropTypes.array.isRequired,
-  query: PropTypes.string.isRequired,
   updateCurrentLocation: PropTypes.func.isRequired,
-  updateQuery: PropTypes.func.isRequired,
   isActive: PropTypes.bool.isRequired
 }
 

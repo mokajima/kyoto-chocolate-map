@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import escapeRegExp from 'escape-string-regexp'
-import sortBy from 'sort-by'
 import { getLocations } from './utils/api'
 import Map from './components/Map'
 import Sidebar from './components/Sidebar'
@@ -10,8 +8,7 @@ class App extends Component {
   state = {
     currentLocation: {},
     isActive: true,
-    locations: [],
-    query: ''
+    locations: []
   }
 
   componentDidMount() {
@@ -63,28 +60,10 @@ class App extends Component {
       })
   }
 
-  /**
-   * @description Update this.state.query
-   * @param {string} query
-   */
-  updateQuery = query => {
-    this.setState({query})
-  }
-
   render() {
-    const {locations, query} = this.state
-    let showingLocations
+    const { locations } = this.state
 
     const className = this.state.isActive ? 'contents is-active' : 'contents'
-
-    if (query) {
-      const match = new RegExp(escapeRegExp(query), 'i')
-      showingLocations = locations.filter(location => match.test(location.name))
-    } else {
-      showingLocations = locations
-    }
-
-    showingLocations.sort(sortBy('name'))
 
     return (
       <main>
@@ -108,10 +87,8 @@ class App extends Component {
         <Sidebar
           currentLocation={this.state.currentLocation}
           isActive={this.state.isActive}
-          locations={showingLocations}
-          query={query}
+          locations={this.state.locations}
           updateCurrentLocation={this.updateCurrentLocation}
-          updateQuery={this.updateQuery}
         />
       </main>
     )
