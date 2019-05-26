@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Location from './Location'
 import LocationsList from './LocationsList'
 import Logo from '../powered-by-foursquare-white.svg'
+import './Sidebar.css'
 
 const Sidebar = props => {
   const {currentLocation} = props
