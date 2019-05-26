@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './LocationsList.css'
 
 const LocationsList = props => {
   const {currentLocation} = props

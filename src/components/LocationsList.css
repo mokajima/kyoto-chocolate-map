@@ -1,0 +1,19 @@
+.locations-list {
+  list-style-type: none;
+  margin-bottom: 30px;
+}
+
+.locations-list__item {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #6b5344;
+  cursor: pointer;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.locations-list__item:hover,
+.locations-list__item.is-active {
+  background: #f5efde;
+}
