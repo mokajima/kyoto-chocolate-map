@@ -37,14 +37,14 @@ class App extends Component {
    * @description Toggle the sidebar
    */
   toggleSidebar = () => {
-    this.setState((prevState) => ({isActive: !prevState.isActive}))
+    this.setState(prevState => ({isActive: !prevState.isActive}))
   }
 
   /**
    * @description Update this.state.currentLocation
    * @param {string} venueId - The ID of the venue to retrieve
    */
-  updateCurrentLocation = (venueId) => {
+  updateCurrentLocation = venueId => {
 
     if (this.state.currentLocation && this.state.currentLocation.id === venueId) return
 
@@ -53,8 +53,8 @@ class App extends Component {
     const v = '20180813'
 
     fetch(`https://api.foursquare.com/v2/venues/${venueId}?client_id=${clientId}&client_secret=${clientSecret}&v=${v}&lang=en`)
-      .then((res) => res.json())
-      .then((data) => {
+      .then(res => res.json())
+      .then(data => {
         this.setState({currentLocation: data.response.venue})
         this.displaySidebar()
       })
@@ -67,7 +67,7 @@ class App extends Component {
    * @description Update this.state.query
    * @param {string} query
    */
-  updateQuery = (query) => {
+  updateQuery = query => {
     this.setState({query})
   }
 
@@ -79,7 +79,7 @@ class App extends Component {
 
     if (query) {
       const match = new RegExp(escapeRegExp(query), 'i')
-      showingLocations = locations.filter((location) => match.test(location.name))
+      showingLocations = locations.filter(location => match.test(location.name))
     } else {
       showingLocations = locations
     }

@@ -4,7 +4,7 @@ import Location from './Location'
 import LocationsList from './LocationsList'
 import Logo from '../powered-by-foursquare-white.svg'
 
-const Sidebar = (props) => {
+const Sidebar = props => {
   const {currentLocation} = props
   const tabIndex = props.isActive ? 0 : -1
 
@@ -18,7 +18,7 @@ const Sidebar = (props) => {
         placeholder="Filter locations"
         value={props.query}
         tabIndex={tabIndex}
-        onChange={(event) => props.updateQuery(event.target.value)}
+        onChange={event => props.updateQuery(event.target.value)}
       />
       {currentLocation.id && (
         <Location location={currentLocation} />

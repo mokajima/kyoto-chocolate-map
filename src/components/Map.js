@@ -2,7 +2,7 @@ import React from 'react'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
 import PropTypes from 'prop-types'
 
-const Map = withScriptjs(withGoogleMap((props) => {
+const Map = withScriptjs(withGoogleMap(props => {
 
   const {currentLocation} = props
 
@@ -31,7 +31,7 @@ const Map = withScriptjs(withGoogleMap((props) => {
 
   return (
     <GoogleMap defaultZoom={13} defaultCenter={{lat: 35.01152, lng: 135.767766}}>
-      {props.locations.map((location) => {
+      {props.locations.map(location => {
         const icon = currentLocation && currentLocation.id === location.venueId ? highlightedIcon : defaultIcon
 
         return (

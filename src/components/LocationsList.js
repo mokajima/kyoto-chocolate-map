@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const LocationsList = (props) => {
+const LocationsList = props => {
   const {currentLocation} = props
 
   return (
     <ul className="locations-list" role="listbox">
-      {props.locations.map((location) => {
+      {props.locations.map(location => {
 
         let ariaSelected, className
 

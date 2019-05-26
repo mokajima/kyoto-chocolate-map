@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Location = (props) => {
+const Location = props => {
   const {location} = props
 
   return (
