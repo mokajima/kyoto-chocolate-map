@@ -1,10 +1,14 @@
+# dependencies
 node_modules
-.DS_Store
 
-# Production
+# production
 build
 
-# Vim
+# misc
+.DS_Store
+.env
+
+# vim
 [._]*.s[a-v][a-z]
 [._]*.sw[a-p]
 [._]s[a-v][a-z]
