@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { getLocations } from './utils/api'
-import { CLIENT_ID, CLIENT_SECRET, API_KEY } from './constants'
 import Map from './components/Map'
 import Sidebar from './components/Sidebar'
 import './App.css'
@@ -44,7 +43,7 @@ const App = () => {
 
     const v = '20180813'
 
-    fetch(`https://api.foursquare.com/v2/venues/${venueId}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&v=${v}&lang=en`)
+    fetch(`https://api.foursquare.com/v2/venues/${venueId}?client_id=${process.env.REACT_APP_CLIENT_ID}&client_secret=${process.env.REACT_APP_CLIENT_SECRET}&v=${v}&lang=en`)
       .then(res => res.json())
       .then(data => {
         setCurrentLocation(data.response.venue)
@@ -71,7 +70,7 @@ const App = () => {
           currentLocation={currentLocation}
           locations={locations}
           updateCurrentLocation={updateCurrentLocation}
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${API_KEY}&v=3.exp`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&v=3.exp`}
           loadingElement={<div style={{height: '100%'}} />}
           containerElement={<div className="map" aria-label="Map" role="application" />}
           mapElement={<div style={{height: '100%'}} />}
