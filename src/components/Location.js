@@ -1,5 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faGlobeAsia,
+  faMapMarkerAlt,
+  faPhone
+} from '@fortawesome/free-solid-svg-icons'
 import './Location.css'
 
 const Location = props => {
@@ -17,12 +23,19 @@ const Location = props => {
       )}
       <div className="location__content">
         <h3 className="location__name">{location.name}</h3>
-        <p>{location.location.formattedAddress[0]}</p>
+        <p>
+          <FontAwesomeIcon className="location__icon" icon={faMapMarkerAlt} />
+          {location.location.formattedAddress[0]}
+        </p>
         {location.contact && (
-          <p>{location.contact.formattedPhone}</p>
+          <p>
+            <FontAwesomeIcon className="location__icon" icon={faPhone} />
+            {location.contact.formattedPhone}
+          </p>
         )}
         {location.url && (
           <p className="location__url">
+            <FontAwesomeIcon className="location__icon" icon={faGlobeAsia} />
             <a href={location.url} target="_blank" rel="noopener noreferrer">{location.url}</a>
           </p>
         )}

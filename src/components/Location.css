@@ -19,6 +19,12 @@
 .location__content p {
   font-size: 14px;
   line-height: 1.4;
+  display: flex;
+  align-items: center;
+}
+
+.location__icon {
+  margin-right: 0.5em;
 }
 
 .location__name {
@@ -38,6 +44,7 @@
 }
 
 .location__btn {
+  justify-content: center;
   text-align: center;
 }
 
