@@ -25,7 +25,9 @@ const Map = withScriptjs(withGoogleMap(props => {
   /**
    * @description Listen for authentication errors
    */
+  // eslint-disable-next-line camelcase
   window.gm_authFailure = () => {
+    // eslint-disable-next-line no-alert
     alert('We couldn\'t get data from Google Maps')
   }
 
