@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { getLocations } from './utils/api'
-import Map from './components/Map'
-import Sidebar from './components/Sidebar'
+import { getLocations } from 'utils/api'
+import Map from 'components/Map'
+import Sidebar from 'components/Sidebar'
 import './App.css'
 
 const App = () => {
