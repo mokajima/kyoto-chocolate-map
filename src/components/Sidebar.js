@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Location from './Location'
+
+// view
 import LocationsList from './LocationsList'
+import Location from './Location'
 import Logo from 'powered-by-foursquare-white.svg'
 import './Sidebar.css'
 

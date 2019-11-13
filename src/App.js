@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react'
+
+// util
 import { getLocations } from 'utils/api'
+
+// view
 import Map from 'components/Map'
 import Sidebar from 'components/Sidebar'
 import './App.css'
