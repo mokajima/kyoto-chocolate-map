@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 // util
-import { getLocations } from 'utils/api'
+import { getLocations, getVenue } from 'utils/api'
 
 // view
 import Map from 'components/Map'
@@ -40,15 +40,11 @@ const App = () => {
    * @param {string} venueId - The ID of the venue to retrieve
    */
   const updateCurrentLocation = venueId => {
-
     if (currentLocation && currentLocation.id === venueId) {
       return
     }
 
-    const v = '20180813'
-
-    fetch(`https://api.foursquare.com/v2/venues/${venueId}?client_id=${process.env.REACT_APP_CLIENT_ID}&client_secret=${process.env.REACT_APP_CLIENT_SECRET}&v=${v}&lang=en`)
-      .then(res => res.json())
+    getVenue(venueId)
       .then(data => {
         setCurrentLocation(data.response.venue)
         displaySidebar()
