@@ -52,7 +52,7 @@ const Map = withScriptjs(withGoogleMap(props => {
 }))
 
 Map.propTypes = {
-  currentLocation: PropTypes.object.isRequired,
+  currentLocation: PropTypes.oneOfType([PropTypes.object.isRequired, null]),
   locations: PropTypes.array.isRequired,
   updateCurrentLocation: PropTypes.func.isRequired,
   googleMapURL: PropTypes.string.isRequired,

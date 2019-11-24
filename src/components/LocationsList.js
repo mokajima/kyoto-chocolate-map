@@ -37,7 +37,7 @@ const LocationsList = props => {
 }
 
 LocationsList.propTypes = {
-  currentLocation: PropTypes.object.isRequired,
+  currentLocation: PropTypes.oneOfType([PropTypes.object.isRequired, null]),
   locations: PropTypes.array.isRequired,
   updateCurrentLocation: PropTypes.func.isRequired,
   isActive: PropTypes.bool.isRequired

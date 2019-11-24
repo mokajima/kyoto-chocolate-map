@@ -13,7 +13,7 @@ const Sidebar = props => {
   return (
     <section className="sidebar">
       <h2 className="sidebar__title">Locations</h2>
-      {currentLocation.id && (
+      {currentLocation && (
         <Location location={currentLocation} />
       )}
       <LocationsList
@@ -30,7 +30,7 @@ const Sidebar = props => {
 }
 
 Sidebar.propTypes = {
-  currentLocation: PropTypes.object.isRequired,
+  currentLocation: PropTypes.oneOfType([PropTypes.object.isRequired, null]),
   locations: PropTypes.array.isRequired,
   updateCurrentLocation: PropTypes.func.isRequired,
   isActive: PropTypes.bool.isRequired

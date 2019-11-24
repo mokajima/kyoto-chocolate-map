@@ -9,7 +9,7 @@ import Sidebar from 'components/Sidebar'
 import './App.css'
 
 const App = () => {
-  const [currentLocation, setCurrentLocation] = useState({})
+  const [currentLocation, setCurrentLocation] = useState(null)
   const [isActive, setIsActive] = useState(true)
   const [locations, setLocations] = useState([])
 
