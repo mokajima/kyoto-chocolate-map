@@ -1,51 +1,113 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faGlobeAsia,
   faMapMarkerAlt,
   faPhone
 } from '@fortawesome/free-solid-svg-icons'
-import './Location.css'
 
-const Location = props => {
-  const {location} = props
+const Container = styled.div`
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  overflow: hidden;
+`
 
-  return (
-    <div className="location">
-      {location.bestPhoto && (
-        <div className="location__img">
-          <img
-            src={location.bestPhoto.prefix + '300x300' + location.bestPhoto.suffix}
-            alt={location.name}
-          />
-        </div>
-      )}
-      <div className="location__content">
-        <h3 className="location__name">{location.name}</h3>
+const Image = styled.img`
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  vertical-align: middle;
+`
+
+const Content = styled.div`
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  p {
+    font-size: 14px;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0.5rem;
+  }
+`
+
+const Icon = styled(FontAwesomeIcon)`
+  margin-right: 0.5rem;
+`
+
+const Name = styled.h3`
+  color: #6b5344;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+`
+
+const Button = styled.a`
+  align-self: center;
+  background: #a79c8e;
+  color: #fff;
+  display: inline-block;
+  line-height: 45px;
+  text-align: center;
+  text-decoration: none;
+  width: 180px;
+  height: 45px;
+  &hover {
+    background: #f5efde;
+    color: #6b5344;
+    text-decoration: underline;
+  }
+`
+
+const Location = ({ location }) => (
+  <Container>
+    {location.bestPhoto && (
+      <Image
+        src={location.bestPhoto.prefix + '300x300' + location.bestPhoto.suffix}
+        alt={location.name}
+      />
+    )}
+    <Content>
+      <Name>{location.name}</Name>
+      <p>
+        <Icon icon={faMapMarkerAlt} />
+        {location.location.formattedAddress[0]}
+      </p>
+      {location.contact && (
         <p>
-          <FontAwesomeIcon className="location__icon" icon={faMapMarkerAlt} />
-          {location.location.formattedAddress[0]}
+          <Icon icon={faPhone} />
+          {location.contact.formattedPhone}
         </p>
-        {location.contact && (
-          <p>
-            <FontAwesomeIcon className="location__icon" icon={faPhone} />
-            {location.contact.formattedPhone}
-          </p>
-        )}
-        {location.url && (
-          <p className="location__url">
-            <FontAwesomeIcon className="location__icon" icon={faGlobeAsia} />
-            <a href={location.url} target="_blank" rel="noopener noreferrer">{location.url}</a>
-          </p>
-        )}
-        <p className="location__btn">
-          <a href={location.canonicalUrl} target="_blank" rel="noopener noreferrer">View in Foursquare</a>
+      )}
+      {location.url && (
+        <p>
+          <Icon icon={faGlobeAsia} />
+          <a
+            href={location.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {location.url}
+          </a>
         </p>
-      </div>
-    </div>
-  )
-}
+      )}
+      <Button
+        href={location.canonicalUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View in Foursquare
+      </Button>
+    </Content>
+  </Container>
+)
 
 Location.propTypes = {
   location: PropTypes.object.isRequired
