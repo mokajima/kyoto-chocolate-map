@@ -10,7 +10,7 @@ import './App.css'
 
 const App = () => {
   const [currentLocation, setCurrentLocation] = useState(null)
-  const [isActive, setIsActive] = useState(true)
+  const [isActiveSidebar, setIsActiveSidebar] = useState(true)
   const [locations, setLocations] = useState([])
 
   useEffect(() => {
@@ -25,14 +25,14 @@ const App = () => {
    * @description Display the sidebar
    */
   const displaySidebar = () => {
-    setIsActive(true)
+    setIsActiveSidebar(true)
   }
 
   /**
    * @description Toggle the sidebar
    */
   const toggleSidebar = () => {
-    setIsActive(!isActive)
+    setIsActiveSidebar(!isActiveSidebar)
   }
 
   /**
@@ -58,7 +58,7 @@ const App = () => {
     <main>
       <div
         id="contents"
-        className={isActive ? 'contents is-active' : 'contents'}
+        className={isActiveSidebar ? 'contents is-active' : 'contents'}
       >
         <header className="header">
           <h1 className="header__title">Kyoto Chocolate Map</h1>
@@ -78,7 +78,7 @@ const App = () => {
       </div>
       <Sidebar
         currentLocation={currentLocation}
-        isActive={isActive}
+        isActive={isActiveSidebar}
         locations={locations}
         updateCurrentLocation={updateCurrentLocation}
       />
