@@ -21,24 +21,14 @@ const App = () => {
       })
   }, [])
 
-  /**
-   * @description Display the sidebar
-   */
   const displaySidebar = () => {
     setIsActiveSidebar(true)
   }
 
-  /**
-   * @description Toggle the sidebar
-   */
   const toggleSidebar = () => {
     setIsActiveSidebar(!isActiveSidebar)
   }
 
-  /**
-   * @description Update the currentLocation
-   * @param {string} venueId - The ID of the venue to retrieve
-   */
   const updateCurrentLocation = venueId => {
     if (currentLocation && currentLocation.id === venueId) {
       return
