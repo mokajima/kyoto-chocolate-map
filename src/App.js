@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import styled, { css } from 'styled-components'
 
 // util
 import { getLocations, getVenue } from 'utils/api'
@@ -6,7 +7,73 @@ import { getLocations, getVenue } from 'utils/api'
 // view
 import Map from 'components/Map'
 import Sidebar from 'components/Sidebar'
-import './App.css'
+
+const Contents = styled.div`
+  margin-left: 0;
+  transition: margin-left 0.5s ease;
+  position: relative;
+  z-index: 1;
+  ${props => props.isActiveSidebar && css`
+    margin-left: 300px;
+  `}
+`
+
+const Header = styled.header`
+  background: #6b5344;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  position: relative;
+`
+
+const Title = styled.h1`
+  color: #fff;
+  font: 20px/60px "Sofia", cursive;
+  ${props => props.isActiveSidebar && css`
+    display: none;
+  `}
+  @media(min-width: 768px) {
+    display: block;
+    font-size: 30px;
+  }
+`
+
+const Button = styled.button`
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  span,
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-top: 4px solid #fff;
+    border-radius: 2px;
+  }
+  span {
+    font-size: 0;
+  }
+  &::before {
+    position: absolute;
+    top: 0;
+  }
+  &::after {
+    position: absolute;
+    bottom: 0;
+  }
+`
+
+const MapContainer = styled.div`
+  height: calc(100vh - 60px);
+`
 
 const App = () => {
   const [currentLocation, setCurrentLocation] = useState(null)
@@ -46,26 +113,25 @@ const App = () => {
 
   return (
     <main>
-      <div
-        id="contents"
-        className={isActiveSidebar ? 'contents is-active' : 'contents'}
-      >
-        <header className="header">
-          <h1 className="header__title">Kyoto Chocolate Map</h1>
-          <button className="header__btn" onClick={toggleSidebar}>
+      <Contents isActiveSidebar={isActiveSidebar}>
+        <Header>
+          <Title isActiveSidebar={isActiveSidebar}>
+            Kyoto Chocolate Map
+          </Title>
+          <Button onClick={toggleSidebar}>
             <span>Hide Navigation</span>
-          </button>
-        </header>
+          </Button>
+        </Header>
         <Map
           currentLocation={currentLocation}
           locations={locations}
           updateCurrentLocation={updateCurrentLocation}
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&v=3.exp`}
           loadingElement={<div style={{height: '100%'}} />}
-          containerElement={<div className="map" aria-label="Map" role="application" />}
+          containerElement={<MapContainer aria-label="Map" role="application" />}
           mapElement={<div style={{height: '100%'}} />}
         />
-      </div>
+      </Contents>
       <Sidebar
         currentLocation={currentLocation}
         isActive={isActiveSidebar}
