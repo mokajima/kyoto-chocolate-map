@@ -13,7 +13,7 @@ const Content = styled.div`
   transition: margin-left 0.5s ease;
   position: relative;
   z-index: 1;
-  ${props => props.isActiveSidebar && css`
+  ${props => props.hasMargin && css`
     margin-left: 300px;
   `}
 `
@@ -113,7 +113,7 @@ const App = () => {
 
   return (
     <main>
-      <Content isActiveSidebar={isActiveSidebar}>
+      <Content hasMargin={isActiveSidebar}>
         <Header>
           <Title isShown={isActiveSidebar}>
             Kyoto Chocolate Map
