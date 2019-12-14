@@ -43,7 +43,7 @@ const Map = withScriptjs(withGoogleMap(props => {
             icon={icon}
             position={location.position}
             title={location.name}
-            onClick={() => props.updateCurrentLocation(location.venueId)}
+            onClick={() => props.onClickLocation(location.venueId)}
           />
         )
       })}
@@ -54,11 +54,11 @@ const Map = withScriptjs(withGoogleMap(props => {
 Map.propTypes = {
   currentLocation: PropTypes.oneOfType([PropTypes.object.isRequired, null]),
   locations: PropTypes.array.isRequired,
-  updateCurrentLocation: PropTypes.func.isRequired,
   googleMapURL: PropTypes.string.isRequired,
   loadingElement: PropTypes.element.isRequired,
   containerElement: PropTypes.element.isRequired,
-  mapElement: PropTypes.element.isRequired
+  mapElement: PropTypes.element.isRequired,
+  onClickLocation: PropTypes.func.isRequired
 }
 
 export default Map

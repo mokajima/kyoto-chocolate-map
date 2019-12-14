@@ -27,7 +27,7 @@ const LocationsList = ({
   currentLocation,
   isActiveSidebar,
   locations,
-  updateCurrentLocation
+  onClickLocation
 }) => {
   const tabIndex = isActiveSidebar ? 0 : -1
 
@@ -45,7 +45,7 @@ const LocationsList = ({
             isCurrent={isCurrent}
             role="option"
             tabIndex={tabIndex}
-            onClick={() => updateCurrentLocation(location.venueId)}
+            onClick={() => onClickLocation(location.venueId)}
           >
             {location.name}
           </ListItem>
@@ -58,8 +58,8 @@ const LocationsList = ({
 LocationsList.propTypes = {
   currentLocation: PropTypes.oneOfType([PropTypes.object.isRequired, null]),
   locations: PropTypes.array.isRequired,
-  updateCurrentLocation: PropTypes.func.isRequired,
-  isActiveSidebar: PropTypes.bool.isRequired
+  isActiveSidebar: PropTypes.bool.isRequired,
+  onClickLocation: PropTypes.func.isRequired
 }
 
 export default LocationsList

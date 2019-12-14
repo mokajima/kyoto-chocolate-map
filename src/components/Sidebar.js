@@ -34,7 +34,7 @@ const Sidebar = ({
   isActive,
   currentLocation,
   locations,
-  updateCurrentLocation
+  onClickLocation
 }) => (
   <Section>
     <Title>Locations</Title>
@@ -45,7 +45,7 @@ const Sidebar = ({
       currentLocation={currentLocation}
       isActive={isActive}
       locations={locations}
-      updateCurrentLocation={updateCurrentLocation}
+      onClickLocation={onClickLocation}
     />
     <Attribution>
       <img src={Logo} alt="POWERED BY FOURSQUARE" />
@@ -56,8 +56,8 @@ const Sidebar = ({
 Sidebar.propTypes = {
   currentLocation: PropTypes.oneOfType([PropTypes.object.isRequired, null]),
   locations: PropTypes.array.isRequired,
-  updateCurrentLocation: PropTypes.func.isRequired,
-  isActive: PropTypes.bool.isRequired
+  isActive: PropTypes.bool.isRequired,
+  onClickLocation: PropTypes.func.isRequired
 }
 
 export default Sidebar

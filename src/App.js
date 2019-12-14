@@ -96,7 +96,7 @@ const App = () => {
     setIsActiveSidebar(v => !v)
   }
 
-  const updateCurrentLocation = venueId => {
+  const onClickLocation = venueId => {
     if (currentLocation && currentLocation.id === venueId) {
       return
     }
@@ -125,18 +125,18 @@ const App = () => {
         <Map
           currentLocation={currentLocation}
           locations={locations}
-          updateCurrentLocation={updateCurrentLocation}
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&v=3.exp`}
           loadingElement={<div style={{height: '100%'}} />}
           containerElement={<MapContainer aria-label="Map" role="application" />}
           mapElement={<div style={{height: '100%'}} />}
+          onClickLocation={onClickLocation}
         />
       </Content>
       <Sidebar
         currentLocation={currentLocation}
         isActive={isActiveSidebar}
         locations={locations}
-        updateCurrentLocation={updateCurrentLocation}
+        onClickLocation={onClickLocation}
       />
     </main>
   )
