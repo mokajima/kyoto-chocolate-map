@@ -29,7 +29,7 @@ const Header = styled.header`
 const Title = styled.h1`
   color: #fff;
   font: 20px/60px "Sofia", cursive;
-  ${props => props.isActiveSidebar && css`
+  ${props => props.isShown && css`
     display: none;
   `}
   @media(min-width: 768px) {
@@ -115,7 +115,7 @@ const App = () => {
     <main>
       <Content isActiveSidebar={isActiveSidebar}>
         <Header>
-          <Title isActiveSidebar={isActiveSidebar}>
+          <Title isShown={isActiveSidebar}>
             Kyoto Chocolate Map
           </Title>
           <Button onClick={toggleSidebar}>
