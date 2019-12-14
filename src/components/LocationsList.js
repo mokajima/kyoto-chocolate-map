@@ -25,40 +25,36 @@ const ListItem = styled.li`
 
 const LocationsList = ({
   currentLocation,
-  isActiveSidebar,
   locations,
+  tabIndex,
   onClickLocation
-}) => {
-  const tabIndex = isActiveSidebar ? 0 : -1
+}) => (
+  <List role="listbox">
+    {locations.map(location => {
+      const isCurrent =
+        currentLocation &&
+        currentLocation.id === location.venueId
 
-  return (
-    <List role="listbox">
-      {locations.map(location => {
-        const isCurrent =
-          currentLocation &&
-          currentLocation.id === location.venueId
-
-        return (
-          <ListItem
-            key={location.venueId}
-            aria-selected={isCurrent}
-            isCurrent={isCurrent}
-            role="option"
-            tabIndex={tabIndex}
-            onClick={() => onClickLocation(location.venueId)}
-          >
-            {location.name}
-          </ListItem>
-        )
-      })}
-    </List>
-  )
-}
+      return (
+        <ListItem
+          key={location.venueId}
+          aria-selected={isCurrent}
+          isCurrent={isCurrent}
+          role="option"
+          tabIndex={tabIndex}
+          onClick={() => onClickLocation(location.venueId)}
+        >
+          {location.name}
+        </ListItem>
+      )
+    })}
+  </List>
+)
 
 LocationsList.propTypes = {
   currentLocation: PropTypes.oneOfType([PropTypes.object.isRequired, null]),
   locations: PropTypes.array.isRequired,
-  isActiveSidebar: PropTypes.bool.isRequired,
+  tabIndex: PropTypes.bool.isRequired,
   onClickLocation: PropTypes.func.isRequired
 }
 
