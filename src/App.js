@@ -8,7 +8,7 @@ import { getLocations, getVenue } from 'utils/api'
 import Map from 'components/Map'
 import Sidebar from 'components/Sidebar'
 
-const Contents = styled.div`
+const Content = styled.div`
   margin-left: 0;
   transition: margin-left 0.5s ease;
   position: relative;
@@ -113,7 +113,7 @@ const App = () => {
 
   return (
     <main>
-      <Contents isActiveSidebar={isActiveSidebar}>
+      <Content isActiveSidebar={isActiveSidebar}>
         <Header>
           <Title isActiveSidebar={isActiveSidebar}>
             Kyoto Chocolate Map
@@ -131,7 +131,7 @@ const App = () => {
           containerElement={<MapContainer aria-label="Map" role="application" />}
           mapElement={<div style={{height: '100%'}} />}
         />
-      </Contents>
+      </Content>
       <Sidebar
         currentLocation={currentLocation}
         isActive={isActiveSidebar}
