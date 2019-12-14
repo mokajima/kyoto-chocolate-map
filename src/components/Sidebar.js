@@ -43,7 +43,7 @@ const Sidebar = ({
     )}
     <LocationsList
       currentLocation={currentLocation}
-      isActive={isActive}
+      isActiveSidebar={isActive}
       locations={locations}
       onClickLocation={onClickLocation}
     />
