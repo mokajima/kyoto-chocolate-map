@@ -93,7 +93,7 @@ const App = () => {
   }
 
   const toggleSidebar = () => {
-    setIsActiveSidebar(!isActiveSidebar)
+    setIsActiveSidebar(v => !v)
   }
 
   const updateCurrentLocation = venueId => {
