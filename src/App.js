@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
+
+// hook
+import useGoogle from 'hooks/useGoogle'
+import useGoogleMap from 'hooks/useGoogleMap'
+import useGoogleMapMarkers from 'hooks/useGoogleMapMarkers'
 
 // util
 import { getLocations, getVenue } from 'utils/api'
 
 // view
-import Map from 'components/Map'
 import Sidebar from 'components/Sidebar'
 
 const Content = styled.div`
@@ -79,6 +83,26 @@ const App = () => {
   const [currentLocation, setCurrentLocation] = useState(null)
   const [isActiveSidebar, setIsActiveSidebar] = useState(true)
   const [locations, setLocations] = useState([])
+  const containerElement = useRef(null)
+  const google = useGoogle()
+  const googleMap = useGoogleMap({ containerElement, google })
+
+  const onClickLocation = venueId => {
+    if (currentLocation && currentLocation.id === venueId) {
+      return
+    }
+
+    getVenue(venueId)
+      .then(data => {
+        setCurrentLocation(data.response.venue)
+        displaySidebar()
+      })
+      .catch(() => {
+        alert('We couldn\'t get data from Foursquare.')
+      })
+  }
+
+  useGoogleMapMarkers({ currentLocation, google, googleMap, locations, onClickLocation })
 
   useEffect(() => {
     getLocations()
@@ -96,21 +120,6 @@ const App = () => {
     setIsActiveSidebar(v => !v)
   }
 
-  const onClickLocation = venueId => {
-    if (currentLocation && currentLocation.id === venueId) {
-      return
-    }
-
-    getVenue(venueId)
-      .then(data => {
-        setCurrentLocation(data.response.venue)
-        displaySidebar()
-      })
-      .catch(() => {
-        alert('We couldn\'t get data from Foursquare.')
-      })
-  }
-
   return (
     <main>
       <Content hasMargin={isActiveSidebar}>
@@ -122,14 +131,10 @@ const App = () => {
             <span>Hide Navigation</span>
           </Button>
         </Header>
-        <Map
-          currentLocation={currentLocation}
-          locations={locations}
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&v=3.exp`}
-          loadingElement={<div style={{height: '100%'}} />}
-          containerElement={<MapContainer aria-label="Map" role="application" />}
-          mapElement={<div style={{height: '100%'}} />}
-          onClickLocation={onClickLocation}
+        <MapContainer
+          ref={containerElement}
+          aria-label="Map"
+          role="application"
         />
       </Content>
       <Sidebar
