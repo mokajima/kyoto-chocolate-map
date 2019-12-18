@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -7,6 +6,13 @@ import {
   faMapMarkerAlt,
   faPhone
 } from '@fortawesome/free-solid-svg-icons'
+
+// model
+import { Venue } from 'services/kyoto-chocolate-map/models'
+
+interface Props {
+  location: Venue
+}
 
 const Container = styled.div`
   background: #fff;
@@ -66,7 +72,7 @@ const Button = styled.a`
   }
 `
 
-const Location = ({ location }) => (
+const Location: FC<Props> = ({ location }) => (
   <Container>
     {location.bestPhoto && (
       <Image
@@ -108,9 +114,5 @@ const Location = ({ location }) => (
     </Content>
   </Container>
 )
-
-Location.propTypes = {
-  location: PropTypes.object.isRequired
-}
 
 export default Location

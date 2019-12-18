@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { RefObject, useEffect, useState } from 'react'
 
 const INITIAL_CONFIG = {
   center: {
@@ -8,8 +8,8 @@ const INITIAL_CONFIG = {
   zoom: 13
 }
 
-const useGoogleMap = ({ containerElement, google }) => {
-  const [googleMap, setGoogleMap] = useState(null)
+const useGoogleMap = (containerElement: RefObject<HTMLDivElement>, google: any) => {
+  const [googleMap, setGoogleMap] = useState<any>(null)
 
   useEffect(() => {
     if (!google || !containerElement.current) return

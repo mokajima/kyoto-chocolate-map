@@ -1,11 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FC } from 'react'
 import styled from 'styled-components'
+
+// model
+import { Location as LocationType, Venue } from 'services/kyoto-chocolate-map/models'
 
 // view
 import LocationsList from './LocationsList'
 import Location from './Location'
 import Logo from 'powered-by-foursquare-white.svg'
+
+interface Props {
+  currentLocation: Venue | null
+  locations: LocationType[]
+  isActive: boolean
+  onClickLocation: (venueId: string) => void
+}
 
 const Section = styled.section`
   background: #a79c8e;
@@ -30,7 +39,7 @@ const Attribution = styled.div`
   width: 75%;
 `
 
-const Sidebar = ({
+const Sidebar: FC<Props> = ({
   isActive,
   currentLocation,
   locations,
@@ -52,12 +61,5 @@ const Sidebar = ({
     </Attribution>
   </Section>
 )
-
-Sidebar.propTypes = {
-  currentLocation: PropTypes.oneOfType([PropTypes.object.isRequired, null]),
-  locations: PropTypes.array.isRequired,
-  isActive: PropTypes.bool.isRequired,
-  onClickLocation: PropTypes.func.isRequired
-}
 
 export default Sidebar

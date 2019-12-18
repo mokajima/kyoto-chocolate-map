@@ -6,13 +6,24 @@ import useGoogle from 'hooks/useGoogle'
 import useGoogleMap from 'hooks/useGoogleMap'
 import useGoogleMapMarkers from 'hooks/useGoogleMapMarkers'
 
+// model
+import { Location as LocationType, Venue } from 'services/kyoto-chocolate-map/models'
+
 // util
 import { getLocations, getVenue } from 'utils/api'
 
 // view
 import Sidebar from 'components/Sidebar'
 
-const Content = styled.div`
+interface ContentProps {
+  hasMargin: boolean
+}
+
+interface TitleProps {
+  isShown: boolean
+}
+
+const Content = styled.div<ContentProps>`
   margin-left: 0;
   transition: margin-left 0.5s ease;
   position: relative;
@@ -30,7 +41,7 @@ const Header = styled.header`
   position: relative;
 `
 
-const Title = styled.h1`
+const Title = styled.h1<TitleProps>`
   color: #fff;
   font: 20px/60px "Sofia", cursive;
   ${props => props.isShown && css`
@@ -80,17 +91,15 @@ const MapContainer = styled.div`
 `
 
 const App = () => {
-  const [currentLocation, setCurrentLocation] = useState(null)
-  const [isActiveSidebar, setIsActiveSidebar] = useState(true)
-  const [locations, setLocations] = useState([])
+  const [currentLocation, setCurrentLocation] = useState<Venue | null>(null)
+  const [isActiveSidebar, setIsActiveSidebar] = useState<boolean>(true)
+  const [locations, setLocations] = useState<LocationType[]>([])
   const containerElement = useRef(null)
   const google = useGoogle()
-  const googleMap = useGoogleMap({ containerElement, google })
+  const googleMap = useGoogleMap(containerElement, google)
 
-  const onClickLocation = venueId => {
-    if (currentLocation && currentLocation.id === venueId) {
-      return
-    }
+  const onClickLocation = (venueId: string) => {
+    if (currentLocation?.id === venueId) return
 
     getVenue(venueId)
       .then(data => {
@@ -102,7 +111,13 @@ const App = () => {
       })
   }
 
-  useGoogleMapMarkers({ currentLocation, google, googleMap, locations, onClickLocation })
+  useGoogleMapMarkers(
+    currentLocation,
+    google,
+    googleMap,
+    locations,
+    onClickLocation
+  )
 
   useEffect(() => {
     getLocations()

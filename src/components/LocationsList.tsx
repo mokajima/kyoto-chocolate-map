@@ -1,13 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
+
+// model
+import { Location, Venue } from 'services/kyoto-chocolate-map/models'
+
+interface ListItemProps {
+  isCurrent: boolean
+}
+
+interface Props {
+  currentLocation: Venue | null
+  locations: Location[]
+  tabIndex: number
+  onClickLocation: (venueId: string) => void
+}
 
 const List = styled.ul`
   list-style-type: none;
   margin-bottom: 30px;
 `
 
-const ListItem = styled.li`
+const ListItem = styled.li<ListItemProps>`
   background: rgba(255, 255, 255, 0.8);
   border-radius: 4px;
   box-sizing: border-box;
@@ -23,17 +36,15 @@ const ListItem = styled.li`
   `}
 `
 
-const LocationsList = ({
+const LocationsList: FC<Props> = ({
   currentLocation,
   locations,
   tabIndex,
   onClickLocation
 }) => (
   <List role="listbox">
-    {locations.map(location => {
-      const isCurrent =
-        currentLocation &&
-        currentLocation.id === location.venueId
+    {locations.map((location: Location) => {
+      const isCurrent = currentLocation?.id === location.venueId
 
       return (
         <ListItem
@@ -50,12 +61,5 @@ const LocationsList = ({
     })}
   </List>
 )
-
-LocationsList.propTypes = {
-  currentLocation: PropTypes.oneOfType([PropTypes.object.isRequired, null]),
-  locations: PropTypes.array.isRequired,
-  tabIndex: PropTypes.bool.isRequired,
-  onClickLocation: PropTypes.func.isRequired
-}
 
 export default LocationsList

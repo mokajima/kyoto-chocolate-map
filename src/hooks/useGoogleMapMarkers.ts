@@ -1,7 +1,16 @@
 import { useEffect, useMemo, useRef } from 'react'
 
-const useGoogleMapMarkers = ({ currentLocation, google, googleMap, locations, onClickLocation }) => {
-  const listeners = useRef([])
+// model
+import { Location, Venue } from 'services/kyoto-chocolate-map/models'
+
+const useGoogleMapMarkers = (
+  currentLocation: Venue | null,
+  google: any,
+  googleMap: any,
+  locations: Location[],
+  onClickLocation: (venueId: string) => void
+) => {
+  const listeners = useRef<any[]>([])
 
   const defaultIcon = useMemo(() => {
     if (!google) return null
