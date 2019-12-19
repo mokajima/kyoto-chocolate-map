@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef } from 'react'
 import { Location, Venue } from 'services/kyoto-chocolate-map/models'
 
 const useGoogleMapMarkers = (
-  currentLocation: Venue | null,
+  venue: Venue | null,
   google: any,
   googleMap: any,
   locations: Location[],
@@ -42,7 +42,7 @@ const useGoogleMapMarkers = (
     if (!google || !googleMap) return
 
     locations.forEach(({ name, position, venueId }) => {
-      const icon = currentLocation && currentLocation.id === venueId
+      const icon = venue && venue.id === venueId
         ? highlightedIcon
         : defaultIcon
 
@@ -63,7 +63,7 @@ const useGoogleMapMarkers = (
       })
       listeners.current = []
     }
-  }, [currentLocation, defaultIcon, google, googleMap, highlightedIcon, locations, onClickLocation])
+  }, [venue, defaultIcon, google, googleMap, highlightedIcon, locations, onClickLocation])
 }
 
 export default useGoogleMapMarkers

@@ -10,7 +10,7 @@ import Location from './Location'
 import Logo from 'powered-by-foursquare-white.svg'
 
 interface Props {
-  currentLocation: Venue | null
+  venue: Venue | null
   locations: LocationType[]
   isActive: boolean
   onClickLocation: (venueId: string) => void
@@ -41,17 +41,17 @@ const Attribution = styled.div`
 
 const Sidebar: FC<Props> = ({
   isActive,
-  currentLocation,
+  venue,
   locations,
   onClickLocation
 }) => (
   <Section>
     <Title>Locations</Title>
-    {currentLocation && (
-      <Location location={currentLocation} />
+    {venue && (
+      <Location location={venue} />
     )}
     <LocationsList
-      currentLocation={currentLocation}
+      venue={venue}
       locations={locations}
       tabIndex={isActive ? 0 : -1}
       onClickLocation={onClickLocation}

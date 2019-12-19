@@ -9,7 +9,7 @@ interface ListItemProps {
 }
 
 interface Props {
-  currentLocation: Venue | null
+  venue: Venue | null
   locations: Location[]
   tabIndex: number
   onClickLocation: (venueId: string) => void
@@ -37,14 +37,14 @@ const ListItem = styled.li<ListItemProps>`
 `
 
 const LocationsList: FC<Props> = ({
-  currentLocation,
+  venue,
   locations,
   tabIndex,
   onClickLocation
 }) => (
   <List role="listbox">
     {locations.map((location: Location) => {
-      const isCurrent = currentLocation?.id === location.venueId
+      const isCurrent = venue?.id === location.venueId
 
       return (
         <ListItem

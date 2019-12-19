@@ -91,7 +91,7 @@ const MapContainer = styled.div`
 `
 
 const App = () => {
-  const [currentLocation, setCurrentLocation] = useState<Venue | null>(null)
+  const [venue, setVenue] = useState<Venue | null>(null)
   const [isActiveSidebar, setIsActiveSidebar] = useState<boolean>(true)
   const [locations, setLocations] = useState<LocationType[]>([])
   const containerElement = useRef(null)
@@ -99,11 +99,11 @@ const App = () => {
   const googleMap = useGoogleMap(containerElement, google)
 
   const onClickLocation = (venueId: string) => {
-    if (currentLocation?.id === venueId) return
+    if (venue?.id === venueId) return
 
     getVenue(venueId)
       .then(data => {
-        setCurrentLocation(data.response.venue)
+        setVenue(data.response.venue)
         displaySidebar()
       })
       .catch(() => {
@@ -112,7 +112,7 @@ const App = () => {
   }
 
   useGoogleMapMarkers(
-    currentLocation,
+    venue,
     google,
     googleMap,
     locations,
@@ -153,7 +153,7 @@ const App = () => {
         />
       </Content>
       <Sidebar
-        currentLocation={currentLocation}
+        venue={venue}
         isActive={isActiveSidebar}
         locations={locations}
         onClickLocation={onClickLocation}
