@@ -42,7 +42,7 @@ const useGoogleMapMarkers = (
     if (!google || !googleMap) return
 
     locations.forEach(({ name, position, venueId }) => {
-      const icon = venue && venue.id === venueId
+      const icon = venue?.id === venueId
         ? highlightedIcon
         : defaultIcon
 
