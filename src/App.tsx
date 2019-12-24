@@ -7,7 +7,10 @@ import useGoogleMap from 'hooks/useGoogleMap'
 import useGoogleMapMarkers from 'hooks/useGoogleMapMarkers'
 
 // model
-import { Location as LocationType, Venue } from 'services/kyoto-chocolate-map/models'
+import {
+  Location as LocationType,
+  Venue
+} from 'services/kyoto-chocolate-map/models'
 
 // util
 import { getLocations, getVenue } from 'utils/api'
@@ -28,9 +31,11 @@ const Content = styled.div<ContentProps>`
   transition: margin-left 0.5s ease;
   position: relative;
   z-index: 1;
-  ${props => props.hasMargin && css`
-    margin-left: 300px;
-  `}
+  ${props =>
+    props.hasMargin &&
+    css`
+      margin-left: 300px;
+    `}
 `
 
 const Header = styled.header`
@@ -43,10 +48,12 @@ const Header = styled.header`
 
 const Title = styled.h1<TitleProps>`
   color: #fff;
-  font: 20px/60px "Sofia", cursive;
-  ${props => props.isShown && css`
-    display: none;
-  `}
+  font: 20px/60px 'Sofia', cursive;
+  ${props =>
+    props.isShown &&
+    css`
+      display: none;
+    `}
   @media(min-width: 768px) {
     display: block;
     font-size: 30px;
@@ -67,7 +74,7 @@ const Button = styled.button`
   span,
   &::before,
   &::after {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     border-top: 4px solid #fff;
@@ -104,32 +111,24 @@ const App = () => {
     getVenue(venueId)
       .then(data => {
         setVenue(data.response.venue)
-        displaySidebar()
+        setIsActiveSidebar(true)
       })
       .catch(() => {
-        alert('We couldn\'t get data from Foursquare.')
+        // eslint-disable-next-line no-alert
+        alert("We couldn't get data from Foursquare.")
       })
   }
 
-  useGoogleMapMarkers(
-    venue,
-    google,
-    googleMap,
-    locations,
-    onClickLocation
-  )
+  useGoogleMapMarkers(venue, google, googleMap, locations, onClickLocation)
 
   useEffect(() => {
     getLocations()
       .then(shops => setLocations(shops))
       .catch(() => {
-        alert('We couldn\'t get location data. Please try reloading the page.')
+        // eslint-disable-next-line no-alert
+        alert("We couldn't get location data. Please try reloading the page.")
       })
   }, [])
-
-  const displaySidebar = () => {
-    setIsActiveSidebar(true)
-  }
 
   const toggleSidebar = () => {
     setIsActiveSidebar(v => !v)
@@ -139,9 +138,7 @@ const App = () => {
     <main>
       <Content hasMargin={isActiveSidebar}>
         <Header>
-          <Title isShown={isActiveSidebar}>
-            Kyoto Chocolate Map
-          </Title>
+          <Title isShown={isActiveSidebar}>Kyoto Chocolate Map</Title>
           <Button onClick={toggleSidebar}>
             <span>Hide Navigation</span>
           </Button>

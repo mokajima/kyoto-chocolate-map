@@ -5,11 +5,12 @@ import { Location, Venue } from 'services/kyoto-chocolate-map/models'
 
 const useGoogleMapMarkers = (
   venue: Venue | null,
-  google: any,
-  googleMap: any,
+  google: any, // eslint-disable-line @typescript-eslint/no-explicit-any
+  googleMap: any, // eslint-disable-line @typescript-eslint/no-explicit-any
   locations: Location[],
   onClickLocation: (venueId: string) => void
 ) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const listeners = useRef<any[]>([])
 
   const defaultIcon = useMemo(() => {
@@ -42,9 +43,7 @@ const useGoogleMapMarkers = (
     if (!google || !googleMap) return
 
     locations.forEach(({ name, position, venueId }) => {
-      const icon = venue?.id === venueId
-        ? highlightedIcon
-        : defaultIcon
+      const icon = venue?.id === venueId ? highlightedIcon : defaultIcon
 
       const marker = new google.maps.Marker({
         icon,
@@ -53,17 +52,28 @@ const useGoogleMapMarkers = (
         title: name
       })
 
-      const listener = google.maps.event.addListener(marker, 'click', () => onClickLocation(venueId))
+      const listener = google.maps.event.addListener(marker, 'click', () =>
+        onClickLocation(venueId)
+      )
       listeners.current = [...listeners.current, listener]
     })
 
+    // eslint-disable-next-line consistent-return
     return () => {
       listeners.current.forEach(listener => {
         google.maps.event.removeListener(listener)
       })
       listeners.current = []
     }
-  }, [venue, defaultIcon, google, googleMap, highlightedIcon, locations, onClickLocation])
+  }, [
+    venue,
+    defaultIcon,
+    google,
+    googleMap,
+    highlightedIcon,
+    locations,
+    onClickLocation
+  ])
 }
 
 export default useGoogleMapMarkers

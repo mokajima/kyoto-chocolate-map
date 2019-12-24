@@ -8,7 +8,11 @@ const INITIAL_CONFIG = {
   zoom: 13
 }
 
-const useGoogleMap = (containerElement: RefObject<HTMLDivElement>, google: any) => {
+const useGoogleMap = (
+  containerElement: RefObject<HTMLDivElement>,
+  google: any // eslint-disable-line @typescript-eslint/no-explicit-any
+) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [googleMap, setGoogleMap] = useState<any>(null)
 
   useEffect(() => {

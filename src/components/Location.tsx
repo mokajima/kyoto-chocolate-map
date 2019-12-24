@@ -76,7 +76,7 @@ const Location: FC<Props> = ({ location }) => (
   <Container>
     {location.bestPhoto && (
       <Image
-        src={location.bestPhoto.prefix + '300x300' + location.bestPhoto.suffix}
+        src={`${location.bestPhoto.prefix}300x300${location.bestPhoto.suffix}`}
         alt={location.name}
       />
     )}
@@ -95,11 +95,7 @@ const Location: FC<Props> = ({ location }) => (
       {location.url && (
         <p>
           <Icon icon={faGlobeAsia} />
-          <a
-            href={location.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={location.url} target="_blank" rel="noopener noreferrer">
             {location.url}
           </a>
         </p>

@@ -2,12 +2,15 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 
 // model
-import { Location as LocationType, Venue } from 'services/kyoto-chocolate-map/models'
+import {
+  Location as LocationType,
+  Venue
+} from 'services/kyoto-chocolate-map/models'
 
 // view
+import Logo from 'powered-by-foursquare-white.svg'
 import LocationsList from './LocationsList'
 import Location from './Location'
-import Logo from 'powered-by-foursquare-white.svg'
 
 interface Props {
   venue: Venue | null
@@ -47,9 +50,7 @@ const Sidebar: FC<Props> = ({
 }) => (
   <Section>
     <Title>Locations</Title>
-    {venue && (
-      <Location location={venue} />
-    )}
+    {venue && <Location location={venue} />}
     <LocationsList
       venue={venue}
       locations={locations}

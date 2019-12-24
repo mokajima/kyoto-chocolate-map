@@ -31,9 +31,11 @@ const ListItem = styled.li<ListItemProps>`
   &:hover {
     background: #f5efde;
   }
-  ${props => props.isCurrent && css`
-    background: #f5efde;
-  `}
+  ${props =>
+    props.isCurrent &&
+    css`
+      background: #f5efde;
+    `}
 `
 
 const LocationsList: FC<Props> = ({
