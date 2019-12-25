@@ -1,14 +1,20 @@
-# dependencies
-node_modules
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# production
-build
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-# misc
-.DS_Store
-.env
+# Firebase
+.firebaserc
 
-# vim
+# Production
+/build
+
+# Testing
+/coverage
+
+# Vim
 [._]*.s[a-v][a-z]
 [._]*.sw[a-p]
 [._]s[a-v][a-z]
@@ -17,3 +23,14 @@ Session.vim
 .netrwhist
 *~
 tags
+
+# Misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
