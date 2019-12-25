@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'; cd functions/ && eslint 'src/**/*.{js,ts}'"
   },
   "devDependencies": {
     "@types/eslint-plugin-prettier": "^2.2.0",
