@@ -2,6 +2,9 @@
 lib/**/*.js
 **/*.js.map
 
+# Firebase Admin SDK credential
+*firebase-adminsdk*.json
+
 # Typescript v1 declaration files
 typings/
 
