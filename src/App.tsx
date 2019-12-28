@@ -1,19 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 
 // hook
 import useGoogle from 'hooks/useGoogle'
 import useGoogleMap from 'hooks/useGoogleMap'
 import useGoogleMapMarkers from 'hooks/useGoogleMapMarkers'
+import useLocations from 'hooks/useLocations'
 
 // model
-import {
-  Location as LocationType,
-  Venue
-} from 'services/kyoto-chocolate-map/models'
+import { Venue } from 'services/kyoto-chocolate-map/models'
 
 // util
-import { getLocations, getVenue } from 'utils/api'
+import { getVenue } from 'utils/api'
 
 // view
 import Sidebar from 'components/Sidebar'
@@ -100,8 +98,10 @@ const MapContainer = styled.div`
 const App = () => {
   const [venue, setVenue] = useState<Venue | null>(null)
   const [isActiveSidebar, setIsActiveSidebar] = useState<boolean>(true)
-  const [locations, setLocations] = useState<LocationType[]>([])
+
   const containerElement = useRef(null)
+
+  const { locations } = useLocations()
   const google = useGoogle()
   const googleMap = useGoogleMap(containerElement, google)
 
@@ -120,15 +120,6 @@ const App = () => {
   }
 
   useGoogleMapMarkers(venue, google, googleMap, locations, onClickLocation)
-
-  useEffect(() => {
-    getLocations()
-      .then(shops => setLocations(shops))
-      .catch(() => {
-        // eslint-disable-next-line no-alert
-        alert("We couldn't get location data. Please try reloading the page.")
-      })
-  }, [])
 
   const toggleSidebar = () => {
     setIsActiveSidebar(v => !v)

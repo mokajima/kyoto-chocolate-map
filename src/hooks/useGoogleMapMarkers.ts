@@ -42,12 +42,12 @@ const useGoogleMapMarkers = (
   useEffect(() => {
     if (!google || !googleMap) return
 
-    locations.forEach(({ name, position, venueId }) => {
+    locations.forEach(({ name, lat, lng, venueId }) => {
       const icon = venue?.id === venueId ? highlightedIcon : defaultIcon
 
       const marker = new google.maps.Marker({
         icon,
-        position,
+        position: { lat, lng },
         map: googleMap,
         title: name
       })

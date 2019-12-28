@@ -1,12 +1,12 @@
-export interface Location {
-  name: string
-  position: Position
-  venueId: string
-}
+import { firestore } from 'firebase/app'
 
-interface Position {
+export interface Location {
   lat: number
   lng: number
+  name: string
+  venueId: string
+  createdAt: firestore.Timestamp | null
+  updatedAt: firestore.Timestamp | null
 }
 
 export interface Venue {
