@@ -1745,6 +1745,11 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/googlemaps@^3.39.0":
+  version "3.39.0"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.39.0.tgz#871b4649c0995f9d013f5edee776809e599977f7"
+  integrity sha512-SiD5JrB5wkA2JvkP7Tn3D+L4F50QXtnQI+J6Y/HnDhfyp0vlB6tNz14BuOOXV1rwP2vnTwE1uqNjfaKXCmuHDg==
+
 "@types/hoist-non-react-statics@*":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"

@@ -12,8 +12,7 @@ const useGoogleMap = (
   containerElement: RefObject<HTMLDivElement>,
   google: any // eslint-disable-line @typescript-eslint/no-explicit-any
 ) => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [googleMap, setGoogleMap] = useState<any>(null)
+  const [googleMap, setGoogleMap] = useState<google.maps.Map | null>(null)
 
   useEffect(() => {
     if (!google || !containerElement.current) return

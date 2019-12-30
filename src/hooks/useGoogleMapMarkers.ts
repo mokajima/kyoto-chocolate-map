@@ -6,12 +6,11 @@ import { Location, Venue } from 'services/kyoto-chocolate-map/models'
 const useGoogleMapMarkers = (
   venue: Venue | null,
   google: any, // eslint-disable-line @typescript-eslint/no-explicit-any
-  googleMap: any, // eslint-disable-line @typescript-eslint/no-explicit-any
+  googleMap: google.maps.Map | null,
   locations: Location[],
   onClickLocation: (venueId: string) => void
 ) => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const listeners = useRef<any[]>([])
+  const listeners = useRef<google.maps.MapsEventListener[]>([])
 
   const defaultIcon = useMemo(() => {
     if (!google) return null
