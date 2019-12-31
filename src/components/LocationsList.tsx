@@ -2,7 +2,8 @@ import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 
 // model
-import { Location, Venue } from 'services/kyoto-chocolate-map/models'
+import { Venue } from 'services/foursquare/models'
+import { Location } from 'services/kyoto-chocolate-map/models'
 
 interface ListItemProps {
   isCurrent: boolean

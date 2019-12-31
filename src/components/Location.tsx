@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 // model
-import { Venue } from 'services/kyoto-chocolate-map/models'
+import { Venue } from 'services/foursquare/models'
 
 interface Props {
   location: Venue

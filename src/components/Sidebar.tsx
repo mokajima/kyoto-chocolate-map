@@ -2,10 +2,8 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 
 // model
-import {
-  Location as LocationType,
-  Venue
-} from 'services/kyoto-chocolate-map/models'
+import { Venue } from 'services/foursquare/models'
+import { Location as LocationType } from 'services/kyoto-chocolate-map/models'
 
 // view
 import Logo from 'powered-by-foursquare-white.svg'

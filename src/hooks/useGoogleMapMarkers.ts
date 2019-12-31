@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef } from 'react'
 
 // model
-import { Location, Venue } from 'services/kyoto-chocolate-map/models'
+import { Venue } from 'services/foursquare/models'
+import { Location } from 'services/kyoto-chocolate-map/models'
 
 const useGoogleMapMarkers = (
   venue: Venue | null,

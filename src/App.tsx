@@ -1,6 +1,9 @@
 import React, { useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 
+// api
+import { getVenue } from 'services/foursquare/api'
+
 // hook
 import useGoogle from 'hooks/useGoogle'
 import useGoogleMap from 'hooks/useGoogleMap'
@@ -8,10 +11,7 @@ import useGoogleMapMarkers from 'hooks/useGoogleMapMarkers'
 import useLocations from 'hooks/useLocations'
 
 // model
-import { Venue } from 'services/kyoto-chocolate-map/models'
-
-// util
-import { getVenue } from 'utils/api'
+import { Venue } from 'services/foursquare/models'
 
 // view
 import Sidebar from 'components/Sidebar'
