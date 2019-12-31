@@ -1,19 +1,17 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 
 // api
 import { getVenue } from 'services/foursquare/api'
 
 // hook
-import useGoogle from 'hooks/useGoogle'
-import useGoogleMap from 'hooks/useGoogleMap'
-import useGoogleMapMarkers from 'hooks/useGoogleMapMarkers'
 import useLocations from 'hooks/useLocations'
 
 // model
 import { Venue } from 'services/foursquare/models'
 
 // view
+import GoogleMap from 'containers/GoogleMap'
 import Sidebar from 'components/Sidebar'
 
 interface ContentProps {
@@ -91,19 +89,11 @@ const Button = styled.button`
   }
 `
 
-const MapContainer = styled.div`
-  height: calc(100vh - 60px);
-`
-
 const App = () => {
   const [venue, setVenue] = useState<Venue | null>(null)
   const [isActiveSidebar, setIsActiveSidebar] = useState<boolean>(true)
 
-  const containerElement = useRef(null)
-
   const { locations } = useLocations()
-  const google = useGoogle()
-  const googleMap = useGoogleMap(containerElement, google)
 
   const onClickLocation = async (venueId: string) => {
     if (venue?.id === venueId) return
@@ -118,8 +108,6 @@ const App = () => {
     }
   }
 
-  useGoogleMapMarkers(venue, google, googleMap, locations, onClickLocation)
-
   const toggleSidebar = () => {
     setIsActiveSidebar(v => !v)
   }
@@ -133,10 +121,10 @@ const App = () => {
             <span>Hide Navigation</span>
           </Button>
         </Header>
-        <MapContainer
-          ref={containerElement}
-          aria-label="Map"
-          role="application"
+        <GoogleMap
+          locations={locations}
+          venue={venue}
+          onClickLocation={onClickLocation}
         />
       </Content>
       <Sidebar
