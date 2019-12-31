@@ -105,18 +105,17 @@ const App = () => {
   const google = useGoogle()
   const googleMap = useGoogleMap(containerElement, google)
 
-  const onClickLocation = (venueId: string) => {
+  const onClickLocation = async (venueId: string) => {
     if (venue?.id === venueId) return
 
-    getVenue(venueId)
-      .then(data => {
-        setVenue(data.response.venue)
-        setIsActiveSidebar(true)
-      })
-      .catch(() => {
-        // eslint-disable-next-line no-alert
-        alert("We couldn't get data from Foursquare.")
-      })
+    try {
+      const data = await getVenue(venueId)
+      setVenue(data.response.venue)
+      setIsActiveSidebar(true)
+    } catch (e) {
+      // eslint-disable-next-line no-alert
+      alert("We couldn't get data from Foursquare.")
+    }
   }
 
   useGoogleMapMarkers(venue, google, googleMap, locations, onClickLocation)
