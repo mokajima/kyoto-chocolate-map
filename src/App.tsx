@@ -93,7 +93,7 @@ const App = () => {
   const [venue, setVenue] = useState<Venue | null>(null)
   const [isActiveSidebar, setIsActiveSidebar] = useState<boolean>(true)
 
-  const { locations } = useLocations()
+  const { isLoading, locations } = useLocations()
 
   const onClickLocation = async (venueId: string) => {
     if (venue?.id === venueId) return
@@ -130,6 +130,7 @@ const App = () => {
       <Sidebar
         venue={venue}
         isActive={isActiveSidebar}
+        isLoading={isLoading}
         locations={locations}
         onClickLocation={onClickLocation}
       />

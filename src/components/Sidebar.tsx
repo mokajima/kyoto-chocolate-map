@@ -9,11 +9,13 @@ import { Location as LocationType } from 'services/kyoto-chocolate-map/models'
 import Logo from 'powered-by-foursquare-white.svg'
 import LocationsList from './LocationsList'
 import Location from './Location'
+import Loader from './Loader'
 
 interface Props {
   venue: Venue | null
   locations: LocationType[]
   isActive: boolean
+  isLoading: boolean
   onClickLocation: (venueId: string) => void
 }
 
@@ -42,19 +44,26 @@ const Attribution = styled.div`
 
 const Sidebar: FC<Props> = ({
   isActive,
+  isLoading,
   venue,
   locations,
   onClickLocation
 }) => (
   <Section>
     <Title>Locations</Title>
-    {venue && <Location location={venue} />}
-    <LocationsList
-      venue={venue}
-      locations={locations}
-      tabIndex={isActive ? 0 : -1}
-      onClickLocation={onClickLocation}
-    />
+    {isLoading ? (
+      <Loader />
+    ) : (
+      <>
+        {venue && <Location location={venue} />}
+        <LocationsList
+          venue={venue}
+          locations={locations}
+          tabIndex={isActive ? 0 : -1}
+          onClickLocation={onClickLocation}
+        />
+      </>
+    )}
     <Attribution>
       <img src={Logo} alt="POWERED BY FOURSQUARE" />
     </Attribution>
