@@ -22,23 +22,24 @@ const Container = styled.div`
 `
 
 const Image = styled.img`
-  object-fit: cover;
-  width: 100%;
   height: 200px;
+  object-fit: cover;
   vertical-align: middle;
+  width: 100%;
 `
 
 const Content = styled.div`
+  align-items: flex-start;
   color: #000;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   padding: 10px;
+
   p {
+    align-items: center;
+    display: flex;
     font-size: 14px;
     line-height: 1.4;
-    display: flex;
-    align-items: center;
     margin: 0 0 0.5rem;
   }
 `
@@ -60,11 +61,12 @@ const Button = styled.a`
   background: #a79c8e;
   color: #fff;
   display: inline-block;
+  height: 45px;
   line-height: 45px;
   text-align: center;
   text-decoration: none;
   width: 180px;
-  height: 45px;
+
   &hover {
     background: #f5efde;
     color: #6b5344;

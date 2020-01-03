@@ -23,13 +23,13 @@ const Section = styled.section`
   background: #a79c8e;
   box-sizing: border-box;
   color: #fff;
+  height: 100%;
+  left: 0;
+  overflow-y: scroll;
   padding: 0 10px 28px;
   position: fixed;
   top: 0;
-  left: 0;
   width: 300px;
-  height: 100%;
-  overflow-y: scroll;
 `
 
 const Title = styled.h2`
