@@ -26,11 +26,13 @@
     "deploy:rules": "firebase deploy --only firestore:rules",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'; cd functions/ && eslint 'src/**/*.{js,ts}'"
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'; stylelint 'src/**/*.{css,jsx,tsx}'; cd functions/ && eslint 'src/**/*.{js,ts}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'; stylelint --fix 'src/**/*.{css,jsx,tsx}'; cd functions/ && eslint --fix 'src/**/*.{js,ts}'"
   },
   "devDependencies": {
     "@types/eslint-plugin-prettier": "^2.2.0",
     "@types/prettier": "^1.19.0",
+    "@types/stylelint": "^9.10.1",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -43,7 +45,14 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "jest-fetch-mock": "^3.0.1",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "prettier-stylelint": "^0.4.2",
+    "stylelint": "^12.0.1",
+    "stylelint-config-prettier": "^8.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-order": "^4.0.0",
+    "stylelint-processor-styled-components": "^1.9.0"
   },
   "browserslist": [
     ">0.2%",
