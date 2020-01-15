@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
-    'jest/globals': true,
+    'jest/globals': true
   },
   extends: [
     'airbnb',
@@ -20,23 +20,23 @@ module.exports = {
     'prettier',
     'prettier/@typescript-eslint',
     'prettier/react',
-    'prettier/standard',
+    'prettier/standard'
   ],
   globals: {
     Atomics: 'readonly',
     cy: 'readonly',
     Cypress: 'readonly',
     SharedArrayBuffer: 'readonly',
-    __DEV__: true,
+    __DEV__: true
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 2018,
     project: './tsconfig.json',
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: [
     '@typescript-eslint',
@@ -46,7 +46,7 @@ module.exports = {
     'prefer-arrow',
     'prettier',
     'react',
-    'react-hooks',
+    'react-hooks'
   ],
   root: true,
   rules: {
@@ -62,8 +62,8 @@ module.exports = {
       'error',
       'always',
       {
-        markers: ['/'],
-      },
+        markers: ['/']
+      }
     ],
 
     // @typescript-eslint
@@ -81,17 +81,17 @@ module.exports = {
       {
         selector: 'ForInStatement',
         message:
-          'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+          'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.'
       },
       {
         selector: 'LabeledStatement',
         message:
-          'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+          'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.'
       },
       {
         selector: 'WithStatement',
         message:
-          '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+          '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.'
       },
     ],
     // prefer-arrow
@@ -100,22 +100,22 @@ module.exports = {
       {
         disallowPrototype: true,
         singleReturnOnly: true,
-        classPropertiesAllowed: false,
-      },
+        classPropertiesAllowed: false
+      }
     ],
 
     // react
     'react/jsx-filename-extension': [
       'error',
       {
-        extensions: ['jsx', 'tsx'],
-      },
+        extensions: ['jsx', 'tsx']
+      }
     ],
     'react/jsx-props-no-spreading': [
       'warn',
       {
-        custom: 'ignore',
-      },
+        custom: 'ignore'
+      }
     ],
     'react/prop-types': 'off',
 
@@ -131,8 +131,8 @@ module.exports = {
         js: 'never',
         jsx: 'never',
         ts: 'never',
-        tsx: 'never',
-      },
+        tsx: 'never'
+      }
     ],
     'import/no-extraneous-dependencies': [
       'error',
@@ -146,24 +146,24 @@ module.exports = {
           '**/*/*.spec.*',
           '**/__tests__/**',
           '**/*/*.test.*',
-          'src/setupTests.*',
-        ],
-      },
+          'src/setupTests.*'
+        ]
+      }
     ],
-    'import/prefer-default-export': 'off',
+    'import/prefer-default-export': 'off'
   },
   settings: {
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
+      '@typescript-eslint/parser': ['.ts', '.tsx']
     },
     'import/resolver': {
       node: {
         extensions: ['.js', 'jsx', '.ts', '.tsx'],
-        paths: ['src'],
-      },
+        paths: ['src']
+      }
     },
     react: {
-      version: 'detect',
-    },
-  },
+      version: 'detect'
+    }
+  }
 };
