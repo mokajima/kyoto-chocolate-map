@@ -19,6 +19,7 @@
   },
   "main": "lib/index.js",
   "dependencies": {
+    "axios": "^0.19.2",
     "commander": "^4.0.1",
     "csv-parse": "^4.8.2",
     "firebase": "^7.6.1",
