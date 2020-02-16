@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import styled, { css } from 'styled-components'
+import React, { FC, useCallback, useState } from 'react'
+import styled from 'styled-components'
 
 // api
 import { getVenue } from 'services/foursquare/api'
@@ -14,49 +14,32 @@ import { Venue } from 'services/foursquare/models'
 import GoogleMap from 'containers/GoogleMap'
 import Sidebar from 'components/Sidebar'
 
-interface ContentProps {
-  hasMargin: boolean
-}
-
-interface TitleProps {
-  isShown: boolean
-}
-
-const Content = styled.div<ContentProps>`
-  margin-left: 0;
-  transition: margin-left 0.5s ease;
+const Content = styled('div')<{ hasMargin: boolean }>`
+  margin-left: ${props => (props.hasMargin ? '300px' : 0)};
   position: relative;
+  transition: margin-left 0.5s ease;
   z-index: 1;
-  ${props =>
-    props.hasMargin &&
-    css`
-      margin-left: 300px;
-    `}
 `
 
-const Header = styled.header`
+const Header = styled('header')`
   background: #6b5344;
   height: 60px;
   line-height: 60px;
-  text-align: center;
   position: relative;
+  text-align: center;
 `
 
-const Title = styled.h1<TitleProps>`
+const Title = styled('h1')<{ isShown: boolean }>`
   color: #fff;
+  display: ${props => (props.isShown ? 'block' : 'none')};
   font: 20px/60px 'Sofia', cursive;
-  ${props =>
-    props.isShown &&
-    css`
-      display: none;
-    `}
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     display: block;
     font-size: 30px;
   }
 `
 
-const Button = styled.button`
+const Button = styled('button')`
   background: transparent;
   border: 0;
   cursor: pointer;
@@ -89,24 +72,27 @@ const Button = styled.button`
   }
 `
 
-const App = () => {
+const App: FC = () => {
   const [venue, setVenue] = useState<Venue | null>(null)
   const [isActiveSidebar, setIsActiveSidebar] = useState<boolean>(true)
 
   const { isLoading, locations } = useLocations()
 
-  const onClickLocation = async (venueId: string) => {
-    if (venue?.id === venueId) return
+  const onClickLocation = useCallback(
+    async (venueId: string) => {
+      if (venue?.id === venueId) return
 
-    try {
-      const data = await getVenue(venueId)
-      setVenue(data.response.venue)
-      setIsActiveSidebar(true)
-    } catch (e) {
-      // eslint-disable-next-line no-alert
-      alert("We couldn't get data from Foursquare.")
-    }
-  }
+      try {
+        const data = await getVenue(venueId)
+        setVenue(data.response.venue)
+        setIsActiveSidebar(true)
+      } catch (e) {
+        // eslint-disable-next-line no-alert
+        alert("We couldn't get data from Foursquare.")
+      }
+    },
+    [venue]
+  )
 
   const toggleSidebar = () => {
     setIsActiveSidebar(v => !v)
@@ -116,7 +102,7 @@ const App = () => {
     <main>
       <Content hasMargin={isActiveSidebar}>
         <Header>
-          <Title isShown={isActiveSidebar}>Kyoto Chocolate Map</Title>
+          <Title isShown={!isActiveSidebar}>Kyoto Chocolate Map</Title>
           <Button onClick={toggleSidebar}>
             <span>Hide Navigation</span>
           </Button>
