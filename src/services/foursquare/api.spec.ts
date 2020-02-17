@@ -1,3 +1,6 @@
+import axios from 'axios'
+import MockAdapter from 'axios-mock-adapter'
+
 import { getVenue } from './api'
 
 const venue = {
@@ -24,17 +27,21 @@ const venue = {
 }
 
 describe('Foursquare API handlers', () => {
-  beforeEach(() => {
-    fetchMock.resetMocks()
+  const mock = new MockAdapter(axios)
+  const venueId = '571b2376498ee5843d97343a'
+  const url = `https://api.foursquare.com/v2/venues/${venueId}`
+
+  afterEach(() => {
+    mock.reset()
   })
 
   it('Getting a venue', async () => {
-    fetchMock.mockResponseOnce(JSON.stringify({ response: { venue } }))
+    mock.onGet(url).reply(200, JSON.stringify({ response: { venue } }))
 
-    const data = await getVenue('571b2376498ee5843d97343a')
+    const data = await getVenue(venueId)
 
-    expect(data.response.venue.canonicalUrl).toEqual(venue.canonicalUrl)
-    expect(data.response.venue.id).toEqual(venue.id)
-    expect(data.response.venue.name).toEqual(venue.name)
+    expect(data.response.venue.canonicalUrl).toBe(venue.canonicalUrl)
+    expect(data.response.venue.id).toBe(venue.id)
+    expect(data.response.venue.name).toBe(venue.name)
   })
 })
