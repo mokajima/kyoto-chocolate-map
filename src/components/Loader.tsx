@@ -6,7 +6,7 @@ const spin = keyframes`
   100% { transform: rotate(360deg); }
 `
 
-const Container = styled.div`
+const Container = styled('div')`
   animation: ${spin} 2s linear infinite;
   border: 8px solid rgba(255, 255, 255, 0.8);
   border-radius: 50%;
@@ -15,7 +15,7 @@ const Container = styled.div`
   width: 32px;
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled('div')`
   display: flex;
   justify-content: center;
   margin: 30px 0 50px;
