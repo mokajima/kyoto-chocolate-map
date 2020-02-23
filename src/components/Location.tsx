@@ -10,25 +10,25 @@ import {
 // model
 import { Venue } from 'services/foursquare/models'
 
-interface Props {
+type Props = {
   location: Venue
 }
 
-const Container = styled.div`
+const Container = styled('div')`
   background: #fff;
   border-radius: 4px;
   margin-bottom: 20px;
   overflow: hidden;
 `
 
-const Image = styled.img`
+const Image = styled('img')`
   height: 200px;
   object-fit: cover;
   vertical-align: middle;
   width: 100%;
 `
 
-const Content = styled.div`
+const Content = styled('div')`
   align-items: flex-start;
   color: #000;
   display: flex;
@@ -48,7 +48,7 @@ const Icon = styled(FontAwesomeIcon)`
   margin-right: 0.5rem;
 `
 
-const Name = styled.h3`
+const Name = styled('h3')`
   color: #6b5344;
   font-size: 16px;
   font-weight: 400;
@@ -56,7 +56,7 @@ const Name = styled.h3`
   margin: 0 0 0.5rem;
 `
 
-const Button = styled.a`
+const Button = styled('a')`
   align-self: center;
   background: #a79c8e;
   color: #fff;
@@ -88,7 +88,7 @@ const Location: FC<Props> = ({ location }) => (
         <Icon icon={faMapMarkerAlt} />
         {location.location.formattedAddress[0]}
       </p>
-      {location.contact && (
+      {location.contact?.formattedPhone && (
         <p>
           <Icon icon={faPhone} />
           {location.contact.formattedPhone}
