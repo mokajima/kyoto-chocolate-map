@@ -5,24 +5,20 @@ import styled, { css } from 'styled-components'
 import { Venue } from 'services/foursquare/models'
 import { Location } from 'services/kyoto-chocolate-map/models'
 
-interface ListItemProps {
-  isCurrent: boolean
-}
-
-interface Props {
+type Props = {
   venue: Venue | null
   locations: Location[]
   tabIndex: number
   onClickLocation: (venueId: string) => void
 }
 
-const List = styled.ul`
+const List = styled('ul')`
   list-style-type: none;
   margin-bottom: 30px;
 `
 
-const ListItem = styled.li<ListItemProps>`
-  background: rgba(255, 255, 255, 0.8);
+const ListItem = styled('li')<{ isCurrent: boolean }>`
+  background: ${props => (props.isCurrent ? '#f5efde' : 'rgba(255, 255, 255, 0.8)')};
   border-radius: 4px;
   box-sizing: border-box;
   color: #6b5344;
@@ -32,11 +28,6 @@ const ListItem = styled.li<ListItemProps>`
   &:hover {
     background: #f5efde;
   }
-  ${props =>
-    props.isCurrent &&
-    css`
-      background: #f5efde;
-    `}
 `
 
 const LocationsList: FC<Props> = ({
