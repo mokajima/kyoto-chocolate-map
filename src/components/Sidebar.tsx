@@ -11,7 +11,7 @@ import LocationsList from './LocationsList'
 import Location from './Location'
 import Loader from './Loader'
 
-interface Props {
+type Props = {
   venue: Venue | null
   locations: LocationType[]
   isActive: boolean
@@ -19,7 +19,7 @@ interface Props {
   onClickLocation: (venueId: string) => void
 }
 
-const Section = styled.section`
+const Section = styled('section')`
   background: #a79c8e;
   box-sizing: border-box;
   color: #fff;
@@ -32,12 +32,12 @@ const Section = styled.section`
   width: 300px;
 `
 
-const Title = styled.h2`
+const Title = styled('h2')`
   letter-spacing: 1px;
   line-height: 60px;
 `
 
-const Attribution = styled.div`
+const Attribution = styled('div')`
   margin: 0 auto;
   width: 75%;
 `
