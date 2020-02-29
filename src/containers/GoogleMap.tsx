@@ -10,13 +10,13 @@ import useGoogleMapMarkers from 'hooks/useGoogleMapMarkers'
 import { Venue } from 'services/foursquare/models'
 import { Location } from 'services/kyoto-chocolate-map/models'
 
-interface Props {
+type Props = {
   locations: Location[]
   venue: Venue | null
   onClickLocation: (venueId: string) => void
 }
 
-const Container = styled.div`
+const Container = styled('div')`
   height: calc(100vh - 60px);
 `
 
@@ -28,7 +28,7 @@ const GoogleMap: FC<Props> = ({ locations, venue, onClickLocation }) => {
   useGoogleMapMarkers(venue, google, googleMap, locations, onClickLocation)
 
   return (
-    <Container ref={containerElement} aria-label="Map" role="application" />
+    <Container aria-label="Map" ref={containerElement} role="application" />
   )
 }
 
