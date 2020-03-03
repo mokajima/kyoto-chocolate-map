@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 // model
 import { Venue } from 'services/foursquare/models'
@@ -18,7 +18,8 @@ const List = styled('ul')`
 `
 
 const ListItem = styled('li')<{ isCurrent: boolean }>`
-  background: ${props => (props.isCurrent ? '#f5efde' : 'rgba(255, 255, 255, 0.8)')};
+  background: ${props =>
+    props.isCurrent ? '#f5efde' : 'rgba(255, 255, 255, 0.8)'};
   border-radius: 4px;
   box-sizing: border-box;
   color: #6b5344;
