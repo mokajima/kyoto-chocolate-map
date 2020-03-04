@@ -24,7 +24,7 @@ const GoogleMap: FC<Props> = ({ locations, venue, onClickLocation }) => {
   const containerElement = useRef(null)
 
   const google = useGoogle()
-  const googleMap = useGoogleMap(containerElement, google)
+  const googleMap = useGoogleMap({ containerElement, google })
   useGoogleMapMarkers(venue, google, googleMap, locations, onClickLocation)
 
   return (

@@ -1,5 +1,10 @@
 import { RefObject, useEffect, useState } from 'react'
 
+type Options = {
+  containerElement: RefObject<HTMLDivElement>
+  google: any // eslint-disable-line @typescript-eslint/no-explicit-any
+}
+
 const INITIAL_CONFIG = {
   center: {
     lat: 35.01152,
@@ -8,10 +13,9 @@ const INITIAL_CONFIG = {
   zoom: 13
 }
 
-const useGoogleMap = (
-  containerElement: RefObject<HTMLDivElement>,
-  google: any // eslint-disable-line @typescript-eslint/no-explicit-any
-) => {
+const useGoogleMap = (options: Options) => {
+  const { containerElement, google } = options
+
   const [googleMap, setGoogleMap] = useState<google.maps.Map | null>(null)
 
   useEffect(() => {
