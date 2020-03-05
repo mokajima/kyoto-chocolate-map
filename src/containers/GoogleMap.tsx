@@ -25,7 +25,7 @@ const GoogleMap: FC<Props> = ({ locations, venue, onClickLocation }) => {
 
   const google = useGoogle()
   const googleMap = useGoogleMap({ containerElement, google })
-  useGoogleMapMarkers(venue, google, googleMap, locations, onClickLocation)
+  useGoogleMapMarkers({ venue, google, googleMap, locations, onClickLocation })
 
   return (
     <Container aria-label="Map" ref={containerElement} role="application" />

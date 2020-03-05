@@ -4,13 +4,17 @@ import { useEffect, useMemo, useRef } from 'react'
 import { Venue } from 'services/foursquare/models'
 import { Location } from 'services/kyoto-chocolate-map/models'
 
-const useGoogleMapMarkers = (
-  venue: Venue | null,
-  google: any, // eslint-disable-line @typescript-eslint/no-explicit-any
-  googleMap: google.maps.Map | null,
-  locations: Location[],
+type Options = {
+  venue: Venue | null
+  google: any // eslint-disable-line @typescript-eslint/no-explicit-any
+  googleMap: google.maps.Map | null
+  locations: Location[]
   onClickLocation: (venueId: string) => void
-) => {
+}
+
+const useGoogleMapMarkers = (options: Options) => {
+  const { venue, google, googleMap, locations, onClickLocation } = options
+
   const listeners = useRef<google.maps.MapsEventListener[]>([])
 
   const defaultIcon = useMemo(() => {
