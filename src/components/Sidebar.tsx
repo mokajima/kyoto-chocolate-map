@@ -5,6 +5,9 @@ import styled from 'styled-components'
 import { Venue } from 'services/foursquare/models'
 import { Location as LocationType } from 'services/kyoto-chocolate-map/models'
 
+// theme
+import theme from 'theme'
+
 // view
 import Logo from 'powered-by-foursquare-white.svg'
 import LocationsList from './LocationsList'
@@ -20,9 +23,9 @@ type Props = {
 }
 
 const Section = styled('section')`
-  background: #a79c8e;
+  background: ${theme.chocolate.milk};
   box-sizing: border-box;
-  color: #fff;
+  color: ${theme.white};
   height: 100%;
   left: 0;
   overflow-y: scroll;

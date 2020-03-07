@@ -10,12 +10,15 @@ import {
 // model
 import { Venue } from 'services/foursquare/models'
 
+// theme
+import theme from 'theme'
+
 type Props = {
   location: Venue
 }
 
 const Container = styled('div')`
-  background: #fff;
+  background: ${theme.white};
   border-radius: 4px;
   margin-bottom: 20px;
   overflow: hidden;
@@ -30,7 +33,7 @@ const Image = styled('img')`
 
 const Content = styled('div')`
   align-items: flex-start;
-  color: #000;
+  color: ${theme.black};
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -49,7 +52,7 @@ const Icon = styled(FontAwesomeIcon)`
 `
 
 const Name = styled('h3')`
-  color: #6b5344;
+  color: ${theme.chocolate.dark};
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -58,8 +61,8 @@ const Name = styled('h3')`
 
 const Button = styled('a')`
   align-self: center;
-  background: #a79c8e;
-  color: #fff;
+  background: ${theme.chocolate.milk};
+  color: ${theme.white};
   display: inline-block;
   height: 45px;
   line-height: 45px;
@@ -67,9 +70,9 @@ const Button = styled('a')`
   text-decoration: none;
   width: 180px;
 
-  &hover {
-    background: #f5efde;
-    color: #6b5344;
+  &:hover {
+    background: ${theme.chocolate.white};
+    color: ${theme.chocolate.dark};
     text-decoration: underline;
   }
 `

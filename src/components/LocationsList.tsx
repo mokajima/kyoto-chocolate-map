@@ -5,6 +5,9 @@ import styled from 'styled-components'
 import { Venue } from 'services/foursquare/models'
 import { Location } from 'services/kyoto-chocolate-map/models'
 
+// theme
+import theme from 'theme'
+
 type Props = {
   venue: Venue | null
   locations: Location[]
@@ -19,15 +22,15 @@ const List = styled('ul')`
 
 const ListItem = styled('li')<{ isCurrent: boolean }>`
   background: ${props =>
-    props.isCurrent ? '#f5efde' : 'rgba(255, 255, 255, 0.8)'};
+    props.isCurrent ? theme.chocolate.white : 'rgba(255, 255, 255, 0.8)'};
   border-radius: 4px;
   box-sizing: border-box;
-  color: #6b5344;
+  color: ${theme.chocolate.dark};
   cursor: pointer;
   margin-bottom: 5px;
   padding: 10px;
   &:hover {
-    background: #f5efde;
+    background: ${theme.chocolate.white};
   }
 `
 
