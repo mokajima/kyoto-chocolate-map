@@ -3,6 +3,9 @@ import MockAdapter from 'axios-mock-adapter'
 
 import { getVenue } from './api'
 
+const CLIENT_ID = process.env.REACT_APP_FOURSQUARE_CLIENT_ID || ''
+const CLIENT_SECRET = process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET || ''
+
 const venue = {
   bestPhoto: {
     prefix: 'https://fastly.4sqi.net/img/general/',
@@ -38,7 +41,7 @@ describe('Foursquare API handlers', () => {
   it('Getting a venue', async () => {
     mock.onGet(url).reply(200, JSON.stringify({ response: { venue } }))
 
-    const data = await getVenue(venueId)
+    const data = await getVenue(venueId, CLIENT_ID, CLIENT_SECRET)
 
     expect(data.response.venue.canonicalUrl).toBe(venue.canonicalUrl)
     expect(data.response.venue.id).toBe(venue.id)
