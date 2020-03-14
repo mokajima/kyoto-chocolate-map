@@ -8,4 +8,8 @@ lib/**/*.js
 # Typescript v1 declaration files
 typings/
 
+# npm packages
 node_modules/
+
+# Firebase environment variables file
+.runtimeconfig.json
