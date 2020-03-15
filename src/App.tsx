@@ -6,6 +6,7 @@ import { getVenue } from 'services/foursquare/api'
 
 // hook
 import useLocations from 'hooks/useLocations'
+import useVenue from 'hooks/useVenue'
 
 // model
 import { Venue } from 'services/foursquare/models'
@@ -73,26 +74,15 @@ const Button = styled('button')`
 `
 
 const App: FC = () => {
-  const [venue, setVenue] = useState<Venue | null>(null)
+  const [venueId, setVenueId] = useState<string>('')
   const [isActiveSidebar, setIsActiveSidebar] = useState<boolean>(true)
 
+  const { venue } = useVenue(venueId)
   const { isLoading, locations } = useLocations()
 
-  const onClickLocation = useCallback(
-    async (venueId: string) => {
-      if (venue?.id === venueId) return
-
-      try {
-        const data = await getVenue(venueId)
-        setVenue(data.response.venue)
-        setIsActiveSidebar(true)
-      } catch (e) {
-        // eslint-disable-next-line no-alert
-        alert("We couldn't get data from Foursquare.")
-      }
-    },
-    [venue]
-  )
+  const onClickLocation = useCallback((id: string) => {
+    setVenueId(id)
+  }, [])
 
   const toggleSidebar = () => {
     setIsActiveSidebar(v => !v)
