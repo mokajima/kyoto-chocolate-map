@@ -1,15 +1,9 @@
 import React, { FC, useCallback, useState } from 'react'
 import styled from 'styled-components'
 
-// api
-import { getVenue } from 'services/foursquare/api'
-
 // hook
 import useLocations from 'hooks/useLocations'
 import useVenue from 'hooks/useVenue'
-
-// model
-import { Venue } from 'services/foursquare/models'
 
 // view
 import GoogleMap from 'containers/GoogleMap'
