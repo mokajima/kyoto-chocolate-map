@@ -1,3 +1,4 @@
 export const collectionName = {
-  locations: 'locations'
+  locations: 'locations',
+  venues: 'venues'
 } as const

@@ -2,7 +2,11 @@ import axios from 'axios'
 
 const apiClient = axios.create()
 
-export const getVenue = async (venueId: string, clientId: string, clientSecret: string) => {
+export const getVenue = async (
+  venueId: string,
+  clientId: string,
+  clientSecret: string
+) => {
   const params = new URLSearchParams()
   params.set('client_id', clientId)
   params.set('client_secret', clientSecret)
