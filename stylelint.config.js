@@ -15,7 +15,7 @@ if (isJsxFile) {
       'declaration-empty-line-before': 'never',
       'indentation': 2,
       'no-missing-end-of-source-newline': null,
-      'string-quotes': 'double',
+      'string-quotes': 'single',
       'order/properties-alphabetical-order': true
     }
   };
@@ -35,7 +35,7 @@ module.exports = {
     'declaration-empty-line-before': 'never',
     'indentation': 2,
     'no-missing-end-of-source-newline': null,
-    'string-quotes': 'double',
+    'string-quotes': 'single',
     'order/properties-alphabetical-order': true
   },
 };
