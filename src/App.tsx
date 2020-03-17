@@ -28,6 +28,7 @@ const Title = styled('h1')<{ isShown: boolean }>`
   color: #fff;
   display: ${props => (props.isShown ? 'block' : 'none')};
   font: 20px/60px 'Sofia', cursive;
+
   @media (min-width: 768px) {
     display: block;
     font-size: 30px;
@@ -37,33 +38,37 @@ const Title = styled('h1')<{ isShown: boolean }>`
 const Button = styled('button')`
   background: transparent;
   border: 0;
+  bottom: 0;
   cursor: pointer;
-  width: 30px;
   height: 25px;
+  left: 15px;
   margin: auto;
   position: absolute;
   top: 0;
-  bottom: 0;
-  left: 15px;
+  width: 30px;
+
   span,
   &::before,
   &::after {
+    border-radius: 2px;
+    border-top: 4px solid #fff;
     content: '';
     display: block;
     width: 100%;
-    border-top: 4px solid #fff;
-    border-radius: 2px;
   }
+
   span {
     font-size: 0;
   }
+
   &::before {
     position: absolute;
     top: 0;
   }
+
   &::after {
-    position: absolute;
     bottom: 0;
+    position: absolute;
   }
 `
 
