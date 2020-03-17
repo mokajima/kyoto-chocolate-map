@@ -59,6 +59,10 @@ const Name = styled('h3')`
   margin: 0 0 0.5rem;
 `
 
+const Url = styled('a')`
+  word-break: break-all;
+`
+
 const Button = styled('a')`
   align-self: center;
   background: ${theme.chocolate.milk};
@@ -100,9 +104,9 @@ const Location: FC<Props> = ({ location }) => (
       {location.url && (
         <p>
           <Icon icon={faGlobeAsia} />
-          <a href={location.url} target="_blank" rel="noopener noreferrer">
+          <Url href={location.url} target="_blank" rel="noopener noreferrer">
             {location.url}
-          </a>
+          </Url>
         </p>
       )}
       <Button
