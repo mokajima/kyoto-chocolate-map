@@ -6,7 +6,7 @@ export interface Location {
   lat: number
   lng: number
   name: string
-  venueId: string
+  venueId: Foursquare.Venue['id']
   createdAt: firestore.Timestamp | null
   updatedAt: firestore.Timestamp | null
 }
