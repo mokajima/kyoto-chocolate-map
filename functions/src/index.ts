@@ -22,7 +22,7 @@ const createVenue = async (db: admin.firestore.Firestore, venue: Venue) => {
 }
 
 export const locations = functions
-  .region('us-central1')
+  .region(functions.config().locale.region)
   .https.onRequest(async (req, res) => {
     const snap = await admin
       .firestore()
@@ -33,7 +33,7 @@ export const locations = functions
   })
 
 export const registerVenues = functions
-  .region('us-central1')
+  .region(functions.config().locale.region)
   .pubsub.schedule('0 0 1 * *')
   .timeZone('Asia/Tokyo')
   .onRun(async () => {
