@@ -35,7 +35,7 @@ export const locations = functions
 export const registerVenues = functions
   .region(functions.config().locale.region)
   .pubsub.schedule('0 0 1 * *')
-  .timeZone('Asia/Tokyo')
+  .timeZone(functions.config().locale.timezone)
   .onRun(async () => {
     const db = admin.firestore()
     const snap = await admin
