@@ -2,5 +2,9 @@
   "foursquare": {
     "client_secret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "client_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "locale": {
+    "region": "us-central1",
+    "timezone": "Asia/Tokyo"
   }
 }
