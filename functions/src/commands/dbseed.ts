@@ -33,7 +33,7 @@ const uploadSeed = async (collection: string, seedFile: string) => {
       }))
 
       for await (const doc of docs) {
-        await ref.doc().set(doc)
+        await ref.doc(doc.venueId).set(doc)
       }
 
       break
