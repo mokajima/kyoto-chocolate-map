@@ -4,6 +4,7 @@
     "build": "npm run lint && tsc",
     "dbreset": "firebase firestore:delete --all-collections",
     "dbreset:locations": "firebase firestore:delete -y --shallow locations",
+    "dbreset:venues": "firebase firestore:delete -y --shallow venues",
     "dbseed": "npm run dbseed:locations",
     "dbseed:locations": "node lib/commands/dbseed.js locations seeds/locations.tsv",
     "serve": "npm run build && firebase serve --only functions",
