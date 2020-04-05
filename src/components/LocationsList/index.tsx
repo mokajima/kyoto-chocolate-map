@@ -29,6 +29,7 @@ const ListItem = styled('li')<{ isCurrent: boolean }>`
   cursor: pointer;
   margin-bottom: 5px;
   padding: 10px;
+
   &:hover {
     background: ${theme.chocolate.white};
   }

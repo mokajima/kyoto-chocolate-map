@@ -28,7 +28,6 @@ const location: Venue = {
   url: 'http://www.assemblages.jp'
 }
 
-storiesOf('Location', module)
-  .add('default', () => (
-    <Location location={object('location', location)} />
-  ))
+storiesOf('Location', module).add('default', () => (
+  <Location location={object('location', location)} />
+))
