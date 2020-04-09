@@ -29,10 +29,12 @@ const venue = {
   url: 'http://www.assemblages.jp'
 }
 
+const venueId = '571b2376498ee5843d97343a'
+
+const url = `https://api.foursquare.com/v2/venues/${venueId}`
+
 describe('Foursquare API handlers', () => {
   const mock = new MockAdapter(axios)
-  const venueId = '571b2376498ee5843d97343a'
-  const url = `https://api.foursquare.com/v2/venues/${venueId}`
 
   afterEach(() => {
     mock.reset()
