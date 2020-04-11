@@ -10,9 +10,9 @@ import theme from 'theme'
 
 // view
 import Logo from 'powered-by-foursquare-white.svg'
-import LocationsList from './LocationsList'
-import Location from './Location'
-import Loader from './Loader'
+import LocationsList from '../LocationsList'
+import Location from '../Location'
+import Loader from '../Loader'
 
 type Props = {
   venue: Venue | null
