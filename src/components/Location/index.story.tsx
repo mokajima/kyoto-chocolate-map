@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { object } from '@storybook/addon-knobs'
 
 import Location from './index'
@@ -28,6 +27,9 @@ const location: Venue = {
   url: 'http://www.assemblages.jp'
 }
 
-storiesOf('Location', module).add('default', () => (
-  <Location location={object('location', location)} />
-))
+export default {
+  component: Location,
+  title: 'Location'
+}
+
+export const Default = () => <Location location={object('location', location)} />

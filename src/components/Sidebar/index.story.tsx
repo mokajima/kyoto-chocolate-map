@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { object } from '@storybook/addon-knobs'
 
 import Sidebar from './index'
@@ -72,7 +71,12 @@ const locations: LocationType[] = [
   }
 ]
 
-storiesOf('Sidebar', module).add('default', () => (
+export default {
+  component: Sidebar,
+  title: 'Sidebar'
+}
+
+export const Default = () => (
   <Sidebar
     venue={venue}
     locations={locations.map(location => object(location.name, location))}
@@ -80,4 +84,4 @@ storiesOf('Sidebar', module).add('default', () => (
     isLoading={false}
     onClickLocation={() => {}}
   />
-))
+)

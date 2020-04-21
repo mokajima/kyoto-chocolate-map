@@ -1,6 +1,10 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Loader from './index'
 
-storiesOf('Loader', module).add('default', () => <Loader />)
+export default {
+  component: Loader,
+  title: 'Loader'
+}
+
+export const Default = () => <Loader />

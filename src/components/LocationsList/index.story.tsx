@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { number, object } from '@storybook/addon-knobs'
 
 import LocationsList from './index'
@@ -75,20 +74,25 @@ const locations: Location[] = [
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const noop = () => {}
 
-storiesOf('LocationsList', module)
-  .add('default', () => (
-    <LocationsList
-      venue={null}
-      locations={locations.map(location => object(location.name, location))}
-      tabIndex={number('tabIndex', 0)}
-      onClickLocation={noop}
-    />
-  ))
-  .add('with a venue', () => (
-    <LocationsList
-      venue={object('venue', venue)}
-      locations={locations.map(location => object(location.name, location))}
-      tabIndex={number('tabIndex', 0)}
-      onClickLocation={noop}
-    />
-  ))
+export default {
+  component: LocationsList,
+  title: 'LocationsList'
+}
+
+export const Default = () => (
+  <LocationsList
+    venue={null}
+    locations={locations.map(location => object(location.name, location))}
+    tabIndex={number('tabIndex', 0)}
+    onClickLocation={noop}
+  />
+)
+
+export const WithVenue = () => (
+  <LocationsList
+    venue={object('venue', venue)}
+    locations={locations.map(location => object(location.name, location))}
+    tabIndex={number('tabIndex', 0)}
+    onClickLocation={noop}
+  />
+)
