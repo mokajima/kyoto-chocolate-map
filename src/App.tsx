@@ -83,9 +83,9 @@ const App: FC = () => {
     setVenueId(id)
   }, [])
 
-  const toggleSidebar = () => {
+  const toggleSidebar = useCallback(() => {
     setIsActiveSidebar(v => !v)
-  }
+  }, [])
 
   return (
     <main>
