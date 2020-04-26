@@ -32,4 +32,6 @@ export default {
   title: 'Location'
 }
 
-export const Default = () => <Location location={object('location', location)} />
+export const Default = () => (
+  <Location location={object('location', location)} />
+)

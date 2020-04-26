@@ -71,6 +71,9 @@ const locations: LocationType[] = [
   }
 ]
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const noop = () => {}
+
 export default {
   component: Sidebar,
   title: 'Sidebar'
@@ -80,8 +83,8 @@ export const Default = () => (
   <Sidebar
     venue={venue}
     locations={locations.map(location => object(location.name, location))}
-    isActive={true}
+    isActive
     isLoading={false}
-    onClickLocation={() => {}}
+    onClickLocation={noop}
   />
 )
