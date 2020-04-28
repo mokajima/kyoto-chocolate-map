@@ -1,4 +1,4 @@
-export interface Venue {
+export type Venue = {
   bestPhoto?: BestPhoto
   canonicalUrl: string
   contact?: Contact
@@ -10,11 +10,11 @@ export interface Venue {
   url?: string
 }
 
-interface BestPhoto {
+type BestPhoto = {
   prefix: string
   suffix: string
 }
 
-interface Contact {
+type Contact = {
   formattedPhone: string
 }

@@ -1,7 +1,7 @@
 import { createContext } from 'react'
 import firebase from 'firebase/app'
 
-interface FirebaseContextValue {
+type FirebaseContextValue = {
   db: firebase.firestore.Firestore | null
 }
 

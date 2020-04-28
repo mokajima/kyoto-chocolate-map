@@ -2,7 +2,7 @@ import { firestore } from 'firebase/app'
 
 import * as Foursquare from 'services/foursquare/models'
 
-export interface Location {
+export type Location = {
   lat: number
   lng: number
   name: string
@@ -11,7 +11,7 @@ export interface Location {
   updatedAt: firestore.Timestamp | null
 }
 
-export interface Venue extends Foursquare.Venue {
+export type Venue = Foursquare.Venue & {
   createdAt: firestore.Timestamp | null
   updatedAt: firestore.Timestamp | null
 }
