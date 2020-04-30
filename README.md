@@ -9,6 +9,9 @@ Kyoto Chocolate Map is a web application that lists chocolate shops in Kyoto.
 - [React](https://reactjs.org/)
 - [Create React App](https://github.com/facebook/create-react-app)
 - [Firebase](https://firebase.google.com/)
+  - [Cloud Firestore](https://firebase.google.com/products/firestore)
+  - [Cloud Functions](https://firebase.google.com/products/functions)
+  - [Hosting](https://firebase.google.com/products/hosting)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Foursquare Places API](https://developer.foursquare.com/)
 
