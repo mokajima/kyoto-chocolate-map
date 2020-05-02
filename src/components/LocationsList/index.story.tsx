@@ -4,6 +4,7 @@ import { number, object } from '@storybook/addon-knobs'
 import LocationsList from './index'
 import { Venue } from '../../services/foursquare/models'
 import { Location } from '../../services/kyoto-chocolate-map/models'
+import theme from '../../theme'
 
 const venue: Venue = {
   bestPhoto: {
@@ -76,6 +77,15 @@ const noop = () => {}
 
 export default {
   component: LocationsList,
+  parameters: {
+    backgrounds: [
+      {
+        name: 'milk',
+        value: theme.chocolate.milk,
+        default: true
+      }
+    ]
+  },
   title: 'LocationsList'
 }
 
