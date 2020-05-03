@@ -1,0 +1,42 @@
+[
+  {
+    "createdAt": null,
+    "lat": 35.016144,
+    "lng": 135.766727,
+    "name": "ASSEMBLAGES KAKIMOTO",
+    "updatedAt": null,
+    "venueId": "571b2376498ee5843d97343a"
+  },
+  {
+    "createdAt": null,
+    "lat": 35.005126,
+    "lng": 135.772487,
+    "name": "CACAO MARKET by MarieBelle",
+    "updatedAt": null,
+    "venueId": "52225c840493f70f68fc7192"
+  },
+  {
+    "createdAt": null,
+    "lat": 34.998879,
+    "lng": 135.780253,
+    "name": "DANDELION CHOCOLATE",
+    "updatedAt": null,
+    "venueId": "5af1663c95d986003963c235"
+  },
+    {
+    "createdAt": null,
+    "lat": 35.008554,
+    "lng": 135.765152,
+    "name": "JEAN-PAUL HÉVIN JAPON - Kyoto",
+    "updatedAt": null,
+    "venueId": "5811ad8338fafc8715ce5530"
+  },
+  {
+    "createdAt": null,
+    "lat": 35.016019,
+    "lng": 135.786283,
+    "name": "Kyoto Nama Chocolat Organic Tea House",
+    "updatedAt": null,
+    "venueId": "4d60c012b19fa143dde9f9c8"
+  }
+]
