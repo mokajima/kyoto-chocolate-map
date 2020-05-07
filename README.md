@@ -27,4 +27,7 @@ Clicking a location on the list or a marker of the location displays unique info
 4. Replace environment variables in `.env` with your own
 5. Rename `.firebaserc.sample` to `.firebaserc`
 6. Replace the project ID in `.firebaserc` with your own
-7. Start the development server with `npm start` or `yarn start`
+7. Rename `functions/.runtimeconfig.sample.json` to `functions/.runtimeconfig.json`
+8. Replace environment variables in `functions/.runtimeconfig.json` with your own
+9. Store your Firebase service account key as `kyoto-chocolate-map-firebase-adminsdk.json` at `functions/src`
+10. Start the development server with `npm start` or `yarn start`
