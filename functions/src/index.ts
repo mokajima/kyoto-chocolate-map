@@ -21,17 +21,6 @@ const createVenue = async (db: admin.firestore.Firestore, venue: Venue) => {
   })
 }
 
-export const locations = functions
-  .region(functions.config().locale.region)
-  .https.onRequest(async (req, res) => {
-    const snap = await admin
-      .firestore()
-      .collection(collectionName.locations)
-      .get()
-    const data = snap.docs.map(doc => doc.data())
-    res.send({ data })
-  })
-
 export const registerVenues = functions
   .region(functions.config().locale.region)
   .pubsub.schedule('0 0 1 * *')
