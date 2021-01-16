@@ -16,7 +16,7 @@ export default {
 export const Default = () => (
   <Sidebar
     venue={venue}
-    locations={locations.map(location => object(location.name, location))}
+    locations={locations.map((location) => object(location.name, location))}
     isActive
     isLoading={false}
     onClickLocation={noop}

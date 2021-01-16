@@ -21,7 +21,7 @@ const List = styled('ul')`
 `
 
 const ListItem = styled('li')<{ isCurrent: boolean }>`
-  background: ${props =>
+  background: ${(props) =>
     props.isCurrent ? theme.chocolate.white : 'rgba(255, 255, 255, 0.8)'};
   border-radius: 4px;
   box-sizing: border-box;

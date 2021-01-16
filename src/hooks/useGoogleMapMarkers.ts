@@ -64,7 +64,7 @@ const useGoogleMapMarkers = (options: Options) => {
 
     // eslint-disable-next-line consistent-return
     return () => {
-      listeners.current.forEach(listener => {
+      listeners.current.forEach((listener) => {
         google.maps.event.removeListener(listener)
       })
       listeners.current = []

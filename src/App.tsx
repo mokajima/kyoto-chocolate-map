@@ -10,7 +10,7 @@ import GoogleMap from 'containers/GoogleMap'
 import Sidebar from 'components/Sidebar'
 
 const Content = styled('div')<{ hasMargin: boolean }>`
-  margin-left: ${props => (props.hasMargin ? '300px' : 0)};
+  margin-left: ${(props) => (props.hasMargin ? '300px' : 0)};
   position: relative;
   transition: margin-left 0.5s ease;
   z-index: 1;
@@ -26,7 +26,7 @@ const Header = styled('header')`
 
 const Title = styled('h1')<{ isShown: boolean }>`
   color: #fff;
-  display: ${props => (props.isShown ? 'block' : 'none')};
+  display: ${(props) => (props.isShown ? 'block' : 'none')};
   font: 20px/60px 'Sofia', cursive;
 
   @media (min-width: 768px) {
@@ -84,7 +84,7 @@ const App: FC = () => {
   }, [])
 
   const toggleSidebar = useCallback(() => {
-    setIsActiveSidebar(v => !v)
+    setIsActiveSidebar((v) => !v)
   }, [])
 
   return (

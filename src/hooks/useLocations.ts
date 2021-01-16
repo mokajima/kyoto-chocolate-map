@@ -28,7 +28,7 @@ const useLocations = () => {
 
       try {
         const snap = await query.get()
-        const locationsData = snap.docs.map(doc => ({
+        const locationsData = snap.docs.map((doc) => ({
           ...(doc.data() as Location)
         }))
         setLocations(locationsData)

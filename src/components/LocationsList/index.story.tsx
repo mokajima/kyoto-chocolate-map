@@ -26,7 +26,7 @@ export default {
 export const Default = () => (
   <LocationsList
     venue={null}
-    locations={locations.map(location => object(location.name, location))}
+    locations={locations.map((location) => object(location.name, location))}
     tabIndex={number('tabIndex', 0)}
     onClickLocation={noop}
   />
@@ -35,7 +35,7 @@ export const Default = () => (
 export const WithVenue = () => (
   <LocationsList
     venue={object('venue', venue)}
-    locations={locations.map(location => object(location.name, location))}
+    locations={locations.map((location) => object(location.name, location))}
     tabIndex={number('tabIndex', 0)}
     onClickLocation={noop}
   />
