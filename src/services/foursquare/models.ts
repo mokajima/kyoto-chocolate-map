@@ -1,3 +1,12 @@
+type BestPhoto = {
+  prefix: string
+  suffix: string
+}
+
+type Contact = {
+  formattedPhone: string
+}
+
 export type Venue = {
   bestPhoto?: BestPhoto
   canonicalUrl: string
@@ -8,13 +17,4 @@ export type Venue = {
   }
   name: string
   url?: string
-}
-
-type BestPhoto = {
-  prefix: string
-  suffix: string
-}
-
-type Contact = {
-  formattedPhone: string
 }
