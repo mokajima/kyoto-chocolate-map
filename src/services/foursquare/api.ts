@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Venue } from './models'
 
 const apiClient = axios.create()
 
@@ -6,7 +7,7 @@ export const getVenue = async (
   venueId: string,
   clientId: string,
   clientSecret: string
-) => {
+): Promise<{ response: { venue: Venue } }> => {
   const params = new URLSearchParams()
   params.set('client_id', clientId)
   params.set('client_secret', clientSecret)

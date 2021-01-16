@@ -22,7 +22,8 @@ const loadGoogleMapsApi = () => {
   })
 }
 
-const useGoogle = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const useGoogle = (): any => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [google, setGoogle] = useState<any>(null)
 

@@ -9,7 +9,11 @@ import { FirebaseContext } from 'contexts'
 // model
 import { Location } from 'services/kyoto-chocolate-map/models'
 
-const useLocations = () => {
+const useLocations = (): {
+  error: Error | null
+  isLoading: boolean
+  locations: Location[]
+} => {
   const [locations, setLocations] = useState<Location[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<Error | null>(null)

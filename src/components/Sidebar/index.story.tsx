@@ -13,7 +13,7 @@ export default {
   title: 'Sidebar'
 }
 
-export const Default = () => (
+export const Default = (): JSX.Element => (
   <Sidebar
     venue={venue}
     locations={locations.map((location) => object(location.name, location))}

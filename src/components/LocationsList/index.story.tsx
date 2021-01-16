@@ -23,7 +23,7 @@ export default {
   title: 'LocationsList'
 }
 
-export const Default = () => (
+export const Default = (): JSX.Element => (
   <LocationsList
     venue={null}
     locations={locations.map((location) => object(location.name, location))}
@@ -32,7 +32,7 @@ export const Default = () => (
   />
 )
 
-export const WithVenue = () => (
+export const WithVenue: React.FC = () => (
   <LocationsList
     venue={object('venue', venue)}
     locations={locations.map((location) => object(location.name, location))}

@@ -17,4 +17,4 @@ export default {
   title: 'Loader'
 }
 
-export const Default = () => <Loader />
+export const Default = (): JSX.Element => <Loader />

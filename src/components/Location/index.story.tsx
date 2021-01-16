@@ -9,6 +9,6 @@ export default {
   title: 'Location'
 }
 
-export const Default = () => (
+export const Default = (): JSX.Element => (
   <Location location={object('location', location)} />
 )

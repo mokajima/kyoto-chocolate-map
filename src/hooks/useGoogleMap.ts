@@ -13,7 +13,7 @@ const INITIAL_CONFIG = {
   zoom: 13
 }
 
-const useGoogleMap = (options: Options) => {
+const useGoogleMap = (options: Options): google.maps.Map<Element> | null => {
   const { containerElement, google } = options
 
   const [googleMap, setGoogleMap] = useState<google.maps.Map | null>(null)

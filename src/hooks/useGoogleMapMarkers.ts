@@ -12,7 +12,7 @@ type Options = {
   onClickLocation: (venueId: string) => void
 }
 
-const useGoogleMapMarkers = (options: Options) => {
+const useGoogleMapMarkers = (options: Options): void => {
   const { venue, google, googleMap, locations, onClickLocation } = options
 
   const listeners = useRef<google.maps.MapsEventListener[]>([])

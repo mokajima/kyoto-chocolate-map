@@ -9,7 +9,9 @@ import { FirebaseContext } from 'contexts'
 // model
 import { Venue } from 'services/kyoto-chocolate-map/models'
 
-const useVenue = (id: string) => {
+const useVenue = (
+  id: string
+): { error: Error | null; isLoading: boolean; venue: Venue | null } => {
   const [venue, setVenue] = useState<Venue | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<Error | null>(null)
