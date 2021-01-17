@@ -2,7 +2,9 @@ import React from 'react'
 import { number, object } from '@storybook/addon-knobs'
 
 import LocationsList from './index'
+// eslint-disable-next-line jest/no-mocks-import
 import venue from '../../services/foursquare/__mocks__/venue.json'
+// eslint-disable-next-line jest/no-mocks-import
 import locations from '../../services/kyoto-chocolate-map/__mocks__/locations.json'
 import theme from '../../theme'
 
