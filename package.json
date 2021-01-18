@@ -21,6 +21,8 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
+    "fix": "npm run -s format && npm run -s lint:fix",
+    "format": "prettier --write --loglevel=warn 'src/**/*.{js,jsx,ts,tsx}'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy:hosting": "npm run build && firebase deploy --only hosting",
