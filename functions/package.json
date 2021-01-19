@@ -29,7 +29,6 @@
   },
   "devDependencies": {
     "@types/eslint": "^7.2.6",
-    "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/jest": "^24.0.24",
     "@types/node": "^13.1.0",
     "@types/prettier": "^2.1.6",
@@ -41,7 +40,6 @@
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prefer-arrow": "^1.2.2",
-    "eslint-plugin-prettier": "^3.3.1",
     "firebase-functions-test": "^0.1.6",
     "jest": "^24.9.0",
     "prettier": "^2.2.1",
