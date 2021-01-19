@@ -1,96 +1,94 @@
 module.exports = {
   env: {
-    'browser': true,
-    'es6': true,
-    'node': true,
-    'jest/globals': true,
+    browser: true,
+    es2020: true,
+    node: true
   },
   extends: [
     'airbnb-base',
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:jest/recommended',
-    'plugin:prettier/recommended',
     'prettier',
     'prettier/@typescript-eslint',
-    'prettier/standard',
+    'prettier/react'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2018,
-    project: './tsconfig.json',
+    project: './tsconfig.eslint.json',
     sourceType: 'module',
+    tsconfigRootDir: __dirname
   },
   plugins: [
     '@typescript-eslint',
     'import',
     'jest',
+    'jsx-a11y',
     'prefer-arrow',
-    'prettier',
+    'react',
+    'react-hooks'
   ],
   root: true,
   rules: {
-    // eslint official
-    'linebreak-style': ['error', 'unix'],
-    'newline-before-return': 'error',
-    'no-console': 'warn',
-    'no-continue': 'off',
-    'quotes': ['error', 'single', { 'avoidEscape': true }],
-    'require-yield': 'error',
-
-    // @typescript-eslint
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-member-accessibility': 'off',
-    'indent': 'off',
-    '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/no-unnecessary-type-assertion': 'error',
-    '@typescript-eslint/no-unused-vars': 'error',
-    '@typescript-eslint/prefer-interface': 'off',
-
-    // airbnb
     'no-restricted-syntax': [
       'error',
       {
         selector: 'ForInStatement',
-        message: 'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+        message:
+          'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.'
       },
       {
         selector: 'LabeledStatement',
-        message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+        message:
+          'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.'
       },
       {
         selector: 'WithStatement',
-        message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+        message:
+          '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.'
       },
     ],
-    // prefer-arrow
-    'prefer-arrow/prefer-arrow-functions': [
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+    'no-void': [
       'error',
       {
-        'disallowPrototype': true,
-        'singleReturnOnly': true,
-        'classPropertiesAllowed': false,
+        allowAsStatement: true,
       },
     ],
-
-
-    // import
+    'padding-line-between-statements': [
+      'error',
+      {
+        blankLine: 'always',
+        prev: '*',
+        next: 'return'
+      }
+    ],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        'vars': 'all',
+        'args': 'after-used',
+        'argsIgnorePattern': '_',
+        'ignoreRestSiblings': false,
+        'varsIgnorePattern': '_'
+      }
+    ],
     'import/extensions': [
       'error',
-      'always',
+      'ignorePackages',
       {
-        'js': 'never',
-        'ts': 'never',
-      },
+        js: 'never',
+        ts: 'never'
+      }
     ],
     'import/no-extraneous-dependencies': [
       'error',
       {
-        'devDependencies': [
+        devDependencies: [
           '.storybook/**',
           'stories/**',
           '**/*/*.story.*',
@@ -99,21 +97,25 @@ module.exports = {
           '**/*/*.spec.*',
           '**/__tests__/**',
           '**/*/*.test.*',
-          'src/setupTests.*',
-        ],
-      },
+          'src/setupTests.*'
+        ]
+      }
     ],
     'import/prefer-default-export': 'off',
+    'prefer-arrow/prefer-arrow-functions': [
+      'error',
+      {
+        disallowPrototype: true,
+        singleReturnOnly: false,
+        classPropertiesAllowed: false
+      }
+    ]
   },
   settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
     'import/resolver': {
-      'node': {
-        'extensions': ['.js', '.ts'],
-        'paths': ['src'],
-      },
-    },
-  },
-};
+      node: {
+        paths: ['src']
+      }
+    }
+  }
+}
