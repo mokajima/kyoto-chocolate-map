@@ -14,6 +14,7 @@ const INITIAL_CONFIG = {
 }
 
 const useGoogleMap = (options: Options): google.maps.Map<Element> | null => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { containerElement, google } = options
 
   const [googleMap, setGoogleMap] = useState<google.maps.Map | null>(null)
@@ -21,6 +22,7 @@ const useGoogleMap = (options: Options): google.maps.Map<Element> | null => {
   useEffect(() => {
     if (!google || !containerElement.current) return
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,  @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
     const map = new google.maps.Map(containerElement.current, INITIAL_CONFIG)
     setGoogleMap(map)
   }, [containerElement, google])

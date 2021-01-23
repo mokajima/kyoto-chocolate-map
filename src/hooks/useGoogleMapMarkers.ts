@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return */
 import { useEffect, useMemo, useRef } from 'react'
 
 // model
@@ -21,7 +22,6 @@ const useGoogleMapMarkers = (options: Options): void => {
     if (!google) return null
 
     return new google.maps.MarkerImage(
-      // https://developers.google.com/chart/image/docs/gallery/dynamic_icons#text-pin-with-scaling-and-rotation
       'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|6dc5c3|40|_|%E2%80%A2',
       new google.maps.Size(21, 34),
       new google.maps.Point(0, 0),

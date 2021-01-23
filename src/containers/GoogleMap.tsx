@@ -23,8 +23,13 @@ const Container = styled('div')`
 const GoogleMap: FC<Props> = ({ locations, venue, onClickLocation }) => {
   const containerElement = useRef(null)
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const google = useGoogle()
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const googleMap = useGoogleMap({ containerElement, google })
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   useGoogleMapMarkers({ venue, google, googleMap, locations, onClickLocation })
 
   return (

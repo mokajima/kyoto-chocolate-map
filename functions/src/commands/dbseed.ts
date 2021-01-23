@@ -15,6 +15,7 @@ const db = admin.firestore()
 
 const uploadSeed = async (collection: string, seedFile: string) => {
   const buffer = fs.readFileSync(seedFile)
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const records = parse(buffer.toString(), {
     columns: true,
     delimiter: '\t',
@@ -24,6 +25,7 @@ const uploadSeed = async (collection: string, seedFile: string) => {
 
   switch (collection) {
     case collectionName.locations: {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
       const docs = records.map((record: Location) => ({
         ...record,
         lat: parseFloat((record.lat as unknown) as string),
@@ -33,6 +35,7 @@ const uploadSeed = async (collection: string, seedFile: string) => {
       }))
 
       for await (const doc of docs) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         await ref.doc(doc.venueId).set(doc)
       }
 

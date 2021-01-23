@@ -24,13 +24,14 @@ const loadGoogleMapsApi = () => {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useGoogle = (): any => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
   const [google, setGoogle] = useState<any>(null)
 
   useEffect(() => {
     loadGoogleMapsApi().then((v) => setGoogle(v))
   }, [])
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return google
 }
 
