@@ -8,7 +8,7 @@ import { Location } from './services/kyoto-chocolate-map/models'
 
 admin.initializeApp()
 
-// eslint-disable-next-line @typescript-eslint/camelcase
+// eslint-disable-next-line camelcase
 const { client_id, client_secret } = functions.config().foursquare
 
 const createVenue = async (db: admin.firestore.Firestore, venue: Venue) => {

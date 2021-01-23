@@ -18,7 +18,7 @@ const uploadSeed = async (collection: string, seedFile: string) => {
   const records = parse(buffer.toString(), {
     columns: true,
     delimiter: '\t',
-    skip_empty_lines: true // eslint-disable-line @typescript-eslint/camelcase
+    skip_empty_lines: true // eslint-disable-line camelcase
   })
   const ref = db.collection(collection)
 
