@@ -27,7 +27,12 @@ const useGoogle = (): any => {
   const [google, setGoogle] = useState<any>(null)
 
   useEffect(() => {
-    loadGoogleMapsApi().then((v) => setGoogle(v))
+    loadGoogleMapsApi()
+      .then((v) => setGoogle(v))
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error)
+      })
   }, [])
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
