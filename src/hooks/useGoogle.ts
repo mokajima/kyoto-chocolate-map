@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
 
-const loadGoogleMapsApi = () => {
-  return new Promise((resolve) => {
+const loadGoogleMapsApi = () =>
+  new Promise((resolve) => {
     const script = document.createElement('script')
     script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=onLoadGoogleMapsApi`
     // eslint-disable-next-line no-unused-expressions
@@ -20,7 +20,6 @@ const loadGoogleMapsApi = () => {
       alert("We couldn't get data from Google Maps")
     }
   })
-}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useGoogle = (): any => {
