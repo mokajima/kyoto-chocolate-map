@@ -51,6 +51,10 @@ const uploadSeed = async (collection: string, seedFile: string) => {
 commander
   .version('0.1.0', '-v, --version')
   .arguments('<collection> <seedFile>')
-  .action(uploadSeed)
+  .action(
+    (collection: string, seedFile: string) =>
+      // eslint-disable-next-line no-void
+      void uploadSeed(collection, seedFile)
+  )
 
 commander.parse(process.argv)
