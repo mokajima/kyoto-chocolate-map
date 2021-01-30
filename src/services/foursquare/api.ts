@@ -15,7 +15,7 @@ export const getVenue = async (
   params.set('v', '20180813')
 
   const url = `https://api.foursquare.com/v2/venues/${venueId}?${params.toString()}`
-  const { data } = await apiClient.get(url)
+  const { data } = await apiClient.get<{ response: { venue: Venue } }>(url)
 
   return data
 }
