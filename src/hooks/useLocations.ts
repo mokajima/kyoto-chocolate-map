@@ -44,7 +44,7 @@ const useLocations = (): {
       setIsLoading(false)
     }
 
-    load()
+    void load()
   }, [])
 
   return { locations, isLoading, error }

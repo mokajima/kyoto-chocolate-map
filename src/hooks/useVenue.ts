@@ -40,7 +40,7 @@ const useVenue = (
       setIsLoading(false)
     }
 
-    load()
+    void load()
   }, [id])
 
   return { venue, isLoading, error }
