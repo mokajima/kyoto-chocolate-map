@@ -2,21 +2,21 @@
   "name": "functions",
   "scripts": {
     "build": "npm run lint && tsc",
-    "fix": "npm run -s format && npm run -s lint:fix",
-    "format": "prettier --write --loglevel=warn 'src/**/*.{js,ts}'",
     "dbreset": "firebase firestore:delete --all-collections",
     "dbreset:locations": "firebase firestore:delete -y --shallow locations",
     "dbreset:venues": "firebase firestore:delete -y --shallow venues",
     "dbseed": "npm run dbseed:locations",
     "dbseed:locations": "node lib/commands/dbseed.js locations seeds/locations.tsv",
+    "deploy": "firebase deploy --only functions",
+    "fix": "npm run -s format && npm run -s lint:fix",
+    "format": "prettier --write --loglevel=warn 'src/**/*.{js,ts}'",
+    "lint": "eslint 'src/**/*.{js,ts}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,ts}'",
+    "logs": "firebase functions:log",
     "serve": "npm run build && firebase serve --only functions",
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
-    "test": "jest",
-    "deploy": "firebase deploy --only functions",
-    "lint": "eslint 'src/**/*.{js,ts}'",
-    "lint:fix": "eslint --fix 'src/**/*.{js,ts}'",
-    "logs": "firebase functions:log"
+    "test": "jest"
   },
   "engines": {
     "node": "10"

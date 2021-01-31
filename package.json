@@ -21,19 +21,19 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "fix": "npm run -s format && npm run -s lint:fix",
-    "format": "prettier --write --loglevel=warn 'src/**/*.{js,jsx,ts,tsx}'",
-    "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:storybook": "build-storybook -o build/storybook",
     "deploy:hosting": "npm run build && firebase deploy --only hosting",
     "deploy:rules": "firebase deploy --only firestore:rules",
-    "test": "react-scripts test --env=jsdom",
-    "test:visual": "backstop test",
     "eject": "react-scripts eject",
+    "fix": "npm run -s format && npm run -s lint:fix",
+    "format": "prettier --write --loglevel=warn 'src/**/*.{js,jsx,ts,tsx}'",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'; stylelint 'src/**/*.{css,jsx,tsx}'; cd functions/ && eslint 'src/**/*.{js,ts}'",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'; stylelint --fix 'src/**/*.{css,jsx,tsx}'; cd functions/ && eslint --fix 'src/**/*.{js,ts}'",
+    "start": "react-scripts start",
     "storybook": "start-storybook -p 6006",
-    "build:storybook": "build-storybook -o build/storybook"
+    "test": "react-scripts test --env=jsdom",
+    "test:visual": "backstop test"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^5.3.17",
