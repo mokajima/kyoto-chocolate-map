@@ -1,0 +1,22 @@
+.list {
+  list-style-type: none;
+  margin-bottom: 30px;
+}
+
+.listItem {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #6b5344;
+  cursor: pointer;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.listItem[data-is-current='true'] {
+  background: #f5efde;
+}
+
+.listItem:hover {
+  background: #f5efde;
+}

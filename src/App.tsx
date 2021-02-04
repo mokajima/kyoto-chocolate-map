@@ -1,5 +1,4 @@
 import React, { FC, useCallback, useState } from 'react'
-import styled from 'styled-components'
 
 // hook
 import useLocations from 'hooks/useLocations'
@@ -8,69 +7,7 @@ import useVenue from 'hooks/useVenue'
 // view
 import GoogleMap from 'containers/GoogleMap'
 import Sidebar from 'components/Sidebar'
-
-const Content = styled('div')<{ hasMargin: boolean }>`
-  margin-left: ${(props) => (props.hasMargin ? '300px' : 0)};
-  position: relative;
-  transition: margin-left 0.5s ease;
-  z-index: 1;
-`
-
-const Header = styled('header')`
-  background: #6b5344;
-  height: 60px;
-  line-height: 60px;
-  position: relative;
-  text-align: center;
-`
-
-const Title = styled('h1')<{ isShown: boolean }>`
-  color: #fff;
-  display: ${(props) => (props.isShown ? 'block' : 'none')};
-  font: 20px/60px 'Sofia', cursive;
-
-  @media (min-width: 768px) {
-    display: block;
-    font-size: 30px;
-  }
-`
-
-const Button = styled('button')`
-  background: transparent;
-  border: 0;
-  bottom: 0;
-  cursor: pointer;
-  height: 25px;
-  left: 15px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  width: 30px;
-
-  span,
-  &::before,
-  &::after {
-    border-radius: 2px;
-    border-top: 4px solid #fff;
-    content: '';
-    display: block;
-    width: 100%;
-  }
-
-  span {
-    font-size: 0;
-  }
-
-  &::before {
-    position: absolute;
-    top: 0;
-  }
-
-  &::after {
-    bottom: 0;
-    position: absolute;
-  }
-`
+import styles from './App.module.css'
 
 const App: FC = () => {
   const [venueId, setVenueId] = useState<string>('')
@@ -89,19 +26,25 @@ const App: FC = () => {
 
   return (
     <main>
-      <Content hasMargin={isActiveSidebar}>
-        <Header>
-          <Title isShown={!isActiveSidebar}>Kyoto Chocolate Map</Title>
-          <Button onClick={toggleSidebar}>
+      <div className={styles.content} data-has-margin={isActiveSidebar}>
+        <header className={styles.header}>
+          <h1 className={styles.title} data-is-shown={!isActiveSidebar}>
+            Kyoto Chocolate Map
+          </h1>
+          <button
+            className={styles.button}
+            type="button"
+            onClick={toggleSidebar}
+          >
             <span>Hide Navigation</span>
-          </Button>
-        </Header>
+          </button>
+        </header>
         <GoogleMap
           locations={locations}
           venue={venue}
           onClickLocation={onClickLocation}
         />
-      </Content>
+      </div>
       <Sidebar
         venue={venue}
         isActive={isActiveSidebar}

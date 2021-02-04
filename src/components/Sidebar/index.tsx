@@ -1,18 +1,15 @@
 import React, { FC } from 'react'
-import styled from 'styled-components'
 
 // model
 import { Venue } from 'services/foursquare/models'
 import { Location as LocationType } from 'services/kyoto-chocolate-map/models'
-
-// theme
-import theme from 'theme'
 
 // view
 import Logo from 'powered-by-foursquare-white.svg'
 import LocationsList from '../LocationsList'
 import Location from '../Location'
 import Loader from '../Loader'
+import styles from './index.module.css'
 
 type Props = {
   venue: Venue | null
@@ -22,29 +19,6 @@ type Props = {
   onClickLocation: (venueId: string) => void
 }
 
-const Section = styled('section')`
-  background: ${theme.chocolate.milk};
-  box-sizing: border-box;
-  color: ${theme.white};
-  height: 100%;
-  left: 0;
-  overflow-y: scroll;
-  padding: 0 10px 28px;
-  position: fixed;
-  top: 0;
-  width: 300px;
-`
-
-const Title = styled('h2')`
-  letter-spacing: 1px;
-  line-height: 60px;
-`
-
-const Attribution = styled('div')`
-  margin: 0 auto;
-  width: 75%;
-`
-
 const Sidebar: FC<Props> = ({
   isActive,
   isLoading,
@@ -52,8 +26,8 @@ const Sidebar: FC<Props> = ({
   locations,
   onClickLocation
 }) => (
-  <Section>
-    <Title>Locations</Title>
+  <section className={styles.section}>
+    <h2 className={styles.title}>Locations</h2>
     {isLoading ? (
       <Loader />
     ) : (
@@ -67,10 +41,10 @@ const Sidebar: FC<Props> = ({
         />
       </>
     )}
-    <Attribution>
+    <div className={styles.attribution}>
       <img src={Logo} alt="POWERED BY FOURSQUARE" />
-    </Attribution>
-  </Section>
+    </div>
+  </section>
 )
 
 export default Sidebar

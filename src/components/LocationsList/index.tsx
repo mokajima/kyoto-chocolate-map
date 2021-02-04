@@ -1,12 +1,11 @@
 import React, { FC } from 'react'
-import styled from 'styled-components'
 
 // model
 import { Venue } from 'services/foursquare/models'
 import { Location } from 'services/kyoto-chocolate-map/models'
 
-// theme
-import theme from 'theme'
+// view
+import styles from './index.module.css'
 
 type Props = {
   venue: Venue | null
@@ -15,50 +14,32 @@ type Props = {
   onClickLocation: (venueId: string) => void
 }
 
-const List = styled('ul')`
-  list-style-type: none;
-  margin-bottom: 30px;
-`
-
-const ListItem = styled('li')<{ isCurrent: boolean }>`
-  background: ${(props) =>
-    props.isCurrent ? theme.chocolate.white : 'rgba(255, 255, 255, 0.8)'};
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: ${theme.chocolate.dark};
-  cursor: pointer;
-  margin-bottom: 5px;
-  padding: 10px;
-
-  &:hover {
-    background: ${theme.chocolate.white};
-  }
-`
-
 const LocationsList: FC<Props> = ({
   venue,
   locations,
   tabIndex,
   onClickLocation
 }) => (
-  <List role="listbox">
+  <ul className={styles.list} role="listbox">
     {locations.map((location: Location) => {
       const isCurrent = venue?.id === location.venueId
 
       return (
-        <ListItem
-          key={location.venueId}
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+        <li
           aria-selected={isCurrent}
-          isCurrent={isCurrent}
+          className={styles.listItem}
+          data-is-current={isCurrent}
+          key={location.venueId}
           role="option"
           tabIndex={tabIndex}
           onClick={() => onClickLocation(location.venueId)}
         >
           {location.name}
-        </ListItem>
+        </li>
       )
     })}
-  </List>
+  </ul>
 )
 
 export default LocationsList
