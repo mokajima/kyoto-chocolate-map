@@ -4,6 +4,7 @@ import { Venue } from 'services/foursquare/models'
 import { Location } from 'services/kyoto-chocolate-map/models'
 
 // view
+import Header from 'components/Header'
 import GoogleMap from 'containers/GoogleMap'
 import Sidebar from 'containers/Sidebar'
 import styles from './index.module.css'
@@ -27,18 +28,10 @@ const App: FC<Props> = ({
 }) => (
   <main>
     <div className={styles.content} data-has-margin={isActiveSidebar}>
-      <header className={styles.header}>
-        <h1 className={styles.title} data-is-shown={!isActiveSidebar}>
-          Kyoto Chocolate Map
-        </h1>
-        <button
-          className={styles.button}
-          type="button"
-          onClick={onToggleSidebar}
-        >
-          <span>Hide Navigation</span>
-        </button>
-      </header>
+      <Header
+        isActiveSidebar={isActiveSidebar}
+        onToggleSidebar={onToggleSidebar}
+      />
       <GoogleMap
         locations={locations}
         venue={venue}
