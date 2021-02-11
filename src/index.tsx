@@ -7,7 +7,7 @@ import 'firebase/firestore'
 import firebaseConfig from './firebase-config'
 
 // view
-import App from './App'
+import App from './containers/App'
 import FirebaseApp from './FirebaseApp'
 import './index.css'
 
