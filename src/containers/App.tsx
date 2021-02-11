@@ -12,7 +12,7 @@ const EnhancedApp: FC = () => {
   const [isActiveSidebar, setIsActiveSidebar] = useState<boolean>(true)
 
   const { venue } = useVenue(venueId)
-  const { isLoading, locations } = useLocations()
+  const { locations } = useLocations()
 
   const onClickLocation = useCallback((id: string) => {
     setVenueId(id)
@@ -25,9 +25,9 @@ const EnhancedApp: FC = () => {
   return (
     <App
       isActiveSidebar={isActiveSidebar}
-      isLoading={isLoading}
       locations={locations}
       venue={venue}
+      venueId={venueId}
       onClickLocation={onClickLocation}
       onToggleSidebar={toggleSidebar}
     />

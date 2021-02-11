@@ -5,23 +5,23 @@ import { Location } from 'services/kyoto-chocolate-map/models'
 
 // view
 import GoogleMap from 'containers/GoogleMap'
-import Sidebar from 'components/Sidebar'
+import Sidebar from 'containers/Sidebar'
 import styles from './index.module.css'
 
 type Props = {
   isActiveSidebar: boolean
-  isLoading: boolean
   locations: Location[]
   venue: Venue | null
+  venueId: string
   onClickLocation: (venueId: string) => void
   onToggleSidebar: () => void
 }
 
 const App: FC<Props> = ({
   isActiveSidebar,
-  isLoading,
   locations,
   venue,
+  venueId,
   onClickLocation,
   onToggleSidebar
 }) => (
@@ -46,10 +46,8 @@ const App: FC<Props> = ({
       />
     </div>
     <Sidebar
-      venue={venue}
       isActive={isActiveSidebar}
-      isLoading={isLoading}
-      locations={locations}
+      venueId={venueId}
       onClickLocation={onClickLocation}
     />
   </main>
