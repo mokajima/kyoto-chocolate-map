@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 // view
 import Header from 'components/Header'
 import GoogleMap from 'containers/GoogleMap'
-import Sidebar from 'containers/Sidebar'
+import Sidebar from 'components/Sidebar'
 import styles from './index.module.css'
 
 type Props = {
