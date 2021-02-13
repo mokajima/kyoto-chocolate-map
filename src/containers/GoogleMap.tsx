@@ -4,22 +4,22 @@ import React, { FC, useRef } from 'react'
 import useGoogle from 'hooks/useGoogle'
 import useGoogleMap from 'hooks/useGoogleMap'
 import useGoogleMapMarkers from 'hooks/useGoogleMapMarkers'
-
-// model
-import { Venue } from 'services/foursquare/models'
-import { Location } from 'services/kyoto-chocolate-map/models'
+import useLocations from 'hooks/useLocations'
+import useVenue from 'hooks/useVenue'
 
 // view
 import styles from 'containers/GoogleMap.module.css'
 
 type Props = {
-  locations: Location[]
-  venue: Venue | null
+  venueId: string
   onClickLocation: (venueId: string) => void
 }
 
-const GoogleMap: FC<Props> = ({ locations, venue, onClickLocation }) => {
+const GoogleMap: FC<Props> = ({ venueId, onClickLocation }) => {
   const containerElement = useRef(null)
+
+  const { locations } = useLocations()
+  const { venue } = useVenue(venueId)
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const google = useGoogle()
