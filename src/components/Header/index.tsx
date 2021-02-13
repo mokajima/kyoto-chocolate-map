@@ -4,13 +4,13 @@ import React, { FC } from 'react'
 import styles from './index.module.css'
 
 type Props = {
-  isActiveSidebar: boolean
+  showTitle: boolean
   onToggleSidebar: () => void
 }
 
-const Header: FC<Props> = ({ isActiveSidebar, onToggleSidebar }) => (
+const Header: FC<Props> = ({ showTitle, onToggleSidebar }) => (
   <header className={styles.header}>
-    <h1 className={styles.title} data-is-shown={!isActiveSidebar}>
+    <h1 className={styles.title} data-is-shown={showTitle}>
       Kyoto Chocolate Map
     </h1>
     <button className={styles.button} type="button" onClick={onToggleSidebar}>

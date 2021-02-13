@@ -22,7 +22,7 @@ const App: FC<Props> = ({
   <main>
     <div className={styles.content} data-has-margin={isActiveSidebar}>
       <Header
-        isActiveSidebar={isActiveSidebar}
+        showTitle={!isActiveSidebar}
         onToggleSidebar={onToggleSidebar}
       />
       <GoogleMap venueId={venueId} onClickLocation={onClickLocation} />
