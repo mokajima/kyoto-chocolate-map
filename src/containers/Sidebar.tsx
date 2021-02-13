@@ -23,6 +23,7 @@ const EnhancedSidebar: FC<Props> = ({ isActive, venueId, onClickLocation }) => {
       isLoading={isLoading}
       locations={locations}
       venue={venue}
+      venueId={venueId}
       onClickLocation={onClickLocation}
     />
   )
