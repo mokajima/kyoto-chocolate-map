@@ -5,15 +5,15 @@ import styles from './index.module.css'
 
 type Props = {
   showTitle: boolean
-  onToggleSidebar: () => void
+  onClickButton: () => void
 }
 
-const Header: FC<Props> = ({ showTitle, onToggleSidebar }) => (
+const Header: FC<Props> = ({ showTitle, onClickButton }) => (
   <header className={styles.header}>
     <h1 className={styles.title} data-is-shown={showTitle}>
       Kyoto Chocolate Map
     </h1>
-    <button className={styles.button} type="button" onClick={onToggleSidebar}>
+    <button className={styles.button} type="button" onClick={onClickButton}>
       <span>Hide Navigation</span>
     </button>
   </header>
