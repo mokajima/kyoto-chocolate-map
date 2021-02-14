@@ -7,25 +7,25 @@ import Sidebar from 'components/Sidebar'
 import styles from './index.module.css'
 
 type Props = {
-  isActiveSidebar: boolean
+  showSidebar: boolean
   venueId: string
   onClickLocation: (venueId: string) => void
   onToggleSidebar: () => void
 }
 
 const App: FC<Props> = ({
-  isActiveSidebar,
+  showSidebar,
   venueId,
   onClickLocation,
   onToggleSidebar
 }) => (
   <main>
-    <div className={styles.content} data-has-margin={isActiveSidebar}>
-      <Header showTitle={!isActiveSidebar} onClickButton={onToggleSidebar} />
+    <div className={styles.content} data-has-margin={showSidebar}>
+      <Header showTitle={!showSidebar} onClickButton={onToggleSidebar} />
       <GoogleMap venueId={venueId} onClickLocation={onClickLocation} />
     </div>
     <Sidebar
-      isActive={isActiveSidebar}
+      isActive={showSidebar}
       venueId={venueId}
       onClickLocation={onClickLocation}
     />

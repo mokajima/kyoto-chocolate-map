@@ -5,19 +5,19 @@ import App from 'components/App'
 
 const EnhancedApp: FC = () => {
   const [venueId, setVenueId] = useState<string>('')
-  const [isActiveSidebar, setIsActiveSidebar] = useState<boolean>(true)
+  const [showSidebar, setShowSidebar] = useState<boolean>(true)
 
   const onClickLocation = useCallback((id: string) => {
     setVenueId(id)
   }, [])
 
   const toggleSidebar = useCallback(() => {
-    setIsActiveSidebar((v) => !v)
+    setShowSidebar((v) => !v)
   }, [])
 
   return (
     <App
-      isActiveSidebar={isActiveSidebar}
+      showSidebar={showSidebar}
       venueId={venueId}
       onClickLocation={onClickLocation}
       onToggleSidebar={toggleSidebar}
