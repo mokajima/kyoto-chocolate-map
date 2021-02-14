@@ -25,7 +25,7 @@ const App: FC<Props> = ({
       <GoogleMap venueId={venueId} onClickLocation={onClickLocation} />
     </div>
     <Sidebar
-      isActive={showSidebar}
+      isShown={showSidebar}
       venueId={venueId}
       onClickLocation={onClickLocation}
     />

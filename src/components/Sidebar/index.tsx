@@ -7,18 +7,18 @@ import LocationsList from 'containers/LocationsList'
 import styles from './index.module.css'
 
 type Props = {
-  isActive: boolean
+  isShown: boolean
   venueId: string
   onClickLocation: (venueId: string) => void
 }
 
-const Sidebar: FC<Props> = ({ isActive, venueId, onClickLocation }) => (
+const Sidebar: FC<Props> = ({ isShown, venueId, onClickLocation }) => (
   <section className={styles.section}>
     <h2 className={styles.title}>Locations</h2>
     <Location venueId={venueId} />
     <LocationsList
       venueId={venueId}
-      tabIndex={isActive ? 0 : -1}
+      tabIndex={isShown ? 0 : -1}
       onClickLocation={onClickLocation}
     />
     <div className={styles.attribution}>
