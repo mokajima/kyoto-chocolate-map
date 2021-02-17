@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Venue } from './models'
 
-const apiClient = axios.create()
+export const apiClient = axios.create()
 
 export const createUrl = (
   venueId: string,

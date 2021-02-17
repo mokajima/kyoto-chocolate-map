@@ -16,6 +16,8 @@ module.exports = {
     'prettier/@typescript-eslint',
     'prettier/react'
   ],
+  // workaround for CI
+  ignorePatterns: ['dbseed.ts'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.eslint.json',
