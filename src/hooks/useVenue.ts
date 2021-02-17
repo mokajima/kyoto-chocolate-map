@@ -1,4 +1,5 @@
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useCallback, useContext, useRef } from 'react'
+import { useQuery } from 'react-query'
 
 // constant
 import { collectionName } from 'services/kyoto-chocolate-map/constants'
@@ -12,36 +13,22 @@ import { Venue } from 'services/kyoto-chocolate-map/models'
 const useVenue = (
   id: string
 ): { error: Error | null; isLoading: boolean; venue: Venue | null } => {
-  const [venue, setVenue] = useState<Venue | null>(null)
-  const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [error, setError] = useState<Error | null>(null)
-
   const firebaseRef = useRef(useContext(FirebaseContext))
 
-  useEffect(() => {
+  const getVenue = useCallback(async () => {
     const { db } = firebaseRef.current
 
     if (!db) throw new Error('Firestore is not initialized')
 
-    const collection = db.collection(collectionName.venues)
+    const doc = await db.collection(collectionName.venues).doc(id).get()
 
-    const load = async () => {
-      setIsLoading(true)
-
-      try {
-        const doc = await collection.doc(id).get()
-        const venueData = doc.data() as Venue
-        setVenue(venueData)
-        setError(null)
-      } catch (err) {
-        setError(err)
-      }
-
-      setIsLoading(false)
-    }
-
-    void load()
+    return doc.data() as Venue
   }, [id])
+
+  const { data: venue = null, error, isLoading } = useQuery<Venue, Error>(
+    ['venue', id],
+    getVenue
+  )
 
   return { venue, isLoading, error }
 }

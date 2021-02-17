@@ -1,4 +1,5 @@
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useCallback, useContext, useRef } from 'react'
+import { useQuery } from 'react-query'
 
 // constant
 import { collectionName } from 'services/kyoto-chocolate-map/constants'
@@ -9,43 +10,32 @@ import { FirebaseContext } from 'contexts'
 // model
 import { Location } from 'services/kyoto-chocolate-map/models'
 
+const QUERY_KEY = 'locations'
+
 const useLocations = (): {
   error: Error | null
   isLoading: boolean
   locations: Location[]
 } => {
-  const [locations, setLocations] = useState<Location[]>([])
-  const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [error, setError] = useState<Error | null>(null)
-
   const firebaseRef = useRef(useContext(FirebaseContext))
 
-  useEffect(() => {
+  const getLocations = useCallback(async () => {
     const { db } = firebaseRef.current
 
     if (!db) throw new Error('Firestore is not initialized')
 
     const query = db.collection(collectionName.locations).orderBy('name', 'asc')
+    const snap = await query.get()
 
-    const load = async () => {
-      setIsLoading(true)
-
-      try {
-        const snap = await query.get()
-        const locationsData = snap.docs.map((doc) => ({
-          ...(doc.data() as Location)
-        }))
-        setLocations(locationsData)
-        setError(null)
-      } catch (err) {
-        setError(err)
-      }
-
-      setIsLoading(false)
-    }
-
-    void load()
+    return snap.docs.map((doc) => ({
+      ...(doc.data() as Location)
+    }))
   }, [])
+
+  const { data: locations = [], error, isLoading } = useQuery<
+    Location[],
+    Error
+  >(QUERY_KEY, getLocations)
 
   return { locations, isLoading, error }
 }
