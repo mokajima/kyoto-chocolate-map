@@ -12,7 +12,7 @@ import { Venue } from 'services/foursquare/models'
 // view
 import styles from './index.module.css'
 
-type Props = {
+export type Props = {
   location: Venue
 }
 

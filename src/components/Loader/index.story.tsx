@@ -6,13 +6,10 @@ import theme from '../../theme'
 export default {
   component: Loader,
   parameters: {
-    backgrounds: [
-      {
-        name: 'milk',
-        value: theme.chocolate.milk,
-        default: true
-      }
-    ]
+    backgrounds: {
+      default: 'milk',
+      values: [{ name: 'milk', value: theme.chocolate.milk }]
+    }
   },
   title: 'Loader'
 }

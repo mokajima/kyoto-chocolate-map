@@ -7,7 +7,7 @@ import { Location } from 'services/kyoto-chocolate-map/models'
 // view
 import styles from './index.module.css'
 
-type Props = {
+export type Props = {
   venue: Venue | null
   locations: Location[]
   tabIndex: number
