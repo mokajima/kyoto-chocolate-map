@@ -1,44 +1,39 @@
+/* eslint-disable react/jsx-props-no-spreading */
+import { Story } from '@storybook/react/types-6-0'
 import React from 'react'
-import { number, object } from '@storybook/addon-knobs'
 
-import LocationsList from './index'
+import LocationsList, { Props } from './index'
 // eslint-disable-next-line jest/no-mocks-import
 import venue from '../../services/foursquare/__mocks__/venue.json'
 // eslint-disable-next-line jest/no-mocks-import
 import locations from '../../services/kyoto-chocolate-map/__mocks__/locations.json'
 import theme from '../../theme'
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const noop = () => {}
-
 export default {
   component: LocationsList,
   parameters: {
-    backgrounds: [
-      {
-        name: 'milk',
-        value: theme.chocolate.milk,
-        default: true
-      }
-    ]
+    backgrounds: {
+      default: 'milk',
+      values: [{ name: 'milk', value: theme.chocolate.milk }]
+    }
   },
   title: 'LocationsList'
 }
 
-export const Default = (): JSX.Element => (
-  <LocationsList
-    venue={null}
-    locations={locations.map((location) => object(location.name, location))}
-    tabIndex={number('tabIndex', 0)}
-    onClickLocation={noop}
-  />
+const Template: Story<Props> = (args): JSX.Element => (
+  <LocationsList {...args} />
 )
 
-export const WithVenue: React.FC = () => (
-  <LocationsList
-    venue={object('venue', venue)}
-    locations={locations.map((location) => object(location.name, location))}
-    tabIndex={number('tabIndex', 0)}
-    onClickLocation={noop}
-  />
-)
+export const Default = Template.bind({})
+Default.args = {
+  locations,
+  tabIndex: 0,
+  venue: null
+}
+
+export const WithVenue = Template.bind({})
+WithVenue.args = {
+  locations,
+  tabIndex: 0,
+  venue
+}
