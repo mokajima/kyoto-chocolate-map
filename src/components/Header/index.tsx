@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 // view
 import styles from './index.module.css'
 
-type Props = {
+export type Props = {
   showTitle: boolean
   onClickButton: () => void
 }
