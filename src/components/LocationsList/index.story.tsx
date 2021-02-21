@@ -3,10 +3,8 @@ import { Story } from '@storybook/react/types-6-0'
 import React from 'react'
 
 import LocationsList, { Props } from './index'
-// eslint-disable-next-line jest/no-mocks-import
-import venue from '../../services/foursquare/__mocks__/venue.json'
-// eslint-disable-next-line jest/no-mocks-import
-import locations from '../../services/kyoto-chocolate-map/__mocks__/locations.json'
+import venue from '../../services/foursquare/mocks/venue.json'
+import locations from '../../services/kyoto-chocolate-map/mocks/locations.json'
 import theme from '../../theme'
 
 export default {
