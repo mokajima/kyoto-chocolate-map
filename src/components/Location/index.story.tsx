@@ -3,8 +3,7 @@ import { Story } from '@storybook/react/types-6-0'
 import React from 'react'
 
 import Location, { Props } from './index'
-// eslint-disable-next-line jest/no-mocks-import
-import location from '../../services/foursquare/__mocks__/venue.json'
+import location from '../../services/foursquare/mocks/venue.json'
 
 export default {
   component: Location,
