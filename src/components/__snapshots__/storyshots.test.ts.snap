@@ -1,1091 +1,244 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Loader Default 1`] = `
-Array [
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+exports[`Storyshots Header Default 1`] = `
+<header
+  className="header"
+>
+  <h1
+    className="title"
+    data-is-shown={true}
   >
-    <div
-      className="sc-bwzfXH kurnWR"
-    >
-      <div
-        className="sc-bdVaJa gsGPIg"
-      />
-    </div>
-  </div>,
+    Kyoto Chocolate Map
+  </h1>
   <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    className="button"
     type="button"
   >
-    Show Info
-  </button>,
-]
+    <span>
+      Hide Navigation
+    </span>
+  </button>
+</header>
 `;
 
-exports[`Storyshots Loader default 1`] = `
-Array [
+exports[`Storyshots Loader Default 1`] = `
+<div
+  className="wrapper"
+>
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="sc-bwzfXH kurnWR"
-    >
-      <div
-        className="sc-bdVaJa gsGPIg"
-      />
-    </div>
-  </div>,
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>,
-]
+    className="container"
+  />
+</div>
 `;
 
 exports[`Storyshots Location Default 1`] = `
-Array [
+<div
+  className="container"
+>
+  <img
+    alt="ASSEMBLAGES KAKIMOTO"
+    className="image"
+    src="https://fastly.4sqi.net/img/general/300x300/125553_VpimgR41UCPz4d8n_ziOjDiSgWjyEpU6AtY7ypGt1BA.jpg"
+  />
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="content"
   >
-    <div
-      className="sc-htpNat kJaKxS"
+    <h3
+      className="name"
     >
-      <img
-        alt="ASSEMBLAGES KAKIMOTO"
-        className="sc-bxivhb khISbW"
-        src="https://fastly.4sqi.net/img/general/300x300/125553_VpimgR41UCPz4d8n_ziOjDiSgWjyEpU6AtY7ypGt1BA.jpg"
-      />
-      <div
-        className="sc-ifAKCX htrKJC"
+      ASSEMBLAGES KAKIMOTO
+    </h3>
+    <p>
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-map-marker-alt fa-w-12 icon"
+        data-icon="map-marker-alt"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 384 512"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <h3
-          className="sc-bZQynM iKaxTR"
-        >
-          ASSEMBLAGES KAKIMOTO
-        </h3>
-        <p>
-          <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-map-marker-alt fa-w-12 sc-EHOje dhoAaM"
-            data-icon="map-marker-alt"
-            data-prefix="fas"
-            focusable="false"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 384 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
-          松本町587-5 (竹屋町通寺町西入る)
-        </p>
-        <p>
-          <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-phone fa-w-16 sc-EHOje dhoAaM"
-            data-icon="phone"
-            data-prefix="fas"
-            focusable="false"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
-          +81 75-202-1351
-        </p>
-        <p>
-          <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-globe-asia fa-w-16 sc-EHOje dhoAaM"
-            data-icon="globe-asia"
-            data-prefix="fas"
-            focusable="false"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 496 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm-11.34 240.23c-2.89 4.82-8.1 7.77-13.72 7.77h-.31c-4.24 0-8.31 1.69-11.31 4.69l-5.66 5.66c-3.12 3.12-3.12 8.19 0 11.31l5.66 5.66c3 3 4.69 7.07 4.69 11.31V304c0 8.84-7.16 16-16 16h-6.11c-6.06 0-11.6-3.42-14.31-8.85l-22.62-45.23c-2.44-4.88-8.95-5.94-12.81-2.08l-19.47 19.46c-3 3-7.07 4.69-11.31 4.69H50.81C49.12 277.55 48 266.92 48 256c0-110.28 89.72-200 200-200 21.51 0 42.2 3.51 61.63 9.82l-50.16 38.53c-5.11 3.41-4.63 11.06.86 13.81l10.83 5.41c5.42 2.71 8.84 8.25 8.84 14.31V216c0 4.42-3.58 8-8 8h-3.06c-3.03 0-5.8-1.71-7.15-4.42-1.56-3.12-5.96-3.29-7.76-.3l-17.37 28.95zM408 358.43c0 4.24-1.69 8.31-4.69 11.31l-9.57 9.57c-3 3-7.07 4.69-11.31 4.69h-15.16c-4.24 0-8.31-1.69-11.31-4.69l-13.01-13.01a26.767 26.767 0 0 0-25.42-7.04l-21.27 5.32c-1.27.32-2.57.48-3.88.48h-10.34c-4.24 0-8.31-1.69-11.31-4.69l-11.91-11.91a8.008 8.008 0 0 1-2.34-5.66v-10.2c0-3.27 1.99-6.21 5.03-7.43l39.34-15.74c1.98-.79 3.86-1.82 5.59-3.05l23.71-16.89a7.978 7.978 0 0 1 4.64-1.48h12.09c3.23 0 6.15 1.94 7.39 4.93l5.35 12.85a4 4 0 0 0 3.69 2.46h3.8c1.78 0 3.35-1.18 3.84-2.88l4.2-14.47c.5-1.71 2.06-2.88 3.84-2.88h6.06c2.21 0 4 1.79 4 4v12.93c0 2.12.84 4.16 2.34 5.66l11.91 11.91c3 3 4.69 7.07 4.69 11.31v24.6z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
-          <a
-            className="sc-gzVnrw hRGqsu"
-            href="http://www.assemblages.jp"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            http://www.assemblages.jp
-          </a>
-        </p>
-        <a
-          className="sc-htoDjs kzoghb"
-          href="https://foursquare.com/v/assemblages-kakimoto/571b2376498ee5843d97343a"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          View in Foursquare
-        </a>
-      </div>
-    </div>
-  </div>,
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>,
-]
-`;
-
-exports[`Storyshots Location default 1`] = `
-Array [
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="sc-htpNat kJaKxS"
+        <path
+          d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      松本町587-5 (竹屋町通寺町西入る)
+    </p>
+    <p>
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-phone fa-w-16 icon"
+        data-icon="phone"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      +81 75-202-1351
+    </p>
+    <p>
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-globe-asia fa-w-16 icon"
+        data-icon="globe-asia"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 496 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm-11.34 240.23c-2.89 4.82-8.1 7.77-13.72 7.77h-.31c-4.24 0-8.31 1.69-11.31 4.69l-5.66 5.66c-3.12 3.12-3.12 8.19 0 11.31l5.66 5.66c3 3 4.69 7.07 4.69 11.31V304c0 8.84-7.16 16-16 16h-6.11c-6.06 0-11.6-3.42-14.31-8.85l-22.62-45.23c-2.44-4.88-8.95-5.94-12.81-2.08l-19.47 19.46c-3 3-7.07 4.69-11.31 4.69H50.81C49.12 277.55 48 266.92 48 256c0-110.28 89.72-200 200-200 21.51 0 42.2 3.51 61.63 9.82l-50.16 38.53c-5.11 3.41-4.63 11.06.86 13.81l10.83 5.41c5.42 2.71 8.84 8.25 8.84 14.31V216c0 4.42-3.58 8-8 8h-3.06c-3.03 0-5.8-1.71-7.15-4.42-1.56-3.12-5.96-3.29-7.76-.3l-17.37 28.95zM408 358.43c0 4.24-1.69 8.31-4.69 11.31l-9.57 9.57c-3 3-7.07 4.69-11.31 4.69h-15.16c-4.24 0-8.31-1.69-11.31-4.69l-13.01-13.01a26.767 26.767 0 0 0-25.42-7.04l-21.27 5.32c-1.27.32-2.57.48-3.88.48h-10.34c-4.24 0-8.31-1.69-11.31-4.69l-11.91-11.91a8.008 8.008 0 0 1-2.34-5.66v-10.2c0-3.27 1.99-6.21 5.03-7.43l39.34-15.74c1.98-.79 3.86-1.82 5.59-3.05l23.71-16.89a7.978 7.978 0 0 1 4.64-1.48h12.09c3.23 0 6.15 1.94 7.39 4.93l5.35 12.85a4 4 0 0 0 3.69 2.46h3.8c1.78 0 3.35-1.18 3.84-2.88l4.2-14.47c.5-1.71 2.06-2.88 3.84-2.88h6.06c2.21 0 4 1.79 4 4v12.93c0 2.12.84 4.16 2.34 5.66l11.91 11.91c3 3 4.69 7.07 4.69 11.31v24.6z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      <a
+        className="url"
+        href="http://www.assemblages.jp"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        http://www.assemblages.jp
+      </a>
+    </p>
+    <a
+      className="button"
+      href="https://foursquare.com/v/assemblages-kakimoto/571b2376498ee5843d97343a"
+      rel="noopener noreferrer"
+      target="_blank"
     >
-      <img
-        alt="ASSEMBLAGES KAKIMOTO"
-        className="sc-bxivhb khISbW"
-        src="https://fastly.4sqi.net/img/general/300x300/125553_VpimgR41UCPz4d8n_ziOjDiSgWjyEpU6AtY7ypGt1BA.jpg"
-      />
-      <div
-        className="sc-ifAKCX htrKJC"
-      >
-        <h3
-          className="sc-bZQynM iKaxTR"
-        >
-          ASSEMBLAGES KAKIMOTO
-        </h3>
-        <p>
-          <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-map-marker-alt fa-w-12 sc-EHOje dhoAaM"
-            data-icon="map-marker-alt"
-            data-prefix="fas"
-            focusable="false"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 384 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
-          松本町587-5 (竹屋町通寺町西入る)
-        </p>
-        <p>
-          <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-phone fa-w-16 sc-EHOje dhoAaM"
-            data-icon="phone"
-            data-prefix="fas"
-            focusable="false"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
-          +81 75-202-1351
-        </p>
-        <p>
-          <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-globe-asia fa-w-16 sc-EHOje dhoAaM"
-            data-icon="globe-asia"
-            data-prefix="fas"
-            focusable="false"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 496 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm-11.34 240.23c-2.89 4.82-8.1 7.77-13.72 7.77h-.31c-4.24 0-8.31 1.69-11.31 4.69l-5.66 5.66c-3.12 3.12-3.12 8.19 0 11.31l5.66 5.66c3 3 4.69 7.07 4.69 11.31V304c0 8.84-7.16 16-16 16h-6.11c-6.06 0-11.6-3.42-14.31-8.85l-22.62-45.23c-2.44-4.88-8.95-5.94-12.81-2.08l-19.47 19.46c-3 3-7.07 4.69-11.31 4.69H50.81C49.12 277.55 48 266.92 48 256c0-110.28 89.72-200 200-200 21.51 0 42.2 3.51 61.63 9.82l-50.16 38.53c-5.11 3.41-4.63 11.06.86 13.81l10.83 5.41c5.42 2.71 8.84 8.25 8.84 14.31V216c0 4.42-3.58 8-8 8h-3.06c-3.03 0-5.8-1.71-7.15-4.42-1.56-3.12-5.96-3.29-7.76-.3l-17.37 28.95zM408 358.43c0 4.24-1.69 8.31-4.69 11.31l-9.57 9.57c-3 3-7.07 4.69-11.31 4.69h-15.16c-4.24 0-8.31-1.69-11.31-4.69l-13.01-13.01a26.767 26.767 0 0 0-25.42-7.04l-21.27 5.32c-1.27.32-2.57.48-3.88.48h-10.34c-4.24 0-8.31-1.69-11.31-4.69l-11.91-11.91a8.008 8.008 0 0 1-2.34-5.66v-10.2c0-3.27 1.99-6.21 5.03-7.43l39.34-15.74c1.98-.79 3.86-1.82 5.59-3.05l23.71-16.89a7.978 7.978 0 0 1 4.64-1.48h12.09c3.23 0 6.15 1.94 7.39 4.93l5.35 12.85a4 4 0 0 0 3.69 2.46h3.8c1.78 0 3.35-1.18 3.84-2.88l4.2-14.47c.5-1.71 2.06-2.88 3.84-2.88h6.06c2.21 0 4 1.79 4 4v12.93c0 2.12.84 4.16 2.34 5.66l11.91 11.91c3 3 4.69 7.07 4.69 11.31v24.6z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
-          <a
-            className="sc-gzVnrw hRGqsu"
-            href="http://www.assemblages.jp"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            http://www.assemblages.jp
-          </a>
-        </p>
-        <a
-          className="sc-htoDjs kzoghb"
-          href="https://foursquare.com/v/assemblages-kakimoto/571b2376498ee5843d97343a"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          View in Foursquare
-        </a>
-      </div>
-    </div>
-  </div>,
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>,
-]
+      View in Foursquare
+    </a>
+  </div>
+</div>
 `;
 
 exports[`Storyshots LocationsList Default 1`] = `
-Array [
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <ul
-      className="sc-dnqmqq tUDaI"
-      role="listbox"
-    >
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        ASSEMBLAGES KAKIMOTO
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        CACAO MARKET by MarieBelle
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        DANDELION CHOCOLATE
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        JEAN-PAUL HÉVIN JAPON - Kyoto
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        Kyoto Nama Chocolat Organic Tea House
-      </li>
-    </ul>
-  </div>,
-  <button
-    className="info__show-button"
+<ul
+  className="list"
+  role="listbox"
+>
+  <li
+    aria-selected={false}
+    className="listItem"
+    data-is-current={false}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    role="option"
+    tabIndex={0}
   >
-    Show Info
-  </button>,
-]
+    ASSEMBLAGES KAKIMOTO
+  </li>
+  <li
+    aria-selected={false}
+    className="listItem"
+    data-is-current={false}
+    onClick={[Function]}
+    role="option"
+    tabIndex={0}
+  >
+    CACAO MARKET by MarieBelle
+  </li>
+  <li
+    aria-selected={false}
+    className="listItem"
+    data-is-current={false}
+    onClick={[Function]}
+    role="option"
+    tabIndex={0}
+  >
+    DANDELION CHOCOLATE
+  </li>
+  <li
+    aria-selected={false}
+    className="listItem"
+    data-is-current={false}
+    onClick={[Function]}
+    role="option"
+    tabIndex={0}
+  >
+    JEAN-PAUL HÉVIN JAPON - Kyoto
+  </li>
+  <li
+    aria-selected={false}
+    className="listItem"
+    data-is-current={false}
+    onClick={[Function]}
+    role="option"
+    tabIndex={0}
+  >
+    Kyoto Nama Chocolat Organic Tea House
+  </li>
+</ul>
 `;
 
 exports[`Storyshots LocationsList With Venue 1`] = `
-Array [
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <ul
-      className="sc-dnqmqq tUDaI"
-      role="listbox"
-    >
-      <li
-        aria-selected={true}
-        className="sc-iwsKbI bPOXMb"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        ASSEMBLAGES KAKIMOTO
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        CACAO MARKET by MarieBelle
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        DANDELION CHOCOLATE
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        JEAN-PAUL HÉVIN JAPON - Kyoto
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        Kyoto Nama Chocolat Organic Tea House
-      </li>
-    </ul>
-  </div>,
-  <button
-    className="info__show-button"
+<ul
+  className="list"
+  role="listbox"
+>
+  <li
+    aria-selected={true}
+    className="listItem"
+    data-is-current={true}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    role="option"
+    tabIndex={0}
   >
-    Show Info
-  </button>,
-]
-`;
-
-exports[`Storyshots LocationsList default 1`] = `
-Array [
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <ul
-      className="sc-dnqmqq tUDaI"
-      role="listbox"
-    >
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        ASSEMBLAGES KAKIMOTO
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        CACAO MARKET by MarieBelle
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        DANDELION CHOCOLATE
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        JEAN-PAUL HÉVIN JAPON - Kyoto
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        Kyoto Nama Chocolat Organic Tea House
-      </li>
-    </ul>
-  </div>,
-  <button
-    className="info__show-button"
+    ASSEMBLAGES KAKIMOTO
+  </li>
+  <li
+    aria-selected={false}
+    className="listItem"
+    data-is-current={false}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    role="option"
+    tabIndex={0}
   >
-    Show Info
-  </button>,
-]
-`;
-
-exports[`Storyshots LocationsList with a venue 1`] = `
-Array [
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <ul
-      className="sc-dnqmqq tUDaI"
-      role="listbox"
-    >
-      <li
-        aria-selected={true}
-        className="sc-iwsKbI bPOXMb"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        ASSEMBLAGES KAKIMOTO
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        CACAO MARKET by MarieBelle
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        DANDELION CHOCOLATE
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        JEAN-PAUL HÉVIN JAPON - Kyoto
-      </li>
-      <li
-        aria-selected={false}
-        className="sc-iwsKbI hbHIRj"
-        onClick={[Function]}
-        role="option"
-        tabIndex={0}
-      >
-        Kyoto Nama Chocolat Organic Tea House
-      </li>
-    </ul>
-  </div>,
-  <button
-    className="info__show-button"
+    CACAO MARKET by MarieBelle
+  </li>
+  <li
+    aria-selected={false}
+    className="listItem"
+    data-is-current={false}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    role="option"
+    tabIndex={0}
   >
-    Show Info
-  </button>,
-]
-`;
-
-exports[`Storyshots Sidebar Default 1`] = `
-Array [
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <section
-      className="sc-gZMcBi jzTAmP"
-    >
-      <h2
-        className="sc-gqjmRU iLKukb"
-      >
-        Locations
-      </h2>
-      <div
-        className="sc-htpNat kJaKxS"
-      >
-        <img
-          alt="ASSEMBLAGES KAKIMOTO"
-          className="sc-bxivhb khISbW"
-          src="https://fastly.4sqi.net/img/general/300x300/125553_VpimgR41UCPz4d8n_ziOjDiSgWjyEpU6AtY7ypGt1BA.jpg"
-        />
-        <div
-          className="sc-ifAKCX htrKJC"
-        >
-          <h3
-            className="sc-bZQynM iKaxTR"
-          >
-            ASSEMBLAGES KAKIMOTO
-          </h3>
-          <p>
-            <svg
-              aria-hidden="true"
-              className="svg-inline--fa fa-map-marker-alt fa-w-12 sc-EHOje dhoAaM"
-              data-icon="map-marker-alt"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              style={Object {}}
-              viewBox="0 0 384 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
-                fill="currentColor"
-                style={Object {}}
-              />
-            </svg>
-            松本町587-5 (竹屋町通寺町西入る)
-          </p>
-          <p>
-            <svg
-              aria-hidden="true"
-              className="svg-inline--fa fa-phone fa-w-16 sc-EHOje dhoAaM"
-              data-icon="phone"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              style={Object {}}
-              viewBox="0 0 512 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                fill="currentColor"
-                style={Object {}}
-              />
-            </svg>
-            +81 75-202-1351
-          </p>
-          <p>
-            <svg
-              aria-hidden="true"
-              className="svg-inline--fa fa-globe-asia fa-w-16 sc-EHOje dhoAaM"
-              data-icon="globe-asia"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              style={Object {}}
-              viewBox="0 0 496 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm-11.34 240.23c-2.89 4.82-8.1 7.77-13.72 7.77h-.31c-4.24 0-8.31 1.69-11.31 4.69l-5.66 5.66c-3.12 3.12-3.12 8.19 0 11.31l5.66 5.66c3 3 4.69 7.07 4.69 11.31V304c0 8.84-7.16 16-16 16h-6.11c-6.06 0-11.6-3.42-14.31-8.85l-22.62-45.23c-2.44-4.88-8.95-5.94-12.81-2.08l-19.47 19.46c-3 3-7.07 4.69-11.31 4.69H50.81C49.12 277.55 48 266.92 48 256c0-110.28 89.72-200 200-200 21.51 0 42.2 3.51 61.63 9.82l-50.16 38.53c-5.11 3.41-4.63 11.06.86 13.81l10.83 5.41c5.42 2.71 8.84 8.25 8.84 14.31V216c0 4.42-3.58 8-8 8h-3.06c-3.03 0-5.8-1.71-7.15-4.42-1.56-3.12-5.96-3.29-7.76-.3l-17.37 28.95zM408 358.43c0 4.24-1.69 8.31-4.69 11.31l-9.57 9.57c-3 3-7.07 4.69-11.31 4.69h-15.16c-4.24 0-8.31-1.69-11.31-4.69l-13.01-13.01a26.767 26.767 0 0 0-25.42-7.04l-21.27 5.32c-1.27.32-2.57.48-3.88.48h-10.34c-4.24 0-8.31-1.69-11.31-4.69l-11.91-11.91a8.008 8.008 0 0 1-2.34-5.66v-10.2c0-3.27 1.99-6.21 5.03-7.43l39.34-15.74c1.98-.79 3.86-1.82 5.59-3.05l23.71-16.89a7.978 7.978 0 0 1 4.64-1.48h12.09c3.23 0 6.15 1.94 7.39 4.93l5.35 12.85a4 4 0 0 0 3.69 2.46h3.8c1.78 0 3.35-1.18 3.84-2.88l4.2-14.47c.5-1.71 2.06-2.88 3.84-2.88h6.06c2.21 0 4 1.79 4 4v12.93c0 2.12.84 4.16 2.34 5.66l11.91 11.91c3 3 4.69 7.07 4.69 11.31v24.6z"
-                fill="currentColor"
-                style={Object {}}
-              />
-            </svg>
-            <a
-              className="sc-gzVnrw hRGqsu"
-              href="http://www.assemblages.jp"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              http://www.assemblages.jp
-            </a>
-          </p>
-          <a
-            className="sc-htoDjs kzoghb"
-            href="https://foursquare.com/v/assemblages-kakimoto/571b2376498ee5843d97343a"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            View in Foursquare
-          </a>
-        </div>
-      </div>
-      <ul
-        className="sc-dnqmqq tUDaI"
-        role="listbox"
-      >
-        <li
-          aria-selected={true}
-          className="sc-iwsKbI bPOXMb"
-          onClick={[Function]}
-          role="option"
-          tabIndex={0}
-        >
-          ASSEMBLAGES KAKIMOTO
-        </li>
-        <li
-          aria-selected={false}
-          className="sc-iwsKbI hbHIRj"
-          onClick={[Function]}
-          role="option"
-          tabIndex={0}
-        >
-          CACAO MARKET by MarieBelle
-        </li>
-        <li
-          aria-selected={false}
-          className="sc-iwsKbI hbHIRj"
-          onClick={[Function]}
-          role="option"
-          tabIndex={0}
-        >
-          DANDELION CHOCOLATE
-        </li>
-        <li
-          aria-selected={false}
-          className="sc-iwsKbI hbHIRj"
-          onClick={[Function]}
-          role="option"
-          tabIndex={0}
-        >
-          JEAN-PAUL HÉVIN JAPON - Kyoto
-        </li>
-        <li
-          aria-selected={false}
-          className="sc-iwsKbI hbHIRj"
-          onClick={[Function]}
-          role="option"
-          tabIndex={0}
-        >
-          Kyoto Nama Chocolat Organic Tea House
-        </li>
-      </ul>
-      <div
-        className="sc-VigVT duaWBk"
-      >
-        <img
-          alt="POWERED BY FOURSQUARE"
-          src="powered-by-foursquare-white.svg"
-        />
-      </div>
-    </section>
-  </div>,
-  <button
-    className="info__show-button"
+    DANDELION CHOCOLATE
+  </li>
+  <li
+    aria-selected={false}
+    className="listItem"
+    data-is-current={false}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    role="option"
+    tabIndex={0}
   >
-    Show Info
-  </button>,
-]
-`;
-
-exports[`Storyshots Sidebar default 1`] = `
-Array [
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <section
-      className="sc-gZMcBi jzTAmP"
-    >
-      <h2
-        className="sc-gqjmRU iLKukb"
-      >
-        Locations
-      </h2>
-      <div
-        className="sc-htpNat kJaKxS"
-      >
-        <img
-          alt="ASSEMBLAGES KAKIMOTO"
-          className="sc-bxivhb khISbW"
-          src="https://fastly.4sqi.net/img/general/300x300/125553_VpimgR41UCPz4d8n_ziOjDiSgWjyEpU6AtY7ypGt1BA.jpg"
-        />
-        <div
-          className="sc-ifAKCX htrKJC"
-        >
-          <h3
-            className="sc-bZQynM iKaxTR"
-          >
-            ASSEMBLAGES KAKIMOTO
-          </h3>
-          <p>
-            <svg
-              aria-hidden="true"
-              className="svg-inline--fa fa-map-marker-alt fa-w-12 sc-EHOje dhoAaM"
-              data-icon="map-marker-alt"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              style={Object {}}
-              viewBox="0 0 384 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
-                fill="currentColor"
-                style={Object {}}
-              />
-            </svg>
-            松本町587-5 (竹屋町通寺町西入る)
-          </p>
-          <p>
-            <svg
-              aria-hidden="true"
-              className="svg-inline--fa fa-phone fa-w-16 sc-EHOje dhoAaM"
-              data-icon="phone"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              style={Object {}}
-              viewBox="0 0 512 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                fill="currentColor"
-                style={Object {}}
-              />
-            </svg>
-            +81 75-202-1351
-          </p>
-          <p>
-            <svg
-              aria-hidden="true"
-              className="svg-inline--fa fa-globe-asia fa-w-16 sc-EHOje dhoAaM"
-              data-icon="globe-asia"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              style={Object {}}
-              viewBox="0 0 496 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm-11.34 240.23c-2.89 4.82-8.1 7.77-13.72 7.77h-.31c-4.24 0-8.31 1.69-11.31 4.69l-5.66 5.66c-3.12 3.12-3.12 8.19 0 11.31l5.66 5.66c3 3 4.69 7.07 4.69 11.31V304c0 8.84-7.16 16-16 16h-6.11c-6.06 0-11.6-3.42-14.31-8.85l-22.62-45.23c-2.44-4.88-8.95-5.94-12.81-2.08l-19.47 19.46c-3 3-7.07 4.69-11.31 4.69H50.81C49.12 277.55 48 266.92 48 256c0-110.28 89.72-200 200-200 21.51 0 42.2 3.51 61.63 9.82l-50.16 38.53c-5.11 3.41-4.63 11.06.86 13.81l10.83 5.41c5.42 2.71 8.84 8.25 8.84 14.31V216c0 4.42-3.58 8-8 8h-3.06c-3.03 0-5.8-1.71-7.15-4.42-1.56-3.12-5.96-3.29-7.76-.3l-17.37 28.95zM408 358.43c0 4.24-1.69 8.31-4.69 11.31l-9.57 9.57c-3 3-7.07 4.69-11.31 4.69h-15.16c-4.24 0-8.31-1.69-11.31-4.69l-13.01-13.01a26.767 26.767 0 0 0-25.42-7.04l-21.27 5.32c-1.27.32-2.57.48-3.88.48h-10.34c-4.24 0-8.31-1.69-11.31-4.69l-11.91-11.91a8.008 8.008 0 0 1-2.34-5.66v-10.2c0-3.27 1.99-6.21 5.03-7.43l39.34-15.74c1.98-.79 3.86-1.82 5.59-3.05l23.71-16.89a7.978 7.978 0 0 1 4.64-1.48h12.09c3.23 0 6.15 1.94 7.39 4.93l5.35 12.85a4 4 0 0 0 3.69 2.46h3.8c1.78 0 3.35-1.18 3.84-2.88l4.2-14.47c.5-1.71 2.06-2.88 3.84-2.88h6.06c2.21 0 4 1.79 4 4v12.93c0 2.12.84 4.16 2.34 5.66l11.91 11.91c3 3 4.69 7.07 4.69 11.31v24.6z"
-                fill="currentColor"
-                style={Object {}}
-              />
-            </svg>
-            <a
-              className="sc-gzVnrw hRGqsu"
-              href="http://www.assemblages.jp"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              http://www.assemblages.jp
-            </a>
-          </p>
-          <a
-            className="sc-htoDjs kzoghb"
-            href="https://foursquare.com/v/assemblages-kakimoto/571b2376498ee5843d97343a"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            View in Foursquare
-          </a>
-        </div>
-      </div>
-      <ul
-        className="sc-dnqmqq tUDaI"
-        role="listbox"
-      >
-        <li
-          aria-selected={true}
-          className="sc-iwsKbI bPOXMb"
-          onClick={[Function]}
-          role="option"
-          tabIndex={0}
-        >
-          ASSEMBLAGES KAKIMOTO
-        </li>
-        <li
-          aria-selected={false}
-          className="sc-iwsKbI hbHIRj"
-          onClick={[Function]}
-          role="option"
-          tabIndex={0}
-        >
-          CACAO MARKET by MarieBelle
-        </li>
-        <li
-          aria-selected={false}
-          className="sc-iwsKbI hbHIRj"
-          onClick={[Function]}
-          role="option"
-          tabIndex={0}
-        >
-          DANDELION CHOCOLATE
-        </li>
-        <li
-          aria-selected={false}
-          className="sc-iwsKbI hbHIRj"
-          onClick={[Function]}
-          role="option"
-          tabIndex={0}
-        >
-          JEAN-PAUL HÉVIN JAPON - Kyoto
-        </li>
-        <li
-          aria-selected={false}
-          className="sc-iwsKbI hbHIRj"
-          onClick={[Function]}
-          role="option"
-          tabIndex={0}
-        >
-          Kyoto Nama Chocolat Organic Tea House
-        </li>
-      </ul>
-      <div
-        className="sc-VigVT duaWBk"
-      >
-        <img
-          alt="POWERED BY FOURSQUARE"
-          src="powered-by-foursquare-white.svg"
-        />
-      </div>
-    </section>
-  </div>,
-  <button
-    className="info__show-button"
+    JEAN-PAUL HÉVIN JAPON - Kyoto
+  </li>
+  <li
+    aria-selected={false}
+    className="listItem"
+    data-is-current={false}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    role="option"
+    tabIndex={0}
   >
-    Show Info
-  </button>,
-]
+    Kyoto Nama Chocolat Organic Tea House
+  </li>
+</ul>
 `;
