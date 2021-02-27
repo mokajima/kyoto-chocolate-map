@@ -1,7 +1,7 @@
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 
-import { getVenue } from './api'
+import { createUrl, getVenue } from './api'
 
 const CLIENT_ID = process.env.REACT_APP_FOURSQUARE_CLIENT_ID || ''
 const CLIENT_SECRET = process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET || ''
@@ -31,7 +31,7 @@ const venue = {
 
 const venueId = '571b2376498ee5843d97343a'
 
-const url = `https://api.foursquare.com/v2/venues/${venueId}`
+const url = createUrl(venueId, CLIENT_ID, CLIENT_SECRET)
 
 describe('Foursquare API handlers', () => {
   const mock = new MockAdapter(axios)
