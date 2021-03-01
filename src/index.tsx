@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
+import * as serviceWorkerRegistration from './serviceWorkerRegistration'
+
 // constant
 import firebaseConfig from './firebase-config'
 
@@ -24,3 +26,5 @@ ReactDOM.render(
   </QueryClientProvider>,
   document.getElementById('root')
 )
+
+serviceWorkerRegistration.register()
