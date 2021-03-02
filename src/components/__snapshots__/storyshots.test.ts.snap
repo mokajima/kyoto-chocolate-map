@@ -38,7 +38,9 @@ exports[`Storyshots Location Default 1`] = `
   <img
     alt="ASSEMBLAGES KAKIMOTO"
     className="image"
+    height={200}
     src="https://fastly.4sqi.net/img/general/300x300/125553_VpimgR41UCPz4d8n_ziOjDiSgWjyEpU6AtY7ypGt1BA.jpg"
+    width={280}
   />
   <div
     className="content"
