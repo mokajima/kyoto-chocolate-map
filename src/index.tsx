@@ -18,6 +18,9 @@ const queryClient = new QueryClient()
 
 firebase.initializeApp(firebaseConfig)
 
+// eslint-disable-next-line no-console
+firebase.firestore().enablePersistence().catch(console.error)
+
 ReactDOM.render(
   <QueryClientProvider client={queryClient}>
     <FirebaseApp>
