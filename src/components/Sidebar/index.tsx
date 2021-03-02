@@ -22,7 +22,7 @@ const Sidebar: FC<Props> = ({ isShown, venueId, onClickLocation }) => (
       onClickLocation={onClickLocation}
     />
     <div className={styles.attribution}>
-      <img src={Logo} alt="POWERED BY FOURSQUARE" />
+      <img src={Logo} alt="POWERED BY FOURSQUARE" width={210} height={13} />
     </div>
   </section>
 )

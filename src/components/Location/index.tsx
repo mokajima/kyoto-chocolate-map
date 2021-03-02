@@ -23,6 +23,8 @@ const Location: FC<Props> = ({ location }) => (
         className={styles.image}
         src={`${location.bestPhoto.prefix}300x300${location.bestPhoto.suffix}`}
         alt={location.name}
+        width={280}
+        height={200}
       />
     )}
     <div className={styles.content}>
