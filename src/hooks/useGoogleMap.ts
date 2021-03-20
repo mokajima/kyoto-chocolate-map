@@ -13,7 +13,7 @@ const INITIAL_CONFIG = {
   zoom: 13
 }
 
-const useGoogleMap = (options: Options): google.maps.Map<Element> | null => {
+const useGoogleMap = (options: Options): google.maps.Map | null => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { containerElement, google } = options
 

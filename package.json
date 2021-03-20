@@ -57,6 +57,7 @@
     "@storybook/addon-storyshots": "^6.1.18",
     "@storybook/preset-create-react-app": "^3.1.6",
     "@storybook/react": "^6.1.18",
+    "@types/google.maps": "^3.44.2",
     "@types/prettier": "^2.2.2",
     "@types/react-test-renderer": "^16.9.2",
     "@types/stylelint": "^9.10.1",
