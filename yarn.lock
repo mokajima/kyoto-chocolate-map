@@ -3995,11 +3995,6 @@
   resolved "https://registry.yarnpkg.com/@types/google.maps/-/google.maps-3.44.2.tgz#4133e4e6f2075d0b30c928c0da11b58a7687744c"
   integrity sha512-m4Q+MKJA3dJQlzZPvRf92KP2eBUYTR1PZuzeVxJqZf8qTiavjhiAqhmuc2hneebEqMHXgfkv5Zs7+yDPIZ4z4Q==
 
-"@types/googlemaps@^3.39.0":
-  version "3.39.3"
-  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.39.3.tgz#8664e424f335802c8aa46a94676666b0a0f31d97"
-  integrity sha512-L8O9HAVFZj0TuiS8h5ORthiMsrrhjxTC8XUusp5k47oXCst4VTm+qWKvrAvmYMybZVokbp4Udco1mNwJrTNZPQ==
-
 "@types/graceful-fs@^4.1.2":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@types/graceful-fs/-/graceful-fs-4.1.4.tgz#4ff9f641a7c6d1a3508ff88bc3141b152772e753"
